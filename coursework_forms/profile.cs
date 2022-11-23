@@ -12,8 +12,6 @@ namespace coursework_forms {
     public partial class profile: Form {
         public profile(int id) {
             InitializeComponent();
-
-
         }
 
         private void b_exit_Click(object sender, EventArgs e) {

@@ -136,19 +136,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\HR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\profile.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HR1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\HR_Form.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\HR.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

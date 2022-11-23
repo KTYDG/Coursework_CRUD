@@ -73,6 +73,16 @@ namespace coursework_forms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DR {
+            get {
+                object obj = ResourceManager.GetObject("DR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye {
             get {
                 object obj = ResourceManager.GetObject("eye", resourceCulture);
@@ -106,6 +116,16 @@ namespace coursework_forms.Properties {
         internal static System.Drawing.Bitmap HR1 {
             get {
                 object obj = ResourceManager.GetObject("HR1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HR2 {
+            get {
+                object obj = ResourceManager.GetObject("HR2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
