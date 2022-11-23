@@ -1,0 +1,15 @@
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\bin\Debug\coursework_forms.exe.config
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\bin\Debug\coursework_forms.exe
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\bin\Debug\coursework_forms.pdb
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.csproj.AssemblyReference.cache
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.csproj.SuggestedBindingRedirects.cache
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.Login.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.Properties.Resources.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.csproj.GenerateResource.cache
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.csproj.CoreCompileInputs.cache
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.exe
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.pdb
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.sotr_view.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.HR.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.Main.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.profile.resources
