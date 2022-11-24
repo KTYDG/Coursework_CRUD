@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.p_top_menu = new System.Windows.Forms.Panel();
+            this.b_exit = new System.Windows.Forms.Button();
             this.p_side_menu = new System.Windows.Forms.Panel();
             this.AttesSubPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.b_profile = new System.Windows.Forms.Button();
             this.p_form_view = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.b_exit = new System.Windows.Forms.Button();
             this.p_top_menu.SuspendLayout();
             this.p_side_menu.SuspendLayout();
             this.AttesSubPanel.SuspendLayout();
@@ -56,6 +56,31 @@
             this.p_top_menu.Size = new System.Drawing.Size(1200, 25);
             this.p_top_menu.TabIndex = 0;
             this.p_top_menu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.p_top_menu_MouseMove);
+            // 
+            // b_exit
+            // 
+            this.b_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.b_exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.b_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(2)))), ((int)(((byte)(30)))));
+            this.b_exit.BackgroundImage = global::coursework_forms.Properties.Resources.close;
+            this.b_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.b_exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
+            this.b_exit.FlatAppearance.BorderSize = 0;
+            this.b_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_exit.Font = new System.Drawing.Font("JetBrains Mono Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.b_exit.ForeColor = System.Drawing.Color.White;
+            this.b_exit.ImageKey = "(none)";
+            this.b_exit.Location = new System.Drawing.Point(1145, 0);
+            this.b_exit.Margin = new System.Windows.Forms.Padding(0);
+            this.b_exit.Name = "b_exit";
+            this.b_exit.Size = new System.Drawing.Size(55, 25);
+            this.b_exit.TabIndex = 7;
+            this.b_exit.UseVisualStyleBackColor = false;
+            this.b_exit.Click += new System.EventHandler(this.b_exit_Click);
+            this.b_exit.MouseEnter += new System.EventHandler(this.b_exit_MouseEnter);
+            this.b_exit.MouseLeave += new System.EventHandler(this.b_exit_MouseLeave);
             // 
             // p_side_menu
             // 
@@ -274,38 +299,14 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::coursework_forms.Properties.Resources.HR_Form;
+            this.pictureBox1.BackgroundImage = global::coursework_forms.Properties.Resources.HR_Form;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(284, 69);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(450, 435);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // b_exit
-            // 
-            this.b_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.b_exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.b_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(2)))), ((int)(((byte)(30)))));
-            this.b_exit.BackgroundImage = global::coursework_forms.Properties.Resources.close;
-            this.b_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.b_exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
-            this.b_exit.FlatAppearance.BorderSize = 0;
-            this.b_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_exit.Font = new System.Drawing.Font("JetBrains Mono Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.b_exit.ForeColor = System.Drawing.Color.White;
-            this.b_exit.ImageKey = "(none)";
-            this.b_exit.Location = new System.Drawing.Point(1145, 0);
-            this.b_exit.Margin = new System.Windows.Forms.Padding(0);
-            this.b_exit.Name = "b_exit";
-            this.b_exit.Size = new System.Drawing.Size(55, 25);
-            this.b_exit.TabIndex = 7;
-            this.b_exit.UseVisualStyleBackColor = false;
-            this.b_exit.Click += new System.EventHandler(this.b_exit_Click);
-            this.b_exit.MouseEnter += new System.EventHandler(this.b_exit_MouseEnter);
-            this.b_exit.MouseLeave += new System.EventHandler(this.b_exit_MouseLeave);
             // 
             // Main
             // 

@@ -93,6 +93,16 @@ namespace coursework_forms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_red {
+            get {
+                object obj = ResourceManager.GetObject("eye_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HR {
             get {
                 object obj = ResourceManager.GetObject("HR", resourceCulture);
@@ -113,9 +123,9 @@ namespace coursework_forms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HR1 {
+        internal static System.Drawing.Bitmap refresh {
             get {
-                object obj = ResourceManager.GetObject("HR1", resourceCulture);
+                object obj = ResourceManager.GetObject("refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +133,9 @@ namespace coursework_forms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HR2 {
+        internal static System.Drawing.Bitmap refresh_green {
             get {
-                object obj = ResourceManager.GetObject("HR2", resourceCulture);
+                object obj = ResourceManager.GetObject("refresh_green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +143,9 @@ namespace coursework_forms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap profile {
+        internal static System.Drawing.Bitmap refresh_orange {
             get {
-                object obj = ResourceManager.GetObject("profile", resourceCulture);
+                object obj = ResourceManager.GetObject("refresh_orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

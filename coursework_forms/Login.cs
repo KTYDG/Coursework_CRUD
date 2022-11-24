@@ -66,23 +66,14 @@ namespace coursework_forms {
                 this.Hide();
                 Form f = new Main(check, Convert.ToInt32(tb_id.Text));
                 f.ShowDialog();
-                this.Close();
+                tb_id.Text = "";
+                tb_pass.Text = "";
+                //this.Close();
             }
-            //else if(check == 2) {
-            //    this.Hide();
-            //    Form f = new HR();
-            //    f.ShowDialog();
-            //    this.Close();
-            //}
             else {
                 // вывод ошибки
                 tb_error.Text = Convert.ToString((string)my_command.Parameters["@error"].Value);
             }
-
-            //this.Hide();
-            //Form f = new Main();
-            //f.ShowDialog();
-            //this.Close();
 
         }
         private void button_MouseEnter(object sender, EventArgs e) {
