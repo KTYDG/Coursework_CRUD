@@ -2,7 +2,7 @@
 <xs:schema id="CourseworkDataSet" targetNamespace="http://tempuri.org/CourseworkDataSet.xsd" xmlns:mstns="http://tempuri.org/CourseworkDataSet.xsd" xmlns="http://tempuri.org/CourseworkDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CourseworkConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CourseworkConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.coursework_forms.Properties.Settings.GlobalReference.Default.CourseworkConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
@@ -539,21 +539,140 @@ SELECT id_должность, Отдел, Должность, [Количест�
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SotrTableAdapter" GeneratorDataComponentClassName="SotrTableAdapter" Name="Sotr" UserDataComponentName="SotrTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CourseworkConnectionString (Settings)" DbObjectName="Coursework.dbo.Sotr" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, ТД, Должность, ФИО, [Дата рождения], Пол, Телефон, Почта, ЗП, Стаж FROM dbo.Sotr</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ТД" DataSetColumn="ТД" />
+              <Mapping SourceColumn="Должность" DataSetColumn="Должность" />
+              <Mapping SourceColumn="ФИО" DataSetColumn="ФИО" />
+              <Mapping SourceColumn="Дата рождения" DataSetColumn="Дата рождения" />
+              <Mapping SourceColumn="Пол" DataSetColumn="Пол" />
+              <Mapping SourceColumn="Телефон" DataSetColumn="Телефон" />
+              <Mapping SourceColumn="Почта" DataSetColumn="Почта" />
+              <Mapping SourceColumn="ЗП" DataSetColumn="ЗП" />
+              <Mapping SourceColumn="Стаж" DataSetColumn="Стаж" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RemovedTableAdapter" GeneratorDataComponentClassName="RemovedTableAdapter" Name="Removed" UserDataComponentName="RemovedTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CourseworkConnectionString (Settings)" DbObjectName="Coursework.dbo.Removed" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_сотрудник, ФИО, Дата, Причина FROM dbo.Removed</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_сотрудник" DataSetColumn="id_сотрудник" />
+              <Mapping SourceColumn="ФИО" DataSetColumn="ФИО" />
+              <Mapping SourceColumn="Дата" DataSetColumn="Дата" />
+              <Mapping SourceColumn="Причина" DataSetColumn="Причина" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
-        <Sources />
+        <Sources>
+          <DbSource ConnectionRef="CourseworkConnectionString (Settings)" DbObjectName="Coursework.dbo.CheckNewWorker" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CheckNewWorker" MethodsParameterType="CLR" Modifier="Public" Name="CheckNewWorker" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckNewWorker">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.CheckNewWorker</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_TD" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_work" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@mail" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@tel" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@res" Precision="0" ProviderType="VarChar" Scale="0" Size="60" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="CourseworkConnectionString (Settings)" DbObjectName="Coursework.dbo.GetProfile" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetProfile" MethodsParameterType="CLR" Modifier="Public" Name="GetProfile" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetProfile">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.GetProfile</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@password" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@fio" Precision="0" ProviderType="VarChar" Scale="0" Size="60" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@mail" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="InputOutput" ParameterName="@phone" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="CourseworkConnectionString (Settings)" DbObjectName="Coursework.dbo.Login" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Login" MethodsParameterType="CLR" Modifier="Public" Name="Login" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Login">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.Login</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@password" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@error" Precision="0" ProviderType="VarChar" Scale="0" Size="60" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="InputOutput" ParameterName="@check" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="CourseworkConnectionString (Settings)" DbObjectName="Coursework.dbo.SetProfile" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SetProfile" MethodsParameterType="CLR" Modifier="Public" Name="SetProfile" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="SetProfile">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.SetProfile</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@password" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@f" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@i" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@o" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@mail" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@phone" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="CourseworkConnectionString (Settings)" DbObjectName="Coursework.dbo.RemoveSotr" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="RemoveSotr" MethodsParameterType="CLR" Modifier="Public" Name="RemoveSotr" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="RemoveSotr">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.RemoveSotr</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@reason" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@res" Precision="0" ProviderType="VarChar" Scale="0" Size="60" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+        </Sources>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="CourseworkDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="CourseworkDataSet" msprop:Generator_DataSetName="CourseworkDataSet">
+  <xs:element name="CourseworkDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="CourseworkDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CourseworkDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Аттестация" msprop:Generator_RowEvHandlerName="АттестацияRowChangeEventHandler" msprop:Generator_RowDeletedName="АттестацияRowDeleted" msprop:Generator_RowDeletingName="АттестацияRowDeleting" msprop:Generator_RowEvArgName="АттестацияRowChangeEvent" msprop:Generator_TablePropName="Аттестация" msprop:Generator_RowChangedName="АттестацияRowChanged" msprop:Generator_RowChangingName="АттестацияRowChanging" msprop:Generator_TableClassName="АттестацияDataTable" msprop:Generator_RowClassName="АттестацияRow" msprop:Generator_TableVarName="tableАттестация" msprop:Generator_UserTableName="Аттестация">
+        <xs:element name="Аттестация" msprop:Generator_RowEvHandlerName="АттестацияRowChangeEventHandler" msprop:Generator_RowDeletedName="АттестацияRowDeleted" msprop:Generator_RowDeletingName="АттестацияRowDeleting" msprop:Generator_RowEvArgName="АттестацияRowChangeEvent" msprop:Generator_TablePropName="Аттестация" msprop:Generator_RowChangedName="АттестацияRowChanged" msprop:Generator_UserTableName="Аттестация" msprop:Generator_RowChangingName="АттестацияRowChanging" msprop:Generator_RowClassName="АттестацияRow" msprop:Generator_TableClassName="АттестацияDataTable" msprop:Generator_TableVarName="tableАттестация">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_аттестация" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id_аттестация" msprop:Generator_ColumnPropNameInTable="id_аттестацияColumn" msprop:Generator_ColumnVarNameInTable="columnid_аттестация" msprop:Generator_UserColumnName="id_аттестация" type="xs:int" />
-              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" type="xs:int" minOccurs="0" />
-              <xs:element name="Дата" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnVarNameInTable="columnДата" msprop:Generator_UserColumnName="Дата" type="xs:dateTime" />
-              <xs:element name="Описание" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnVarNameInTable="columnОписание" msprop:Generator_UserColumnName="Описание" minOccurs="0">
+              <xs:element name="id_аттестация" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="id_аттестацияColumn" msprop:Generator_ColumnPropNameInRow="id_аттестация" msprop:Generator_UserColumnName="id_аттестация" msprop:Generator_ColumnVarNameInTable="columnid_аттестация" type="xs:int" />
+              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" type="xs:int" minOccurs="0" />
+              <xs:element name="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_UserColumnName="Дата" msprop:Generator_ColumnVarNameInTable="columnДата" type="xs:dateTime" />
+              <xs:element name="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_UserColumnName="Описание" msprop:Generator_ColumnVarNameInTable="columnОписание" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -563,14 +682,14 @@ SELECT id_должность, Отдел, Должность, [Количест�
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Больничный" msprop:Generator_RowEvHandlerName="БольничныйRowChangeEventHandler" msprop:Generator_RowDeletedName="БольничныйRowDeleted" msprop:Generator_RowDeletingName="БольничныйRowDeleting" msprop:Generator_RowEvArgName="БольничныйRowChangeEvent" msprop:Generator_TablePropName="Больничный" msprop:Generator_RowChangedName="БольничныйRowChanged" msprop:Generator_RowChangingName="БольничныйRowChanging" msprop:Generator_TableClassName="БольничныйDataTable" msprop:Generator_RowClassName="БольничныйRow" msprop:Generator_TableVarName="tableБольничный" msprop:Generator_UserTableName="Больничный">
+        <xs:element name="Больничный" msprop:Generator_RowEvHandlerName="БольничныйRowChangeEventHandler" msprop:Generator_RowDeletedName="БольничныйRowDeleted" msprop:Generator_RowDeletingName="БольничныйRowDeleting" msprop:Generator_RowEvArgName="БольничныйRowChangeEvent" msprop:Generator_TablePropName="Больничный" msprop:Generator_RowChangedName="БольничныйRowChanged" msprop:Generator_UserTableName="Больничный" msprop:Generator_RowChangingName="БольничныйRowChanging" msprop:Generator_RowClassName="БольничныйRow" msprop:Generator_TableClassName="БольничныйDataTable" msprop:Generator_TableVarName="tableБольничный">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_Больничный" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id_Больничный" msprop:Generator_ColumnPropNameInTable="id_БольничныйColumn" msprop:Generator_ColumnVarNameInTable="columnid_Больничный" msprop:Generator_UserColumnName="id_Больничный" type="xs:int" />
-              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" type="xs:int" minOccurs="0" />
-              <xs:element name="Дата_x0020_начало" msprop:Generator_ColumnPropNameInRow="Дата_начало" msprop:Generator_ColumnPropNameInTable="Дата_началоColumn" msprop:Generator_ColumnVarNameInTable="columnДата_начало" msprop:Generator_UserColumnName="Дата начало" type="xs:dateTime" />
-              <xs:element name="Дата_x0020_конец" msprop:Generator_ColumnPropNameInRow="Дата_конец" msprop:Generator_ColumnPropNameInTable="Дата_конецColumn" msprop:Generator_ColumnVarNameInTable="columnДата_конец" msprop:Generator_UserColumnName="Дата конец" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Причина" msprop:Generator_ColumnPropNameInRow="Причина" msprop:Generator_ColumnPropNameInTable="ПричинаColumn" msprop:Generator_ColumnVarNameInTable="columnПричина" msprop:Generator_UserColumnName="Причина" minOccurs="0">
+              <xs:element name="id_Больничный" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="id_БольничныйColumn" msprop:Generator_ColumnPropNameInRow="id_Больничный" msprop:Generator_UserColumnName="id_Больничный" msprop:Generator_ColumnVarNameInTable="columnid_Больничный" type="xs:int" />
+              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" type="xs:int" minOccurs="0" />
+              <xs:element name="Дата_x0020_начало" msprop:Generator_ColumnPropNameInTable="Дата_началоColumn" msprop:Generator_ColumnPropNameInRow="Дата_начало" msprop:Generator_UserColumnName="Дата начало" msprop:Generator_ColumnVarNameInTable="columnДата_начало" type="xs:dateTime" />
+              <xs:element name="Дата_x0020_конец" msprop:Generator_ColumnPropNameInTable="Дата_конецColumn" msprop:Generator_ColumnPropNameInRow="Дата_конец" msprop:Generator_UserColumnName="Дата конец" msprop:Generator_ColumnVarNameInTable="columnДата_конец" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Причина" msprop:Generator_ColumnPropNameInTable="ПричинаColumn" msprop:Generator_ColumnPropNameInRow="Причина" msprop:Generator_UserColumnName="Причина" msprop:Generator_ColumnVarNameInTable="columnПричина" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -580,14 +699,14 @@ SELECT id_должность, Отдел, Должность, [Количест�
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Отпуск" msprop:Generator_RowEvHandlerName="ОтпускRowChangeEventHandler" msprop:Generator_RowDeletedName="ОтпускRowDeleted" msprop:Generator_RowDeletingName="ОтпускRowDeleting" msprop:Generator_RowEvArgName="ОтпускRowChangeEvent" msprop:Generator_TablePropName="Отпуск" msprop:Generator_RowChangedName="ОтпускRowChanged" msprop:Generator_RowChangingName="ОтпускRowChanging" msprop:Generator_TableClassName="ОтпускDataTable" msprop:Generator_RowClassName="ОтпускRow" msprop:Generator_TableVarName="tableОтпуск" msprop:Generator_UserTableName="Отпуск">
+        <xs:element name="Отпуск" msprop:Generator_RowEvHandlerName="ОтпускRowChangeEventHandler" msprop:Generator_RowDeletedName="ОтпускRowDeleted" msprop:Generator_RowDeletingName="ОтпускRowDeleting" msprop:Generator_RowEvArgName="ОтпускRowChangeEvent" msprop:Generator_TablePropName="Отпуск" msprop:Generator_RowChangedName="ОтпускRowChanged" msprop:Generator_UserTableName="Отпуск" msprop:Generator_RowChangingName="ОтпускRowChanging" msprop:Generator_RowClassName="ОтпускRow" msprop:Generator_TableClassName="ОтпускDataTable" msprop:Generator_TableVarName="tableОтпуск">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_отпуск" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id_отпуск" msprop:Generator_ColumnPropNameInTable="id_отпускColumn" msprop:Generator_ColumnVarNameInTable="columnid_отпуск" msprop:Generator_UserColumnName="id_отпуск" type="xs:int" />
-              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" type="xs:int" minOccurs="0" />
-              <xs:element name="Дата_x0020_начало" msprop:Generator_ColumnPropNameInRow="Дата_начало" msprop:Generator_ColumnPropNameInTable="Дата_началоColumn" msprop:Generator_ColumnVarNameInTable="columnДата_начало" msprop:Generator_UserColumnName="Дата начало" type="xs:dateTime" />
-              <xs:element name="Дата_x0020_конец" msprop:Generator_ColumnPropNameInRow="Дата_конец" msprop:Generator_ColumnPropNameInTable="Дата_конецColumn" msprop:Generator_ColumnVarNameInTable="columnДата_конец" msprop:Generator_UserColumnName="Дата конец" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Описание" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnVarNameInTable="columnОписание" msprop:Generator_UserColumnName="Описание" minOccurs="0">
+              <xs:element name="id_отпуск" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="id_отпускColumn" msprop:Generator_ColumnPropNameInRow="id_отпуск" msprop:Generator_UserColumnName="id_отпуск" msprop:Generator_ColumnVarNameInTable="columnid_отпуск" type="xs:int" />
+              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" type="xs:int" minOccurs="0" />
+              <xs:element name="Дата_x0020_начало" msprop:Generator_ColumnPropNameInTable="Дата_началоColumn" msprop:Generator_ColumnPropNameInRow="Дата_начало" msprop:Generator_UserColumnName="Дата начало" msprop:Generator_ColumnVarNameInTable="columnДата_начало" type="xs:dateTime" />
+              <xs:element name="Дата_x0020_конец" msprop:Generator_ColumnPropNameInTable="Дата_конецColumn" msprop:Generator_ColumnPropNameInRow="Дата_конец" msprop:Generator_UserColumnName="Дата конец" msprop:Generator_ColumnVarNameInTable="columnДата_конец" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_UserColumnName="Описание" msprop:Generator_ColumnVarNameInTable="columnОписание" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -597,11 +716,11 @@ SELECT id_должность, Отдел, Должность, [Количест�
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Пользователь" msprop:Generator_RowEvHandlerName="ПользовательRowChangeEventHandler" msprop:Generator_RowDeletedName="ПользовательRowDeleted" msprop:Generator_RowDeletingName="ПользовательRowDeleting" msprop:Generator_RowEvArgName="ПользовательRowChangeEvent" msprop:Generator_TablePropName="Пользователь" msprop:Generator_RowChangedName="ПользовательRowChanged" msprop:Generator_RowChangingName="ПользовательRowChanging" msprop:Generator_TableClassName="ПользовательDataTable" msprop:Generator_RowClassName="ПользовательRow" msprop:Generator_TableVarName="tableПользователь" msprop:Generator_UserTableName="Пользователь">
+        <xs:element name="Пользователь" msprop:Generator_RowEvHandlerName="ПользовательRowChangeEventHandler" msprop:Generator_RowDeletedName="ПользовательRowDeleted" msprop:Generator_RowDeletingName="ПользовательRowDeleting" msprop:Generator_RowEvArgName="ПользовательRowChangeEvent" msprop:Generator_TablePropName="Пользователь" msprop:Generator_RowChangedName="ПользовательRowChanged" msprop:Generator_UserTableName="Пользователь" msprop:Generator_RowChangingName="ПользовательRowChanging" msprop:Generator_RowClassName="ПользовательRow" msprop:Generator_TableClassName="ПользовательDataTable" msprop:Generator_TableVarName="tableПользователь">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" type="xs:int" />
-              <xs:element name="Пароль" msprop:Generator_ColumnPropNameInRow="Пароль" msprop:Generator_ColumnPropNameInTable="ПарольColumn" msprop:Generator_ColumnVarNameInTable="columnПароль" msprop:Generator_UserColumnName="Пароль">
+              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" type="xs:int" />
+              <xs:element name="Пароль" msprop:Generator_ColumnPropNameInTable="ПарольColumn" msprop:Generator_ColumnPropNameInRow="Пароль" msprop:Generator_UserColumnName="Пароль" msprop:Generator_ColumnVarNameInTable="columnПароль">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -611,13 +730,13 @@ SELECT id_должность, Отдел, Должность, [Количест�
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Прогул" msprop:Generator_RowEvHandlerName="ПрогулRowChangeEventHandler" msprop:Generator_RowDeletedName="ПрогулRowDeleted" msprop:Generator_RowDeletingName="ПрогулRowDeleting" msprop:Generator_RowEvArgName="ПрогулRowChangeEvent" msprop:Generator_TablePropName="Прогул" msprop:Generator_RowChangedName="ПрогулRowChanged" msprop:Generator_RowChangingName="ПрогулRowChanging" msprop:Generator_TableClassName="ПрогулDataTable" msprop:Generator_RowClassName="ПрогулRow" msprop:Generator_TableVarName="tableПрогул" msprop:Generator_UserTableName="Прогул">
+        <xs:element name="Прогул" msprop:Generator_RowEvHandlerName="ПрогулRowChangeEventHandler" msprop:Generator_RowDeletedName="ПрогулRowDeleted" msprop:Generator_RowDeletingName="ПрогулRowDeleting" msprop:Generator_RowEvArgName="ПрогулRowChangeEvent" msprop:Generator_TablePropName="Прогул" msprop:Generator_RowChangedName="ПрогулRowChanged" msprop:Generator_UserTableName="Прогул" msprop:Generator_RowChangingName="ПрогулRowChanging" msprop:Generator_RowClassName="ПрогулRow" msprop:Generator_TableClassName="ПрогулDataTable" msprop:Generator_TableVarName="tableПрогул">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_прогул" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id_прогул" msprop:Generator_ColumnPropNameInTable="id_прогулColumn" msprop:Generator_ColumnVarNameInTable="columnid_прогул" msprop:Generator_UserColumnName="id_прогул" type="xs:int" />
-              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" type="xs:int" minOccurs="0" />
-              <xs:element name="Дата" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnVarNameInTable="columnДата" msprop:Generator_UserColumnName="Дата" type="xs:dateTime" />
-              <xs:element name="Причина" msprop:Generator_ColumnPropNameInRow="Причина" msprop:Generator_ColumnPropNameInTable="ПричинаColumn" msprop:Generator_ColumnVarNameInTable="columnПричина" msprop:Generator_UserColumnName="Причина" minOccurs="0">
+              <xs:element name="id_прогул" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="id_прогулColumn" msprop:Generator_ColumnPropNameInRow="id_прогул" msprop:Generator_UserColumnName="id_прогул" msprop:Generator_ColumnVarNameInTable="columnid_прогул" type="xs:int" />
+              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" type="xs:int" minOccurs="0" />
+              <xs:element name="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_UserColumnName="Дата" msprop:Generator_ColumnVarNameInTable="columnДата" type="xs:dateTime" />
+              <xs:element name="Причина" msprop:Generator_ColumnPropNameInTable="ПричинаColumn" msprop:Generator_ColumnPropNameInRow="Причина" msprop:Generator_UserColumnName="Причина" msprop:Generator_ColumnVarNameInTable="columnПричина" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -627,61 +746,61 @@ SELECT id_должность, Отдел, Должность, [Количест�
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Сотрудник" msprop:Generator_RowEvHandlerName="СотрудникRowChangeEventHandler" msprop:Generator_RowDeletedName="СотрудникRowDeleted" msprop:Generator_RowDeletingName="СотрудникRowDeleting" msprop:Generator_RowEvArgName="СотрудникRowChangeEvent" msprop:Generator_TablePropName="Сотрудник" msprop:Generator_RowChangedName="СотрудникRowChanged" msprop:Generator_RowChangingName="СотрудникRowChanging" msprop:Generator_TableClassName="СотрудникDataTable" msprop:Generator_RowClassName="СотрудникRow" msprop:Generator_TableVarName="tableСотрудник" msprop:Generator_UserTableName="Сотрудник">
+        <xs:element name="Сотрудник" msprop:Generator_RowEvHandlerName="СотрудникRowChangeEventHandler" msprop:Generator_RowDeletedName="СотрудникRowDeleted" msprop:Generator_RowDeletingName="СотрудникRowDeleting" msprop:Generator_RowEvArgName="СотрудникRowChangeEvent" msprop:Generator_TablePropName="Сотрудник" msprop:Generator_RowChangedName="СотрудникRowChanged" msprop:Generator_UserTableName="Сотрудник" msprop:Generator_RowChangingName="СотрудникRowChanging" msprop:Generator_RowClassName="СотрудникRow" msprop:Generator_TableClassName="СотрудникDataTable" msprop:Generator_TableVarName="tableСотрудник">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_сотрудник" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" type="xs:int" />
-              <xs:element name="id_трудовойДоговор" msprop:Generator_ColumnPropNameInRow="id_трудовойДоговор" msprop:Generator_ColumnPropNameInTable="id_трудовойДоговорColumn" msprop:Generator_ColumnVarNameInTable="columnid_трудовойДоговор" msprop:Generator_UserColumnName="id_трудовойДоговор" type="xs:int" />
-              <xs:element name="id_должность" msprop:Generator_ColumnPropNameInRow="id_должность" msprop:Generator_ColumnPropNameInTable="id_должностьColumn" msprop:Generator_ColumnVarNameInTable="columnid_должность" msprop:Generator_UserColumnName="id_должность" type="xs:int" minOccurs="0" />
-              <xs:element name="Имя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_UserColumnName="Имя">
+              <xs:element name="id_сотрудник" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" type="xs:int" />
+              <xs:element name="id_трудовойДоговор" msprop:Generator_ColumnPropNameInTable="id_трудовойДоговорColumn" msprop:Generator_ColumnPropNameInRow="id_трудовойДоговор" msprop:Generator_UserColumnName="id_трудовойДоговор" msprop:Generator_ColumnVarNameInTable="columnid_трудовойДоговор" type="xs:int" />
+              <xs:element name="id_должность" msprop:Generator_ColumnPropNameInTable="id_должностьColumn" msprop:Generator_ColumnPropNameInRow="id_должность" msprop:Generator_UserColumnName="id_должность" msprop:Generator_ColumnVarNameInTable="columnid_должность" type="xs:int" minOccurs="0" />
+              <xs:element name="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_UserColumnName="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Фамилия" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_ColumnVarNameInTable="columnФамилия" msprop:Generator_UserColumnName="Фамилия">
+              <xs:element name="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_UserColumnName="Фамилия" msprop:Generator_ColumnVarNameInTable="columnФамилия">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Отчество" msprop:Generator_ColumnPropNameInRow="Отчество" msprop:Generator_ColumnPropNameInTable="ОтчествоColumn" msprop:Generator_ColumnVarNameInTable="columnОтчество" msprop:Generator_UserColumnName="Отчество" minOccurs="0">
+              <xs:element name="Отчество" msprop:Generator_ColumnPropNameInTable="ОтчествоColumn" msprop:Generator_ColumnPropNameInRow="Отчество" msprop:Generator_UserColumnName="Отчество" msprop:Generator_ColumnVarNameInTable="columnОтчество" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Дата_x0020_рождения" msprop:Generator_ColumnPropNameInRow="Дата_рождения" msprop:Generator_ColumnPropNameInTable="Дата_рожденияColumn" msprop:Generator_ColumnVarNameInTable="columnДата_рождения" msprop:Generator_UserColumnName="Дата рождения" type="xs:dateTime" />
-              <xs:element name="Пол" msprop:Generator_ColumnPropNameInRow="Пол" msprop:Generator_ColumnPropNameInTable="ПолColumn" msprop:Generator_ColumnVarNameInTable="columnПол" msprop:Generator_UserColumnName="Пол" minOccurs="0">
+              <xs:element name="Дата_x0020_рождения" msprop:Generator_ColumnPropNameInTable="Дата_рожденияColumn" msprop:Generator_ColumnPropNameInRow="Дата_рождения" msprop:Generator_UserColumnName="Дата рождения" msprop:Generator_ColumnVarNameInTable="columnДата_рождения" type="xs:dateTime" />
+              <xs:element name="Пол" msprop:Generator_ColumnPropNameInTable="ПолColumn" msprop:Generator_ColumnPropNameInRow="Пол" msprop:Generator_UserColumnName="Пол" msprop:Generator_ColumnVarNameInTable="columnПол" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnVarNameInTable="columnТелефон" msprop:Generator_UserColumnName="Телефон" type="xs:long" />
-              <xs:element name="Почта" msprop:Generator_ColumnPropNameInRow="Почта" msprop:Generator_ColumnPropNameInTable="ПочтаColumn" msprop:Generator_ColumnVarNameInTable="columnПочта" msprop:Generator_UserColumnName="Почта">
+              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_UserColumnName="Телефон" msprop:Generator_ColumnVarNameInTable="columnТелефон" type="xs:long" />
+              <xs:element name="Почта" msprop:Generator_ColumnPropNameInTable="ПочтаColumn" msprop:Generator_ColumnPropNameInRow="Почта" msprop:Generator_UserColumnName="Почта" msprop:Generator_ColumnVarNameInTable="columnПочта">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Заработная_x0020_плата" msprop:Generator_ColumnPropNameInRow="Заработная_плата" msprop:Generator_ColumnPropNameInTable="Заработная_платаColumn" msprop:Generator_ColumnVarNameInTable="columnЗаработная_плата" msprop:Generator_UserColumnName="Заработная плата" type="xs:int" />
-              <xs:element name="Стаж" msprop:Generator_ColumnPropNameInRow="Стаж" msprop:Generator_ColumnPropNameInTable="СтажColumn" msprop:Generator_ColumnVarNameInTable="columnСтаж" msprop:Generator_UserColumnName="Стаж" type="xs:int" />
+              <xs:element name="Заработная_x0020_плата" msprop:Generator_ColumnPropNameInTable="Заработная_платаColumn" msprop:Generator_ColumnPropNameInRow="Заработная_плата" msprop:Generator_UserColumnName="Заработная плата" msprop:Generator_ColumnVarNameInTable="columnЗаработная_плата" type="xs:int" />
+              <xs:element name="Стаж" msprop:Generator_ColumnPropNameInTable="СтажColumn" msprop:Generator_ColumnPropNameInRow="Стаж" msprop:Generator_UserColumnName="Стаж" msprop:Generator_ColumnVarNameInTable="columnСтаж" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Увольнение" msprop:Generator_RowEvHandlerName="УвольнениеRowChangeEventHandler" msprop:Generator_RowDeletedName="УвольнениеRowDeleted" msprop:Generator_RowDeletingName="УвольнениеRowDeleting" msprop:Generator_RowEvArgName="УвольнениеRowChangeEvent" msprop:Generator_TablePropName="Увольнение" msprop:Generator_RowChangedName="УвольнениеRowChanged" msprop:Generator_RowChangingName="УвольнениеRowChanging" msprop:Generator_TableClassName="УвольнениеDataTable" msprop:Generator_RowClassName="УвольнениеRow" msprop:Generator_TableVarName="tableУвольнение" msprop:Generator_UserTableName="Увольнение">
+        <xs:element name="Увольнение" msprop:Generator_RowEvHandlerName="УвольнениеRowChangeEventHandler" msprop:Generator_RowDeletedName="УвольнениеRowDeleted" msprop:Generator_RowDeletingName="УвольнениеRowDeleting" msprop:Generator_RowEvArgName="УвольнениеRowChangeEvent" msprop:Generator_TablePropName="Увольнение" msprop:Generator_RowChangedName="УвольнениеRowChanged" msprop:Generator_UserTableName="Увольнение" msprop:Generator_RowChangingName="УвольнениеRowChanging" msprop:Generator_RowClassName="УвольнениеRow" msprop:Generator_TableClassName="УвольнениеDataTable" msprop:Generator_TableVarName="tableУвольнение">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_увольнение" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id_увольнение" msprop:Generator_ColumnPropNameInTable="id_увольнениеColumn" msprop:Generator_ColumnVarNameInTable="columnid_увольнение" msprop:Generator_UserColumnName="id_увольнение" type="xs:int" />
-              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" type="xs:int" minOccurs="0" />
-              <xs:element name="Дата" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnVarNameInTable="columnДата" msprop:Generator_UserColumnName="Дата" type="xs:dateTime" />
-              <xs:element name="Причина" msprop:Generator_ColumnPropNameInRow="Причина" msprop:Generator_ColumnPropNameInTable="ПричинаColumn" msprop:Generator_ColumnVarNameInTable="columnПричина" msprop:Generator_UserColumnName="Причина" minOccurs="0">
+              <xs:element name="id_увольнение" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="id_увольнениеColumn" msprop:Generator_ColumnPropNameInRow="id_увольнение" msprop:Generator_UserColumnName="id_увольнение" msprop:Generator_ColumnVarNameInTable="columnid_увольнение" type="xs:int" />
+              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" type="xs:int" minOccurs="0" />
+              <xs:element name="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_UserColumnName="Дата" msprop:Generator_ColumnVarNameInTable="columnДата" type="xs:dateTime" />
+              <xs:element name="Причина" msprop:Generator_ColumnPropNameInTable="ПричинаColumn" msprop:Generator_ColumnPropNameInRow="Причина" msprop:Generator_UserColumnName="Причина" msprop:Generator_ColumnVarNameInTable="columnПричина" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -691,26 +810,88 @@ SELECT id_должность, Отдел, Должность, [Количест�
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ШтатноеРасписание" msprop:Generator_RowEvHandlerName="ШтатноеРасписаниеRowChangeEventHandler" msprop:Generator_RowDeletedName="ШтатноеРасписаниеRowDeleted" msprop:Generator_RowDeletingName="ШтатноеРасписаниеRowDeleting" msprop:Generator_RowEvArgName="ШтатноеРасписаниеRowChangeEvent" msprop:Generator_TablePropName="ШтатноеРасписание" msprop:Generator_RowChangedName="ШтатноеРасписаниеRowChanged" msprop:Generator_RowChangingName="ШтатноеРасписаниеRowChanging" msprop:Generator_TableClassName="ШтатноеРасписаниеDataTable" msprop:Generator_RowClassName="ШтатноеРасписаниеRow" msprop:Generator_TableVarName="tableШтатноеРасписание" msprop:Generator_UserTableName="ШтатноеРасписание">
+        <xs:element name="ШтатноеРасписание" msprop:Generator_RowEvHandlerName="ШтатноеРасписаниеRowChangeEventHandler" msprop:Generator_RowDeletedName="ШтатноеРасписаниеRowDeleted" msprop:Generator_RowDeletingName="ШтатноеРасписаниеRowDeleting" msprop:Generator_RowEvArgName="ШтатноеРасписаниеRowChangeEvent" msprop:Generator_TablePropName="ШтатноеРасписание" msprop:Generator_RowChangedName="ШтатноеРасписаниеRowChanged" msprop:Generator_UserTableName="ШтатноеРасписание" msprop:Generator_RowChangingName="ШтатноеРасписаниеRowChanging" msprop:Generator_RowClassName="ШтатноеРасписаниеRow" msprop:Generator_TableClassName="ШтатноеРасписаниеDataTable" msprop:Generator_TableVarName="tableШтатноеРасписание">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_должность" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id_должность" msprop:Generator_ColumnPropNameInTable="id_должностьColumn" msprop:Generator_ColumnVarNameInTable="columnid_должность" msprop:Generator_UserColumnName="id_должность" type="xs:int" />
-              <xs:element name="Отдел" msprop:Generator_ColumnPropNameInRow="Отдел" msprop:Generator_ColumnPropNameInTable="ОтделColumn" msprop:Generator_ColumnVarNameInTable="columnОтдел" msprop:Generator_UserColumnName="Отдел">
+              <xs:element name="id_должность" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="id_должностьColumn" msprop:Generator_ColumnPropNameInRow="id_должность" msprop:Generator_UserColumnName="id_должность" msprop:Generator_ColumnVarNameInTable="columnid_должность" type="xs:int" />
+              <xs:element name="Отдел" msprop:Generator_ColumnPropNameInTable="ОтделColumn" msprop:Generator_ColumnPropNameInRow="Отдел" msprop:Generator_UserColumnName="Отдел" msprop:Generator_ColumnVarNameInTable="columnОтдел">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Должность" msprop:Generator_ColumnPropNameInRow="Должность" msprop:Generator_ColumnPropNameInTable="ДолжностьColumn" msprop:Generator_ColumnVarNameInTable="columnДолжность" msprop:Generator_UserColumnName="Должность">
+              <xs:element name="Должность" msprop:Generator_ColumnPropNameInTable="ДолжностьColumn" msprop:Generator_ColumnPropNameInRow="Должность" msprop:Generator_UserColumnName="Должность" msprop:Generator_ColumnVarNameInTable="columnДолжность">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Количество_x0020_мест" msprop:Generator_ColumnPropNameInRow="Количество_мест" msprop:Generator_ColumnPropNameInTable="Количество_местColumn" msprop:Generator_ColumnVarNameInTable="columnКоличество_мест" msprop:Generator_UserColumnName="Количество мест" type="xs:int" />
-              <xs:element name="Количество_x0020_сотрудников" msprop:Generator_ColumnPropNameInRow="Количество_сотрудников" msprop:Generator_ColumnPropNameInTable="Количество_сотрудниковColumn" msprop:Generator_ColumnVarNameInTable="columnКоличество_сотрудников" msprop:Generator_UserColumnName="Количество сотрудников" type="xs:int" />
+              <xs:element name="Количество_x0020_мест" msprop:Generator_ColumnPropNameInTable="Количество_местColumn" msprop:Generator_ColumnPropNameInRow="Количество_мест" msprop:Generator_UserColumnName="Количество мест" msprop:Generator_ColumnVarNameInTable="columnКоличество_мест" type="xs:int" />
+              <xs:element name="Количество_x0020_сотрудников" msprop:Generator_ColumnPropNameInTable="Количество_сотрудниковColumn" msprop:Generator_ColumnPropNameInRow="Количество_сотрудников" msprop:Generator_UserColumnName="Количество сотрудников" msprop:Generator_ColumnVarNameInTable="columnКоличество_сотрудников" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Sotr" msprop:Generator_RowClassName="SotrRow" msprop:Generator_RowEvHandlerName="SotrRowChangeEventHandler" msprop:Generator_RowDeletedName="SotrRowDeleted" msprop:Generator_RowDeletingName="SotrRowDeleting" msprop:Generator_RowEvArgName="SotrRowChangeEvent" msprop:Generator_TablePropName="Sotr" msprop:Generator_RowChangedName="SotrRowChanged" msprop:Generator_UserTableName="Sotr" msprop:Generator_RowChangingName="SotrRowChanging" msprop:Generator_TableClassName="SotrDataTable" msprop:Generator_TableVarName="tableSotr">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="ТД" msprop:Generator_UserColumnName="ТД" msprop:Generator_ColumnPropNameInTable="ТДColumn" msprop:Generator_ColumnPropNameInRow="ТД" msprop:Generator_ColumnVarNameInTable="columnТД" type="xs:int" />
+              <xs:element name="Должность" msprop:Generator_UserColumnName="Должность" msprop:Generator_ColumnPropNameInTable="ДолжностьColumn" msprop:Generator_ColumnPropNameInRow="Должность" msprop:Generator_ColumnVarNameInTable="columnДолжность">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ФИО" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnVarNameInTable="columnФИО" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="62" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_рождения" msprop:Generator_UserColumnName="Дата рождения" msprop:Generator_ColumnPropNameInTable="Дата_рожденияColumn" msprop:Generator_ColumnPropNameInRow="Дата_рождения" msprop:Generator_ColumnVarNameInTable="columnДата_рождения" type="xs:dateTime" />
+              <xs:element name="Пол" msprop:Generator_UserColumnName="Пол" msprop:Generator_ColumnPropNameInTable="ПолColumn" msprop:Generator_ColumnPropNameInRow="Пол" msprop:Generator_ColumnVarNameInTable="columnПол" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Телефон" msprop:Generator_UserColumnName="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_ColumnVarNameInTable="columnТелефон" type="xs:long" />
+              <xs:element name="Почта" msprop:Generator_UserColumnName="Почта" msprop:Generator_ColumnPropNameInTable="ПочтаColumn" msprop:Generator_ColumnPropNameInRow="Почта" msprop:Generator_ColumnVarNameInTable="columnПочта">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ЗП" msprop:Generator_UserColumnName="ЗП" msprop:Generator_ColumnPropNameInTable="ЗПColumn" msprop:Generator_ColumnPropNameInRow="ЗП" msprop:Generator_ColumnVarNameInTable="columnЗП" type="xs:int" />
+              <xs:element name="Стаж" msprop:Generator_UserColumnName="Стаж" msprop:Generator_ColumnPropNameInTable="СтажColumn" msprop:Generator_ColumnPropNameInRow="Стаж" msprop:Generator_ColumnVarNameInTable="columnСтаж" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Removed" msprop:Generator_RowEvHandlerName="RemovedRowChangeEventHandler" msprop:Generator_RowDeletedName="RemovedRowDeleted" msprop:Generator_RowDeletingName="RemovedRowDeleting" msprop:Generator_RowEvArgName="RemovedRowChangeEvent" msprop:Generator_TablePropName="Removed" msprop:Generator_RowChangedName="RemovedRowChanged" msprop:Generator_RowChangingName="RemovedRowChanging" msprop:Generator_TableClassName="RemovedDataTable" msprop:Generator_RowClassName="RemovedRow" msprop:Generator_TableVarName="tableRemoved" msprop:Generator_UserTableName="Removed">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_сотрудник" msprop:Generator_ColumnPropNameInRow="id_сотрудник" msprop:Generator_ColumnPropNameInTable="id_сотрудникColumn" msprop:Generator_ColumnVarNameInTable="columnid_сотрудник" msprop:Generator_UserColumnName="id_сотрудник" type="xs:int" />
+              <xs:element name="ФИО" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_ColumnVarNameInTable="columnФИО" msprop:Generator_UserColumnName="ФИО" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="62" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnVarNameInTable="columnДата" msprop:Generator_UserColumnName="Дата" type="xs:dateTime" />
+              <xs:element name="Причина" msprop:Generator_ColumnPropNameInRow="Причина" msprop:Generator_ColumnPropNameInTable="ПричинаColumn" msprop:Generator_ColumnVarNameInTable="columnПричина" msprop:Generator_UserColumnName="Причина" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -748,15 +929,19 @@ SELECT id_должность, Отдел, Должность, [Количест�
       <xs:selector xpath=".//mstns:ШтатноеРасписание" />
       <xs:field xpath="mstns:id_должность" />
     </xs:unique>
+    <xs:unique name="Sotr_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Sotr" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Аттестаци__id_со__5832119F" msdata:parent="Сотрудник" msdata:child="Аттестация" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Аттестация" msprop:Generator_RelationVarName="relationFK__Аттестаци__id_со__5832119F" msprop:Generator_UserRelationName="FK__Аттестаци__id_со__5832119F" msprop:Generator_ChildPropName="GetАттестацияRows" msprop:Generator_ParentPropName="СотрудникRow" />
-      <msdata:Relationship name="FK__Больничны__id_со__5C02A283" msdata:parent="Сотрудник" msdata:child="Больничный" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Больничный" msprop:Generator_RelationVarName="relationFK__Больничны__id_со__5C02A283" msprop:Generator_UserRelationName="FK__Больничны__id_со__5C02A283" msprop:Generator_ChildPropName="GetБольничныйRows" msprop:Generator_ParentPropName="СотрудникRow" />
-      <msdata:Relationship name="FK__Отпуск__id_сотру__5FD33367" msdata:parent="Сотрудник" msdata:child="Отпуск" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Отпуск" msprop:Generator_RelationVarName="relationFK__Отпуск__id_сотру__5FD33367" msprop:Generator_UserRelationName="FK__Отпуск__id_сотру__5FD33367" msprop:Generator_ChildPropName="GetОтпускRows" msprop:Generator_ParentPropName="СотрудникRow" />
-      <msdata:Relationship name="FK__Пользоват__id_со__6774552F" msdata:parent="Сотрудник" msdata:child="Пользователь" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Пользователь" msprop:Generator_RelationVarName="relationFK__Пользоват__id_со__6774552F" msprop:Generator_UserRelationName="FK__Пользоват__id_со__6774552F" msprop:Generator_ChildPropName="GetПользовательRows" msprop:Generator_ParentPropName="СотрудникRow" />
-      <msdata:Relationship name="FK__Прогул__id_сотру__63A3C44B" msdata:parent="Сотрудник" msdata:child="Прогул" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Прогул" msprop:Generator_RelationVarName="relationFK__Прогул__id_сотру__63A3C44B" msprop:Generator_UserRelationName="FK__Прогул__id_сотру__63A3C44B" msprop:Generator_ChildPropName="GetПрогулRows" msprop:Generator_ParentPropName="СотрудникRow" />
-      <msdata:Relationship name="FK__Сотрудник__id_до__4CC05EF3" msdata:parent="ШтатноеРасписание" msdata:child="Сотрудник" msdata:parentkey="id_должность" msdata:childkey="id_должность" msprop:Generator_UserParentTable="ШтатноеРасписание" msprop:Generator_UserChildTable="Сотрудник" msprop:Generator_RelationVarName="relationFK__Сотрудник__id_до__4CC05EF3" msprop:Generator_UserRelationName="FK__Сотрудник__id_до__4CC05EF3" msprop:Generator_ChildPropName="GetСотрудникRows" msprop:Generator_ParentPropName="ШтатноеРасписаниеRow" />
+      <msdata:Relationship name="FK__Аттестаци__id_со__5832119F" msdata:parent="Сотрудник" msdata:child="Аттестация" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Аттестация" msprop:Generator_RelationVarName="relationFK__Аттестаци__id_со__5832119F" msprop:Generator_ChildPropName="GetАттестацияRows" msprop:Generator_UserRelationName="FK__Аттестаци__id_со__5832119F" msprop:Generator_ParentPropName="СотрудникRow" />
+      <msdata:Relationship name="FK__Больничны__id_со__5C02A283" msdata:parent="Сотрудник" msdata:child="Больничный" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Больничный" msprop:Generator_RelationVarName="relationFK__Больничны__id_со__5C02A283" msprop:Generator_ChildPropName="GetБольничныйRows" msprop:Generator_UserRelationName="FK__Больничны__id_со__5C02A283" msprop:Generator_ParentPropName="СотрудникRow" />
+      <msdata:Relationship name="FK__Отпуск__id_сотру__5FD33367" msdata:parent="Сотрудник" msdata:child="Отпуск" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Отпуск" msprop:Generator_RelationVarName="relationFK__Отпуск__id_сотру__5FD33367" msprop:Generator_ChildPropName="GetОтпускRows" msprop:Generator_UserRelationName="FK__Отпуск__id_сотру__5FD33367" msprop:Generator_ParentPropName="СотрудникRow" />
+      <msdata:Relationship name="FK__Пользоват__id_со__6774552F" msdata:parent="Сотрудник" msdata:child="Пользователь" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Пользователь" msprop:Generator_RelationVarName="relationFK__Пользоват__id_со__6774552F" msprop:Generator_ChildPropName="GetПользовательRows" msprop:Generator_UserRelationName="FK__Пользоват__id_со__6774552F" msprop:Generator_ParentPropName="СотрудникRow" />
+      <msdata:Relationship name="FK__Прогул__id_сотру__63A3C44B" msdata:parent="Сотрудник" msdata:child="Прогул" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Прогул" msprop:Generator_RelationVarName="relationFK__Прогул__id_сотру__63A3C44B" msprop:Generator_ChildPropName="GetПрогулRows" msprop:Generator_UserRelationName="FK__Прогул__id_сотру__63A3C44B" msprop:Generator_ParentPropName="СотрудникRow" />
+      <msdata:Relationship name="FK__Сотрудник__id_до__4CC05EF3" msdata:parent="ШтатноеРасписание" msdata:child="Сотрудник" msdata:parentkey="id_должность" msdata:childkey="id_должность" msprop:Generator_UserParentTable="ШтатноеРасписание" msprop:Generator_UserChildTable="Сотрудник" msprop:Generator_RelationVarName="relationFK__Сотрудник__id_до__4CC05EF3" msprop:Generator_ChildPropName="GetСотрудникRows" msprop:Generator_UserRelationName="FK__Сотрудник__id_до__4CC05EF3" msprop:Generator_ParentPropName="ШтатноеРасписаниеRow" />
       <msdata:Relationship name="FK__Увольнени__id_со__546180BB" msdata:parent="Сотрудник" msdata:child="Увольнение" msdata:parentkey="id_сотрудник" msdata:childkey="id_сотрудник" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Увольнение" msprop:Generator_RelationVarName="relationFK__Увольнени__id_со__546180BB" msprop:Generator_ChildPropName="GetУвольнениеRows" msprop:Generator_ParentPropName="СотрудникRow" msprop:Generator_UserRelationName="FK__Увольнени__id_со__546180BB" />
     </xs:appinfo>
   </xs:annotation>

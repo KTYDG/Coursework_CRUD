@@ -10,6 +10,11 @@ C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_for
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.exe
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.pdb
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.sotr_view.resources
-C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.HR.resources
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.Main.resources
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.profile.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.sotr_add.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.sotr_edit.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.sotr_options.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.removed_restore.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.removed_remove.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.removed_view.resources

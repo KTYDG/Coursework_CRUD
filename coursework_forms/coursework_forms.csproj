@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,29 +55,74 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CourseworkDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="CourseworkDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourseworkDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CourseworkDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourseworkDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CourseworkDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourseworkDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="FORMS\main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
     </Compile>
-    <Compile Include="HR.cs">
+    <Compile Include="FORMS\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HR.Designer.cs">
-      <DependentUpon>HR.cs</DependentUpon>
+    <Compile Include="FORMS\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="FORMS\profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="profile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="profile.Designer.cs">
+    <Compile Include="FORMS\profile.Designer.cs">
       <DependentUpon>profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\removed\removed_restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\removed\removed_restore.Designer.cs">
+      <DependentUpon>removed_restore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\removed\removed_remove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\removed\removed_remove.Designer.cs">
+      <DependentUpon>removed_remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\removed\removed_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\removed\removed_view.Designer.cs">
+      <DependentUpon>removed_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\sotr\sotr_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\sotr\sotr_add.Designer.cs">
+      <DependentUpon>sotr_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\sotr\sotr_options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\sotr\sotr_options.Designer.cs">
+      <DependentUpon>sotr_options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\sotr\sotr_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\sotr\sotr_view.Designer.cs">
+      <DependentUpon>sotr_view.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,31 +134,46 @@
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="sotr_view.cs">
+    <Compile Include="FORMS\sotr\sotr_edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sotr_view.Designer.cs">
-      <DependentUpon>sotr_view.cs</DependentUpon>
+    <Compile Include="FORMS\sotr\sotr_edit.Designer.cs">
+      <DependentUpon>sotr_edit.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="FORMS\main.resx">
+      <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HR.resx">
-      <DependentUpon>HR.cs</DependentUpon>
+    <EmbeddedResource Include="FORMS\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="profile.resx">
+    <EmbeddedResource Include="FORMS\profile.resx">
       <DependentUpon>profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\removed\removed_restore.resx">
+      <DependentUpon>removed_restore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\removed\removed_remove.resx">
+      <DependentUpon>removed_remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\removed\removed_view.resx">
+      <DependentUpon>removed_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\sotr\sotr_add.resx">
+      <DependentUpon>sotr_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\sotr\sotr_options.resx">
+      <DependentUpon>sotr_options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\sotr\sotr_view.resx">
+      <DependentUpon>sotr_view.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="sotr_view.resx">
-      <DependentUpon>sotr_view.cs</DependentUpon>
+    <EmbeddedResource Include="FORMS\sotr\sotr_edit.resx">
+      <DependentUpon>sotr_edit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CourseworkDataSet.xsc">
       <DependentUpon>CourseworkDataSet.xsd</DependentUpon>
@@ -122,6 +186,40 @@
     <None Include="CourseworkDataSet.xss">
       <DependentUpon>CourseworkDataSet.xsd</DependentUpon>
     </None>
+    <None Include="CourseworkDataSet1.xsc">
+      <DependentUpon>CourseworkDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CourseworkDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CourseworkDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CourseworkDataSet1.xss">
+      <DependentUpon>CourseworkDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CourseworkDataSet2.xsc">
+      <DependentUpon>CourseworkDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CourseworkDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CourseworkDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CourseworkDataSet2.xss">
+      <DependentUpon>CourseworkDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CourseworkDataSet3.xsc">
+      <DependentUpon>CourseworkDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CourseworkDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CourseworkDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CourseworkDataSet3.xss">
+      <DependentUpon>CourseworkDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -162,5 +260,9 @@
   <ItemGroup>
     <None Include="Resources\refresh_orange.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\option.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
