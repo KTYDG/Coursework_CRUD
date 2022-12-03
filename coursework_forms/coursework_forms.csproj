@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Words, Version=22.12.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.22.12.0\lib\net461\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words.Pdf2Word, Version=22.12.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.22.12.0\lib\net461\Aspose.Words.Pdf2Word.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -50,6 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CourseworkDataSet.cs">
+      <DependentUpon>CourseworkDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CourseworkDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +97,30 @@
     <Compile Include="FORMS\profile.Designer.cs">
       <DependentUpon>profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\removed\removed_delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\removed\removed_delete.Designer.cs">
+      <DependentUpon>removed_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\attes\attes_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\attes\attes_view.Designer.cs">
+      <DependentUpon>attes_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\timetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\timetable.Designer.cs">
+      <DependentUpon>timetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\sotr\sotr_move.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\sotr\sotr_move.Designer.cs">
+      <DependentUpon>sotr_move.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\removed\removed_restore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +144,12 @@
     </Compile>
     <Compile Include="FORMS\sotr\sotr_add.Designer.cs">
       <DependentUpon>sotr_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\common_options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\common_options.Designer.cs">
+      <DependentUpon>common_options.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\sotr\sotr_options.cs">
       <SubType>Form</SubType>
@@ -149,6 +188,18 @@
     <EmbeddedResource Include="FORMS\profile.resx">
       <DependentUpon>profile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\removed\removed_delete.resx">
+      <DependentUpon>removed_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\attes\attes_view.resx">
+      <DependentUpon>attes_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\timetable.resx">
+      <DependentUpon>timetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\sotr\sotr_move.resx">
+      <DependentUpon>sotr_move.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\removed\removed_restore.resx">
       <DependentUpon>removed_restore.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\sotr\sotr_add.resx">
       <DependentUpon>sotr_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\common_options.resx">
+      <DependentUpon>common_options.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\sotr\sotr_options.resx">
       <DependentUpon>sotr_options.cs</DependentUpon>

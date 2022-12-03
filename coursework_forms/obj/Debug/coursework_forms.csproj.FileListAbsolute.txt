@@ -18,3 +18,12 @@ C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_for
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.removed_restore.resources
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.removed_remove.resources
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.removed_view.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.sotr_move.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.common_options.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\bin\Debug\Aspose.Words.dll
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\bin\Debug\Aspose.Words.Pdf2Word.dll
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\bin\Debug\Aspose.Words.xml
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.csproj.CopyComplete
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.removed_delete.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.timetable.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.attes_view.resources

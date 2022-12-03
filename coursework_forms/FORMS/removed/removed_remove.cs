@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aspose.Words.Replacing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,6 +66,7 @@ namespace coursework_forms.FORMS.sotr {
             // создание входных параметров
             my_command.Parameters.Add("@ID", SqlDbType.Int);
             my_command.Parameters.Add("@reason", SqlDbType.VarChar, 256);
+            my_command.Parameters.Add("@a_date", SqlDbType.Date);
             my_command.Parameters.Add("@res", SqlDbType.VarChar, 60);
 
             try {
@@ -76,6 +78,7 @@ namespace coursework_forms.FORMS.sotr {
             }
             my_command.Parameters["@reason"].Value = rtb_reason.Text;
             my_command.Parameters["@res"].Direction = ParameterDirection.Output;
+            my_command.Parameters["@a_date"].Direction = ParameterDirection.Output;
 
             // открытие соединения с БД
             try {
@@ -88,8 +91,9 @@ namespace coursework_forms.FORMS.sotr {
             try {
                 my_command.ExecuteNonQuery();
             }
-            catch {
+            catch(Exception ex) {
                 tb_error.Text = "Ошибка запроса";
+                MessageBox.Show(ex.ToString());
                 return;
             }
             connection.Close();
@@ -101,6 +105,66 @@ namespace coursework_forms.FORMS.sotr {
                 t.Stop();
             };
             t.Start();
+
+            if(tb_error.Text == "Сотрудник уволен") {
+                DateTime start = (DateTime)my_command.Parameters["@a_date"].Value;
+                try {
+                    save(start);
+                }
+                catch {
+                    MessageBox.Show("Не удалось сохранить документ");
+                }
+            }
+
+        }
+
+        private void save(DateTime start) {
+            // Displays a SaveFileDialog so the user can save the Image
+            // assigned to Button2.
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Word document |*.docx";
+            saveFileDialog1.Title = "Сохранить ТД";
+            saveFileDialog1.ShowDialog();
+
+            // If the file name is not an empty string open it for saving.
+            if(saveFileDialog1.FileName != "") {
+                // Saves the Image via a FileStream created by the OpenFile method.
+                System.IO.FileStream fs =
+                    (System.IO.FileStream)saveFileDialog1.OpenFile();
+                // Saves the Image in the appropriate ImageFormat based upon the
+                // File type selected in the dialog box.
+                // NOTE that the FilterIndex property is one-based.
+                fs.Close();
+            }
+            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+            object file = Path.GetFullPath("REMOVE.docx");
+            object nullobj = System.Reflection.Missing.Value;
+
+            Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Open(
+                ref file, ref nullobj, ref nullobj,
+                ref nullobj, ref nullobj, ref nullobj,
+                ref nullobj, ref nullobj, ref nullobj,
+                ref nullobj, ref nullobj, ref nullobj, true);
+
+            Object oSaveAsFile = (Object)Path.GetFullPath(saveFileDialog1.FileName);
+
+            doc.SaveAs2(oSaveAsFile, Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatXMLDocument);
+
+            doc.Close(ref nullobj, ref nullobj, ref nullobj);
+            wordApp.Quit(ref nullobj, ref nullobj, ref nullobj);
+
+            DateTime today = DateTime.Today;
+
+            Aspose.Words.Document d = new Aspose.Words.Document(Path.GetFullPath(saveFileDialog1.FileName));
+            // Find and replace text in the document
+            d.Range.Replace("ДТ", today.ToString("dd.MM.yyyy"), new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("ДДА", start.ToString("dd.MM.yyyy"), new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("ID", cb_sotr.SelectedValue.ToString(), new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("ФИО", cb_sotr.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("ДЖН", tb_place.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("ПРИЧИНА", rtb_reason.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
+            // Save the Word document
+            d.Save(Path.GetFullPath(saveFileDialog1.FileName));
         }
     }
 }

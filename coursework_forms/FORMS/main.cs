@@ -19,13 +19,15 @@ namespace coursework_forms {
             InitializeComponent();
             if(w != 1) {
                 b_sotr_add.Visible = false;
-                b_removed_delete.Visible = false;
+                b_removed_remove.Visible = false;
                 b_removed_restore.Visible = false;
+                b_removed_delete.Visible = false;
             }
             else {
                 b_sotr_add.Visible = true;
-                b_removed_delete.Visible = true;
+                b_removed_remove.Visible = true;
                 b_removed_restore.Visible = true;
+                b_removed_delete.Visible = true;
             }
         }
 
@@ -46,6 +48,9 @@ namespace coursework_forms {
         private void b_sotr_add_Click(object sender, EventArgs e) {
             openChildForm(new sotr_add(), p_form_view);
         }
+        private void b_sotr_move_Click(object sender, EventArgs e) {
+            openChildForm(new sotr_move(), p_form_view);
+        }
         private void b_removed_Click(object sender, EventArgs e) {
             HideSubPanels(RemovedSubPanel);
             SubPanelsOnClick(sender, (ShowSubPanel(RemovedSubPanel)));
@@ -59,9 +64,18 @@ namespace coursework_forms {
         private void b_removed_restore_Click(object sender, EventArgs e) {
             openChildForm(new removed_restore(), p_form_view);
         }
+        private void b_removed_delete_Click_1(object sender, EventArgs e) {
+            openChildForm(new removed_delete(), p_form_view);
+        }
+        private void b_tt_Click(object sender, EventArgs e) {
+            openChildForm(new timetable(), p_form_view);
+        }
         private void b_attes_Click(object sender, EventArgs e) {
             HideSubPanels(AttesSubPanel);
             SubPanelsOnClick(sender, (ShowSubPanel(AttesSubPanel)));
+        }
+        private void b_attes_view_Click(object sender, EventArgs e) {
+            openChildForm(new attes_view(), p_form_view);
         }
 
         private void b_exit_Click(object sender, EventArgs e) {

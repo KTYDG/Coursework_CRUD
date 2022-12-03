@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Word;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,12 +11,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
+using Aspose.Words;
+using Aspose.Words.Replacing;
 
 namespace coursework_forms.FORMS.sotr {
     public partial class sotr_add: Form {
         public sotr_add() {
             InitializeComponent();
-
+            DateTime today = DateTime.Now.AddYears(-18);
+            dtm_birth.MaxDate = today;
         }
 
         private void b_exit_Click(object sender, EventArgs e) {
@@ -116,6 +121,7 @@ namespace coursework_forms.FORMS.sotr {
         }
 
         private void b_add_Click(object sender, EventArgs e) {
+
             if(!tb_mail.Text.Contains("@") || tb_mail.Text == "") {
                 tb_error.Text = "Неверный формат почты";
                 return;
@@ -211,8 +217,20 @@ namespace coursework_forms.FORMS.sotr {
                 tb_stage.Text
                 );
 
-            connection.Open();
-            my_command2.ExecuteNonQuery();
+            try {
+                connection.Open();
+            }
+            catch {
+                tb_error.Text = "Ошибка соединения";
+                return;
+            }
+            try {
+                my_command2.ExecuteNonQuery();
+            }
+            catch {
+                tb_error.Text = "Ошибка запроса";
+                return;
+            }
             connection.Close();
 
             tb_error.Text = "Изменения прошли успешно";
@@ -223,7 +241,60 @@ namespace coursework_forms.FORMS.sotr {
                 t.Stop();
             };
             t.Start();
+            try {
+                save();
+            }
+            catch {
+                MessageBox.Show("Не удалось сохранить документ");
+            }
         }
+        private void save() {
+            // Displays a SaveFileDialog so the user can save the Image
+            // assigned to Button2.
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Word document |*.docx";
+            saveFileDialog1.Title = "Сохранить ТД";
+            saveFileDialog1.ShowDialog();
 
+            // If the file name is not an empty string open it for saving.
+            if(saveFileDialog1.FileName != "") {
+                // Saves the Image via a FileStream created by the OpenFile method.
+                System.IO.FileStream fs =
+                    (System.IO.FileStream)saveFileDialog1.OpenFile();
+                // Saves the Image in the appropriate ImageFormat based upon the
+                // File type selected in the dialog box.
+                // NOTE that the FilterIndex property is one-based.
+                fs.Close();
+            }
+            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+            object file = Path.GetFullPath("TD.docx");
+            object nullobj = System.Reflection.Missing.Value;
+
+            Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Open(
+                ref file, ref nullobj, ref nullobj,
+                ref nullobj, ref nullobj, ref nullobj,
+                ref nullobj, ref nullobj, ref nullobj,
+                ref nullobj, ref nullobj, ref nullobj, true);
+
+            Object oSaveAsFile = (Object)Path.GetFullPath(saveFileDialog1.FileName);
+
+            doc.SaveAs2(oSaveAsFile, Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatXMLDocument);
+
+            doc.Close(ref nullobj, ref nullobj, ref nullobj);
+            wordApp.Quit(ref nullobj, ref nullobj, ref nullobj);
+
+            DateTime today = DateTime.Today;
+
+            Aspose.Words.Document d = new Aspose.Words.Document(Path.GetFullPath(saveFileDialog1.FileName));
+            // Find and replace text in the document
+            d.Range.Replace("$0", tb_td.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("$1", today.ToString("dd.MM.yyyy"), new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("$2", tb_fio.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("$3", cb_place.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("$4", today.ToString("dd.MM.yyyy"), new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("$5", tb_salary.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
+            // Save the Word document
+            d.Save(Path.GetFullPath(saveFileDialog1.FileName));
+        }
     }
 }

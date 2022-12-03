@@ -46,9 +46,9 @@
             this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
             this.b_exit = new System.Windows.Forms.Button();
             this.p_top_menu = new System.Windows.Forms.Panel();
+            this.b_update = new System.Windows.Forms.Button();
             this.сотрудникTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.СотрудникTableAdapter();
             this.tableAdapterManager = new coursework_forms.CourseworkDataSetTableAdapters.TableAdapterManager();
-            this.b_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sotr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
@@ -98,7 +98,7 @@
             this.заработнаяПлатаDataGridViewTextBoxColumn,
             this.стажDataGridViewTextBoxColumn});
             this.dgv_sotr.DataSource = this.сотрудникBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
@@ -264,23 +264,6 @@
             this.p_top_menu.Size = new System.Drawing.Size(1150, 25);
             this.p_top_menu.TabIndex = 7;
             // 
-            // сотрудникTableAdapter
-            // 
-            this.сотрудникTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = coursework_forms.CourseworkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.АттестацияTableAdapter = null;
-            this.tableAdapterManager.БольничныйTableAdapter = null;
-            this.tableAdapterManager.ОтпускTableAdapter = null;
-            this.tableAdapterManager.ПользовательTableAdapter = null;
-            this.tableAdapterManager.ПрогулTableAdapter = null;
-            this.tableAdapterManager.СотрудникTableAdapter = this.сотрудникTableAdapter;
-            this.tableAdapterManager.УвольнениеTableAdapter = null;
-            this.tableAdapterManager.ШтатноеРасписаниеTableAdapter = null;
-            // 
             // b_update
             // 
             this.b_update.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -303,8 +286,26 @@
             this.b_update.TabIndex = 23;
             this.b_update.UseVisualStyleBackColor = false;
             this.b_update.Click += new System.EventHandler(this.b_update_Click);
+            this.b_update.MouseDown += new System.Windows.Forms.MouseEventHandler(this.b_update_MouseDown);
             this.b_update.MouseEnter += new System.EventHandler(this.b_update_MouseEnter);
             this.b_update.MouseLeave += new System.EventHandler(this.b_update_Leave);
+            // 
+            // сотрудникTableAdapter
+            // 
+            this.сотрудникTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = coursework_forms.CourseworkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.АттестацияTableAdapter = null;
+            this.tableAdapterManager.БольничныйTableAdapter = null;
+            this.tableAdapterManager.ОтпускTableAdapter = null;
+            this.tableAdapterManager.ПользовательTableAdapter = null;
+            this.tableAdapterManager.ПрогулTableAdapter = null;
+            this.tableAdapterManager.СотрудникTableAdapter = this.сотрудникTableAdapter;
+            this.tableAdapterManager.УвольнениеTableAdapter = null;
+            this.tableAdapterManager.ШтатноеРасписаниеTableAdapter = null;
             // 
             // sotr_edit
             // 

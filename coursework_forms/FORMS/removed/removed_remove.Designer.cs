@@ -37,6 +37,7 @@
             this.rtb_reason = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_place = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.p_top_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sotrBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
@@ -58,6 +59,7 @@
             this.b_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
             this.b_exit.BackgroundImage = global::coursework_forms.Properties.Resources.close;
             this.b_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.b_exit.Dock = System.Windows.Forms.DockStyle.Left;
             this.b_exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
             this.b_exit.FlatAppearance.BorderSize = 0;
             this.b_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -97,10 +99,11 @@
             this.cb_sotr.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.cb_sotr.ForeColor = System.Drawing.Color.Crimson;
             this.cb_sotr.FormattingEnabled = true;
-            this.cb_sotr.Location = new System.Drawing.Point(40, 111);
+            this.cb_sotr.Location = new System.Drawing.Point(109, 110);
+            this.cb_sotr.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.cb_sotr.MaxDropDownItems = 6;
             this.cb_sotr.Name = "cb_sotr";
-            this.cb_sotr.Size = new System.Drawing.Size(563, 39);
+            this.cb_sotr.Size = new System.Drawing.Size(508, 39);
             this.cb_sotr.TabIndex = 38;
             this.cb_sotr.ValueMember = "ID";
             // 
@@ -145,6 +148,7 @@
             this.tb_error.ForeColor = System.Drawing.Color.Orange;
             this.tb_error.Location = new System.Drawing.Point(344, 569);
             this.tb_error.Name = "tb_error";
+            this.tb_error.ReadOnly = true;
             this.tb_error.Size = new System.Drawing.Size(764, 39);
             this.tb_error.TabIndex = 40;
             this.tb_error.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -185,12 +189,26 @@
             this.tb_place.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sotrBindingSource, "Должность", true));
             this.tb_place.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 22F, System.Drawing.FontStyle.Bold);
             this.tb_place.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_place.Location = new System.Drawing.Point(627, 111);
+            this.tb_place.Location = new System.Drawing.Point(627, 110);
             this.tb_place.Margin = new System.Windows.Forms.Padding(0);
             this.tb_place.Name = "tb_place";
             this.tb_place.ReadOnly = true;
             this.tb_place.Size = new System.Drawing.Size(481, 39);
             this.tb_place.TabIndex = 43;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sotrBindingSource, "ID", true));
+            this.textBox2.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 22F, System.Drawing.FontStyle.Bold);
+            this.textBox2.ForeColor = System.Drawing.Color.Crimson;
+            this.textBox2.Location = new System.Drawing.Point(40, 110);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(56, 39);
+            this.textBox2.TabIndex = 53;
             // 
             // removed_remove
             // 
@@ -198,6 +216,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(4)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1150, 675);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.tb_place);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtb_reason);
@@ -233,5 +252,6 @@
         private System.Windows.Forms.RichTextBox rtb_reason;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_place;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -94,6 +94,7 @@ namespace coursework_forms {
             this.tb_error.ForeColor = System.Drawing.Color.Orange;
             this.tb_error.Location = new System.Drawing.Point(12, 141);
             this.tb_error.Name = "tb_error";
+            this.tb_error.ReadOnly = true;
             this.tb_error.Size = new System.Drawing.Size(350, 30);
             this.tb_error.TabIndex = 5;
             this.tb_error.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

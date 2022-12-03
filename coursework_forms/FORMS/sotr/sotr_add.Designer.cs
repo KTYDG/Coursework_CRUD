@@ -94,7 +94,7 @@
             this.tb_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_phone.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_phone.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_phone.Location = new System.Drawing.Point(545, 202);
+            this.tb_phone.Location = new System.Drawing.Point(595, 227);
             this.tb_phone.Margin = new System.Windows.Forms.Padding(0);
             this.tb_phone.Name = "tb_phone";
             this.tb_phone.Size = new System.Drawing.Size(465, 36);
@@ -106,8 +106,8 @@
             this.l_phone.AutoSize = true;
             this.l_phone.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_phone.ForeColor = System.Drawing.Color.Crimson;
-            this.l_phone.Location = new System.Drawing.Point(539, 166);
-            this.l_phone.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
+            this.l_phone.Location = new System.Drawing.Point(589, 186);
+            this.l_phone.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.l_phone.Name = "l_phone";
             this.l_phone.Size = new System.Drawing.Size(134, 36);
             this.l_phone.TabIndex = 25;
@@ -119,7 +119,7 @@
             this.tb_mail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_mail.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_mail.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_mail.Location = new System.Drawing.Point(43, 202);
+            this.tb_mail.Location = new System.Drawing.Point(93, 227);
             this.tb_mail.Margin = new System.Windows.Forms.Padding(0);
             this.tb_mail.Name = "tb_mail";
             this.tb_mail.Size = new System.Drawing.Size(485, 36);
@@ -130,8 +130,8 @@
             this.l_mail.AutoSize = true;
             this.l_mail.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_mail.ForeColor = System.Drawing.Color.Crimson;
-            this.l_mail.Location = new System.Drawing.Point(37, 166);
-            this.l_mail.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
+            this.l_mail.Location = new System.Drawing.Point(87, 186);
+            this.l_mail.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.l_mail.Name = "l_mail";
             this.l_mail.Size = new System.Drawing.Size(100, 36);
             this.l_mail.TabIndex = 23;
@@ -143,7 +143,7 @@
             this.tb_fio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_fio.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_fio.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_fio.Location = new System.Drawing.Point(43, 120);
+            this.tb_fio.Location = new System.Drawing.Point(93, 125);
             this.tb_fio.Margin = new System.Windows.Forms.Padding(0);
             this.tb_fio.Name = "tb_fio";
             this.tb_fio.Size = new System.Drawing.Size(967, 36);
@@ -154,8 +154,8 @@
             this.l_fio.AutoSize = true;
             this.l_fio.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_fio.ForeColor = System.Drawing.Color.Crimson;
-            this.l_fio.Location = new System.Drawing.Point(37, 84);
-            this.l_fio.Margin = new System.Windows.Forms.Padding(25, 10, 0, 0);
+            this.l_fio.Location = new System.Drawing.Point(87, 84);
+            this.l_fio.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.l_fio.Name = "l_fio";
             this.l_fio.Size = new System.Drawing.Size(66, 36);
             this.l_fio.TabIndex = 21;
@@ -166,8 +166,8 @@
             this.l_gender.AutoSize = true;
             this.l_gender.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_gender.ForeColor = System.Drawing.Color.Crimson;
-            this.l_gender.Location = new System.Drawing.Point(37, 248);
-            this.l_gender.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
+            this.l_gender.Location = new System.Drawing.Point(87, 288);
+            this.l_gender.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.l_gender.Name = "l_gender";
             this.l_gender.Size = new System.Drawing.Size(66, 36);
             this.l_gender.TabIndex = 27;
@@ -179,10 +179,10 @@
             this.tb_stage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_stage.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_stage.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_stage.Location = new System.Drawing.Point(916, 287);
+            this.tb_stage.Location = new System.Drawing.Point(949, 329);
             this.tb_stage.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.tb_stage.Name = "tb_stage";
-            this.tb_stage.Size = new System.Drawing.Size(94, 36);
+            this.tb_stage.Size = new System.Drawing.Size(111, 36);
             this.tb_stage.TabIndex = 30;
             this.tb_stage.TextChanged += new System.EventHandler(this.tb_stage_TextChanged);
             // 
@@ -191,8 +191,8 @@
             this.l_stage.AutoSize = true;
             this.l_stage.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_stage.ForeColor = System.Drawing.Color.Crimson;
-            this.l_stage.Location = new System.Drawing.Point(910, 248);
-            this.l_stage.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
+            this.l_stage.Location = new System.Drawing.Point(943, 288);
+            this.l_stage.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.l_stage.Name = "l_stage";
             this.l_stage.Size = new System.Drawing.Size(83, 36);
             this.l_stage.TabIndex = 29;
@@ -204,7 +204,7 @@
             this.tb_salary.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_salary.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_salary.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_salary.Location = new System.Drawing.Point(484, 289);
+            this.tb_salary.Location = new System.Drawing.Point(534, 329);
             this.tb_salary.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.tb_salary.Name = "tb_salary";
             this.tb_salary.Size = new System.Drawing.Size(392, 36);
@@ -216,8 +216,8 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(478, 248);
-            this.label1.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
+            this.label1.Location = new System.Drawing.Point(528, 288);
+            this.label1.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(287, 36);
             this.label1.TabIndex = 31;
@@ -233,21 +233,22 @@
             this.dtm_birth.CustomFormat = "dd.MM.yyyy";
             this.dtm_birth.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
             this.dtm_birth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtm_birth.Location = new System.Drawing.Point(143, 287);
+            this.dtm_birth.Location = new System.Drawing.Point(193, 332);
             this.dtm_birth.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.dtm_birth.MaxDate = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
+            this.dtm_birth.MaxDate = new System.DateTime(2022, 12, 3, 0, 0, 0, 0);
+            this.dtm_birth.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtm_birth.Name = "dtm_birth";
             this.dtm_birth.Size = new System.Drawing.Size(301, 36);
             this.dtm_birth.TabIndex = 33;
-            this.dtm_birth.Value = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
+            this.dtm_birth.Value = new System.DateTime(2022, 12, 3, 0, 0, 0, 0);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(137, 248);
-            this.label2.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
+            this.label2.Location = new System.Drawing.Point(187, 288);
+            this.label2.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(236, 36);
             this.label2.TabIndex = 34;
@@ -259,7 +260,7 @@
             this.tb_td.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_td.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_td.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_td.Location = new System.Drawing.Point(649, 38);
+            this.tb_td.Location = new System.Drawing.Point(699, 38);
             this.tb_td.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.tb_td.Name = "tb_td";
             this.tb_td.Size = new System.Drawing.Size(99, 36);
@@ -271,7 +272,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Crimson;
-            this.label3.Location = new System.Drawing.Point(329, 38);
+            this.label3.Location = new System.Drawing.Point(379, 38);
             this.label3.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(321, 36);
@@ -283,8 +284,8 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(37, 336);
-            this.label4.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
+            this.label4.Location = new System.Drawing.Point(87, 396);
+            this.label4.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(168, 36);
             this.label4.TabIndex = 37;
@@ -300,7 +301,7 @@
             this.cb_place.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_place.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.cb_place.ForeColor = System.Drawing.Color.Crimson;
-            this.cb_place.Location = new System.Drawing.Point(43, 376);
+            this.cb_place.Location = new System.Drawing.Point(93, 440);
             this.cb_place.Name = "cb_place";
             this.cb_place.Size = new System.Drawing.Size(967, 39);
             this.cb_place.TabIndex = 38;
@@ -330,7 +331,7 @@
             this.b_add.ForeColor = System.Drawing.Color.White;
             this.b_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.b_add.ImageKey = "(none)";
-            this.b_add.Location = new System.Drawing.Point(43, 447);
+            this.b_add.Location = new System.Drawing.Point(93, 507);
             this.b_add.Name = "b_add";
             this.b_add.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.b_add.Size = new System.Drawing.Size(271, 104);
@@ -349,9 +350,10 @@
             this.tb_error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_error.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20F, System.Drawing.FontStyle.Bold);
             this.tb_error.ForeColor = System.Drawing.Color.Orange;
-            this.tb_error.Location = new System.Drawing.Point(356, 478);
+            this.tb_error.Location = new System.Drawing.Point(385, 538);
             this.tb_error.Name = "tb_error";
-            this.tb_error.Size = new System.Drawing.Size(654, 36);
+            this.tb_error.ReadOnly = true;
+            this.tb_error.Size = new System.Drawing.Size(675, 36);
             this.tb_error.TabIndex = 40;
             this.tb_error.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -366,7 +368,7 @@
             this.cb_gender.Items.AddRange(new object[] {
             "М",
             "Ж"});
-            this.cb_gender.Location = new System.Drawing.Point(43, 284);
+            this.cb_gender.Location = new System.Drawing.Point(93, 332);
             this.cb_gender.Name = "cb_gender";
             this.cb_gender.Size = new System.Drawing.Size(77, 39);
             this.cb_gender.TabIndex = 41;
