@@ -20,7 +20,10 @@ namespace coursework_forms.FORMS.sotr {
         public sotr_add() {
             InitializeComponent();
             DateTime today = DateTime.Now.AddYears(-18);
+            DateTime TD = DateTime.Now;
             dtm_birth.MaxDate = today;
+            dtm_birth.Value = today;
+            tb_td.Text = TD.ToString("MMddmmss");
         }
 
         private void b_exit_Click(object sender, EventArgs e) {
@@ -241,11 +244,13 @@ namespace coursework_forms.FORMS.sotr {
                 t.Stop();
             };
             t.Start();
-            try {
-                save();
-            }
-            catch {
-                MessageBox.Show("Не удалось сохранить документ");
+            if(cb_doc.Checked) {
+                try {
+                    save();
+                }
+                catch {
+                    MessageBox.Show("Не удалось сохранить документ");
+                }
             }
         }
         private void save() {

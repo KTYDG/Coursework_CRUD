@@ -12,10 +12,15 @@ using System.Windows.Forms;
 namespace coursework_forms {
     public partial class common_options: Form {
         BindingSource bs = null;
-        public common_options(BindingSource b) {
+        string date = "";
+        public common_options(BindingSource b, string d) {
             InitializeComponent();
             bs = b;
             b.Filter = "";
+            date = d;
+            DateTime today = DateTime.Now;
+            dtp_from.Value = today;
+            dtp_to.Value = today;
         }
         private void b_exit_MouseEnter(object sender, EventArgs e) {
             ((Button)sender).BackColor = Color.Red;
@@ -91,11 +96,11 @@ namespace coursework_forms {
                 string option = bs.Filter;
                 if(option.Length != 0)
                     option += " AND ";
-                option += "Дата > " + "'" + dtp_from.Text + "'";
+                option += date + " > " + "'" + dtp_from.Text + "'";
                 bs.Filter = option;
             }
             else {
-                bs.Filter = delete_option(bs.Filter, "Дата >");
+                bs.Filter = delete_option(bs.Filter, date + " >");
             }
         }
 
@@ -104,32 +109,32 @@ namespace coursework_forms {
                 string option = bs.Filter;
                 if(option.Length != 0)
                     option += " AND ";
-                option += "Дата <" + "'" + dtp_to.Text + "'";
+                option += date + " <" + "'" + dtp_to.Text + "'";
                 bs.Filter = option;
             }
             else {
-                bs.Filter = delete_option(bs.Filter, "Дата <");
+                bs.Filter = delete_option(bs.Filter, date + " <");
             }
         }
 
         private void dtp_from_CloseUp(object sender, EventArgs e) {
             if(cb_from.Checked) {
-                bs.Filter = delete_option(bs.Filter, "Дата >");
+                bs.Filter = delete_option(bs.Filter, date + " >");
                 string option = bs.Filter;
                 if(option.Length != 0)
                     option += " AND ";
-                option += "Дата > " + "'" + dtp_from.Text + "'";
+                option += date + " > " + "'" + dtp_from.Text + "'";
                 bs.Filter = option;
             }
         }
 
         private void dtp_to_CloseUp(object sender, EventArgs e) {
             if(cb_to.Checked) {
-                bs.Filter = delete_option(bs.Filter, "Дата <");
+                bs.Filter = delete_option(bs.Filter, date + " <");
                 string option = bs.Filter;
                 if(option.Length != 0)
                     option += " AND ";
-                option += "Дата <" + "'" + dtp_to.Text + "'";
+                option += date + " <" + "'" + dtp_to.Text + "'";
                 bs.Filter = option;
             }
         }

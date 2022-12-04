@@ -211,27 +211,30 @@
             // 
             // iDDataGridViewTextBoxColumn
             // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 30;
+            this.iDDataGridViewTextBoxColumn.Width = 41;
             // 
             // тДDataGridViewTextBoxColumn
             // 
+            this.тДDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.тДDataGridViewTextBoxColumn.DataPropertyName = "ТД";
             this.тДDataGridViewTextBoxColumn.HeaderText = "ТД";
             this.тДDataGridViewTextBoxColumn.Name = "тДDataGridViewTextBoxColumn";
             this.тДDataGridViewTextBoxColumn.ReadOnly = true;
-            this.тДDataGridViewTextBoxColumn.Width = 30;
+            this.тДDataGridViewTextBoxColumn.Width = 43;
             // 
             // должностьDataGridViewTextBoxColumn
             // 
-            this.должностьDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.должностьDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.должностьDataGridViewTextBoxColumn.DataPropertyName = "Должность";
             this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
             this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
             this.должностьDataGridViewTextBoxColumn.ReadOnly = true;
+            this.должностьDataGridViewTextBoxColumn.Width = 60;
             // 
             // фИОDataGridViewTextBoxColumn
             // 
@@ -266,11 +269,12 @@
             // 
             // почтаDataGridViewTextBoxColumn
             // 
-            this.почтаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.почтаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.почтаDataGridViewTextBoxColumn.DataPropertyName = "Почта";
             this.почтаDataGridViewTextBoxColumn.HeaderText = "Почта";
             this.почтаDataGridViewTextBoxColumn.Name = "почтаDataGridViewTextBoxColumn";
             this.почтаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.почтаDataGridViewTextBoxColumn.Width = 46;
             // 
             // зПDataGridViewTextBoxColumn
             // 

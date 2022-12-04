@@ -50,6 +50,8 @@
             this.b_add = new System.Windows.Forms.Button();
             this.tb_error = new System.Windows.Forms.TextBox();
             this.cb_gender = new System.Windows.Forms.ComboBox();
+            this.cb_doc = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.p_top_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.штатноеРасписаниеBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
@@ -263,7 +265,8 @@
             this.tb_td.Location = new System.Drawing.Point(699, 38);
             this.tb_td.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.tb_td.Name = "tb_td";
-            this.tb_td.Size = new System.Drawing.Size(99, 36);
+            this.tb_td.ReadOnly = true;
+            this.tb_td.Size = new System.Drawing.Size(138, 36);
             this.tb_td.TabIndex = 36;
             this.tb_td.TextChanged += new System.EventHandler(this.tb_td_TextChanged);
             // 
@@ -350,7 +353,7 @@
             this.tb_error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_error.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20F, System.Drawing.FontStyle.Bold);
             this.tb_error.ForeColor = System.Drawing.Color.Orange;
-            this.tb_error.Location = new System.Drawing.Point(385, 538);
+            this.tb_error.Location = new System.Drawing.Point(385, 575);
             this.tb_error.Name = "tb_error";
             this.tb_error.ReadOnly = true;
             this.tb_error.Size = new System.Drawing.Size(675, 36);
@@ -373,12 +376,40 @@
             this.cb_gender.Size = new System.Drawing.Size(77, 39);
             this.cb_gender.TabIndex = 41;
             // 
+            // cb_doc
+            // 
+            this.cb_doc.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cb_doc.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.cb_doc.FlatAppearance.BorderSize = 3;
+            this.cb_doc.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.cb_doc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_doc.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.cb_doc.Location = new System.Drawing.Point(670, 509);
+            this.cb_doc.Name = "cb_doc";
+            this.cb_doc.Size = new System.Drawing.Size(30, 30);
+            this.cb_doc.TabIndex = 60;
+            this.cb_doc.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Crimson;
+            this.label5.Location = new System.Drawing.Point(379, 507);
+            this.label5.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(287, 36);
+            this.label5.TabIndex = 61;
+            this.label5.Text = "Создать документ";
+            // 
             // sotr_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(4)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1150, 675);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cb_doc);
             this.Controls.Add(this.cb_gender);
             this.Controls.Add(this.tb_error);
             this.Controls.Add(this.b_add);
@@ -440,5 +471,7 @@
         private System.Windows.Forms.TextBox tb_error;
         private System.Windows.Forms.ComboBox cb_gender;
         private System.Windows.Forms.ComboBox cb_place;
+        private System.Windows.Forms.CheckBox cb_doc;
+        private System.Windows.Forms.Label label5;
     }
 }

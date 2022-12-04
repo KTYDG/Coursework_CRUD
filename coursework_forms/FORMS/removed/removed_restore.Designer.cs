@@ -38,6 +38,7 @@
             this.tb_place = new System.Windows.Forms.TextBox();
             this.removedTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.RemovedTableAdapter();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.p_top_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.removedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
@@ -183,7 +184,7 @@
             // 
             this.tb_place.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
             this.tb_place.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_place.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.removedBindingSource, "Дата", true));
+            this.tb_place.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.removedBindingSource, "Должность", true));
             this.tb_place.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 22F, System.Drawing.FontStyle.Bold);
             this.tb_place.ForeColor = System.Drawing.Color.Crimson;
             this.tb_place.Location = new System.Drawing.Point(627, 110);
@@ -211,12 +212,27 @@
             this.textBox2.Size = new System.Drawing.Size(56, 39);
             this.textBox2.TabIndex = 52;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.removedBindingSource, "Дата", true));
+            this.textBox1.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 22F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.Crimson;
+            this.textBox1.Location = new System.Drawing.Point(962, 58);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(146, 39);
+            this.textBox1.TabIndex = 53;
+            // 
             // removed_restore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(4)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1150, 675);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.tb_place);
             this.Controls.Add(this.label1);
@@ -254,5 +270,6 @@
         private System.Windows.Forms.BindingSource removedBindingSource;
         private CourseworkDataSetTableAdapters.RemovedTableAdapter removedTableAdapter;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

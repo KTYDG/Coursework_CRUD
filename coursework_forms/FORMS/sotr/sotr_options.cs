@@ -52,7 +52,7 @@ namespace coursework_forms {
                     string option = delete_option(v.sotrBindingSource.Filter, "Стаж >=");
                     if(option.Length != 0)
                         option += " AND ";
-                    v.sotrBindingSource.Filter += option + "Стаж >= " + ((TextBox)sender).Text;
+                    v.sotrBindingSource.Filter = option + "Стаж >= " + ((TextBox)sender).Text;
                 }
             }
         }
@@ -70,17 +70,17 @@ namespace coursework_forms {
         private void tb_to_changed(object sender, EventArgs e) {
             if(((TextBox)sender).Text.Length != 0 && ((TextBox)sender).Text.All(char.IsDigit)) {
                 sotr_view v = Application.OpenForms.OfType<sotr_view>().SingleOrDefault();
-                if(((TextBox)sender) == tb_salary_min) {
+                if(((TextBox)sender) == tb_salary_max) {
                     string option = delete_option(v.sotrBindingSource.Filter, "ЗП <=");
                     if(option.Length != 0)
                         option += " AND ";
                     v.sotrBindingSource.Filter = option + "ЗП <= " + ((TextBox)sender).Text;
                 }
-                if(((TextBox)sender) == tb_stage_min) {
+                if(((TextBox)sender) == tb_stage_max) {
                     string option = delete_option(v.sotrBindingSource.Filter, "Стаж <=");
                     if(option.Length != 0)
                         option += " AND ";
-                    v.sotrBindingSource.Filter += option + "Стаж <= " + ((TextBox)sender).Text;
+                    v.sotrBindingSource.Filter = option + "Стаж <= " + ((TextBox)sender).Text;
                 }
             }
         }

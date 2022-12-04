@@ -25,7 +25,20 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.p_top_menu = new System.Windows.Forms.Panel();
+            this.b_exit = new System.Windows.Forms.Button();
             this.p_side_menu = new System.Windows.Forms.Panel();
+            this.LeaveSubPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.b_leave_view = new System.Windows.Forms.Button();
+            this.b_leave_add = new System.Windows.Forms.Button();
+            this.b_leave = new System.Windows.Forms.Button();
+            this.RestSubPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.b_rest_view = new System.Windows.Forms.Button();
+            this.b_rest_add = new System.Windows.Forms.Button();
+            this.b_rest = new System.Windows.Forms.Button();
+            this.IllSubPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.b_ill_view = new System.Windows.Forms.Button();
+            this.b_ill_add = new System.Windows.Forms.Button();
+            this.b_ill = new System.Windows.Forms.Button();
             this.AttesSubPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.b_attes_view = new System.Windows.Forms.Button();
             this.b_attes_add = new System.Windows.Forms.Button();
@@ -46,9 +59,11 @@
             this.b_profile = new System.Windows.Forms.Button();
             this.p_form_view = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.b_exit = new System.Windows.Forms.Button();
             this.p_top_menu.SuspendLayout();
             this.p_side_menu.SuspendLayout();
+            this.LeaveSubPanel.SuspendLayout();
+            this.RestSubPanel.SuspendLayout();
+            this.IllSubPanel.SuspendLayout();
             this.AttesSubPanel.SuspendLayout();
             this.RemovedSubPanel.SuspendLayout();
             this.SotrSubPanel.SuspendLayout();
@@ -67,10 +82,39 @@
             this.p_top_menu.TabIndex = 0;
             this.p_top_menu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.p_top_menu_MouseMove);
             // 
+            // b_exit
+            // 
+            this.b_exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.b_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(2)))), ((int)(((byte)(30)))));
+            this.b_exit.BackgroundImage = global::coursework_forms.Properties.Resources.close;
+            this.b_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.b_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.b_exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
+            this.b_exit.FlatAppearance.BorderSize = 0;
+            this.b_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_exit.Font = new System.Drawing.Font("JetBrains Mono Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.b_exit.ForeColor = System.Drawing.Color.White;
+            this.b_exit.ImageKey = "(none)";
+            this.b_exit.Location = new System.Drawing.Point(1260, 0);
+            this.b_exit.Margin = new System.Windows.Forms.Padding(0);
+            this.b_exit.Name = "b_exit";
+            this.b_exit.Size = new System.Drawing.Size(55, 25);
+            this.b_exit.TabIndex = 7;
+            this.b_exit.UseVisualStyleBackColor = false;
+            this.b_exit.Click += new System.EventHandler(this.b_exit_Click);
+            this.b_exit.MouseEnter += new System.EventHandler(this.b_exit_MouseEnter);
+            this.b_exit.MouseLeave += new System.EventHandler(this.b_exit_MouseLeave);
+            // 
             // p_side_menu
             // 
             this.p_side_menu.AutoScroll = true;
             this.p_side_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(2)))), ((int)(((byte)(30)))));
+            this.p_side_menu.Controls.Add(this.LeaveSubPanel);
+            this.p_side_menu.Controls.Add(this.b_leave);
+            this.p_side_menu.Controls.Add(this.RestSubPanel);
+            this.p_side_menu.Controls.Add(this.b_rest);
+            this.p_side_menu.Controls.Add(this.IllSubPanel);
+            this.p_side_menu.Controls.Add(this.b_ill);
             this.p_side_menu.Controls.Add(this.AttesSubPanel);
             this.p_side_menu.Controls.Add(this.b_attes);
             this.p_side_menu.Controls.Add(this.b_tt);
@@ -85,6 +129,264 @@
             this.p_side_menu.Size = new System.Drawing.Size(165, 675);
             this.p_side_menu.TabIndex = 2;
             // 
+            // LeaveSubPanel
+            // 
+            this.LeaveSubPanel.AutoSize = true;
+            this.LeaveSubPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.LeaveSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(3)))), ((int)(((byte)(28)))));
+            this.LeaveSubPanel.Controls.Add(this.b_leave_view);
+            this.LeaveSubPanel.Controls.Add(this.b_leave_add);
+            this.LeaveSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LeaveSubPanel.Location = new System.Drawing.Point(0, 920);
+            this.LeaveSubPanel.Name = "LeaveSubPanel";
+            this.LeaveSubPanel.Size = new System.Drawing.Size(148, 80);
+            this.LeaveSubPanel.TabIndex = 19;
+            this.LeaveSubPanel.Visible = false;
+            // 
+            // b_leave_view
+            // 
+            this.b_leave_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(1)))), ((int)(((byte)(20)))));
+            this.b_leave_view.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_leave_view.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(6)))), ((int)(((byte)(64)))));
+            this.b_leave_view.FlatAppearance.BorderSize = 0;
+            this.b_leave_view.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_leave_view.Font = new System.Drawing.Font("JetBrains Mono Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.b_leave_view.ForeColor = System.Drawing.Color.White;
+            this.b_leave_view.ImageKey = "(none)";
+            this.b_leave_view.Location = new System.Drawing.Point(0, 0);
+            this.b_leave_view.Margin = new System.Windows.Forms.Padding(0);
+            this.b_leave_view.Name = "b_leave_view";
+            this.b_leave_view.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.b_leave_view.Size = new System.Drawing.Size(165, 40);
+            this.b_leave_view.TabIndex = 15;
+            this.b_leave_view.Text = "Список";
+            this.b_leave_view.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_leave_view.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.b_leave_view.UseVisualStyleBackColor = false;
+            this.b_leave_view.Click += new System.EventHandler(this.b_leave_view_Click);
+            this.b_leave_view.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.b_leave_view.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
+            // b_leave_add
+            // 
+            this.b_leave_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(1)))), ((int)(((byte)(20)))));
+            this.b_leave_add.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_leave_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(6)))), ((int)(((byte)(64)))));
+            this.b_leave_add.FlatAppearance.BorderSize = 0;
+            this.b_leave_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_leave_add.Font = new System.Drawing.Font("JetBrains Mono Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.b_leave_add.ForeColor = System.Drawing.Color.White;
+            this.b_leave_add.ImageKey = "(none)";
+            this.b_leave_add.Location = new System.Drawing.Point(0, 40);
+            this.b_leave_add.Margin = new System.Windows.Forms.Padding(0);
+            this.b_leave_add.Name = "b_leave_add";
+            this.b_leave_add.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.b_leave_add.Size = new System.Drawing.Size(165, 40);
+            this.b_leave_add.TabIndex = 16;
+            this.b_leave_add.Text = "Добавить";
+            this.b_leave_add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_leave_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.b_leave_add.UseVisualStyleBackColor = false;
+            this.b_leave_add.Click += new System.EventHandler(this.b_leave_add_Click);
+            this.b_leave_add.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.b_leave_add.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
+            // b_leave
+            // 
+            this.b_leave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(2)))), ((int)(((byte)(30)))));
+            this.b_leave.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_leave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
+            this.b_leave.FlatAppearance.BorderSize = 0;
+            this.b_leave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_leave.Font = new System.Drawing.Font("JetBrains Mono Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.b_leave.ForeColor = System.Drawing.Color.White;
+            this.b_leave.ImageKey = "(none)";
+            this.b_leave.Location = new System.Drawing.Point(0, 875);
+            this.b_leave.Margin = new System.Windows.Forms.Padding(0);
+            this.b_leave.Name = "b_leave";
+            this.b_leave.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.b_leave.Size = new System.Drawing.Size(148, 45);
+            this.b_leave.TabIndex = 18;
+            this.b_leave.Text = "Прогул";
+            this.b_leave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_leave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.b_leave.UseVisualStyleBackColor = false;
+            this.b_leave.Click += new System.EventHandler(this.b_leave_Click);
+            this.b_leave.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.b_leave.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
+            // RestSubPanel
+            // 
+            this.RestSubPanel.AutoSize = true;
+            this.RestSubPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.RestSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(3)))), ((int)(((byte)(28)))));
+            this.RestSubPanel.Controls.Add(this.b_rest_view);
+            this.RestSubPanel.Controls.Add(this.b_rest_add);
+            this.RestSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RestSubPanel.Location = new System.Drawing.Point(0, 795);
+            this.RestSubPanel.Name = "RestSubPanel";
+            this.RestSubPanel.Size = new System.Drawing.Size(148, 80);
+            this.RestSubPanel.TabIndex = 17;
+            this.RestSubPanel.Visible = false;
+            // 
+            // b_rest_view
+            // 
+            this.b_rest_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(1)))), ((int)(((byte)(20)))));
+            this.b_rest_view.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_rest_view.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(6)))), ((int)(((byte)(64)))));
+            this.b_rest_view.FlatAppearance.BorderSize = 0;
+            this.b_rest_view.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_rest_view.Font = new System.Drawing.Font("JetBrains Mono Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.b_rest_view.ForeColor = System.Drawing.Color.White;
+            this.b_rest_view.ImageKey = "(none)";
+            this.b_rest_view.Location = new System.Drawing.Point(0, 0);
+            this.b_rest_view.Margin = new System.Windows.Forms.Padding(0);
+            this.b_rest_view.Name = "b_rest_view";
+            this.b_rest_view.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.b_rest_view.Size = new System.Drawing.Size(165, 40);
+            this.b_rest_view.TabIndex = 15;
+            this.b_rest_view.Text = "Список";
+            this.b_rest_view.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_rest_view.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.b_rest_view.UseVisualStyleBackColor = false;
+            this.b_rest_view.Click += new System.EventHandler(this.b_rest_view_Click);
+            this.b_rest_view.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.b_rest_view.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
+            // b_rest_add
+            // 
+            this.b_rest_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(1)))), ((int)(((byte)(20)))));
+            this.b_rest_add.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_rest_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(6)))), ((int)(((byte)(64)))));
+            this.b_rest_add.FlatAppearance.BorderSize = 0;
+            this.b_rest_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_rest_add.Font = new System.Drawing.Font("JetBrains Mono Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.b_rest_add.ForeColor = System.Drawing.Color.White;
+            this.b_rest_add.ImageKey = "(none)";
+            this.b_rest_add.Location = new System.Drawing.Point(0, 40);
+            this.b_rest_add.Margin = new System.Windows.Forms.Padding(0);
+            this.b_rest_add.Name = "b_rest_add";
+            this.b_rest_add.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.b_rest_add.Size = new System.Drawing.Size(165, 40);
+            this.b_rest_add.TabIndex = 16;
+            this.b_rest_add.Text = "Добавить";
+            this.b_rest_add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_rest_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.b_rest_add.UseVisualStyleBackColor = false;
+            this.b_rest_add.Click += new System.EventHandler(this.b_rest_add_Click);
+            this.b_rest_add.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.b_rest_add.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
+            // b_rest
+            // 
+            this.b_rest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(2)))), ((int)(((byte)(30)))));
+            this.b_rest.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_rest.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
+            this.b_rest.FlatAppearance.BorderSize = 0;
+            this.b_rest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_rest.Font = new System.Drawing.Font("JetBrains Mono Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.b_rest.ForeColor = System.Drawing.Color.White;
+            this.b_rest.ImageKey = "(none)";
+            this.b_rest.Location = new System.Drawing.Point(0, 750);
+            this.b_rest.Margin = new System.Windows.Forms.Padding(0);
+            this.b_rest.Name = "b_rest";
+            this.b_rest.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.b_rest.Size = new System.Drawing.Size(148, 45);
+            this.b_rest.TabIndex = 16;
+            this.b_rest.Text = "Отпуск";
+            this.b_rest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_rest.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.b_rest.UseVisualStyleBackColor = false;
+            this.b_rest.Click += new System.EventHandler(this.b_rest_Click);
+            this.b_rest.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.b_rest.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
+            // IllSubPanel
+            // 
+            this.IllSubPanel.AutoSize = true;
+            this.IllSubPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.IllSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(3)))), ((int)(((byte)(28)))));
+            this.IllSubPanel.Controls.Add(this.b_ill_view);
+            this.IllSubPanel.Controls.Add(this.b_ill_add);
+            this.IllSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.IllSubPanel.Location = new System.Drawing.Point(0, 670);
+            this.IllSubPanel.Name = "IllSubPanel";
+            this.IllSubPanel.Size = new System.Drawing.Size(148, 80);
+            this.IllSubPanel.TabIndex = 15;
+            this.IllSubPanel.Visible = false;
+            // 
+            // b_ill_view
+            // 
+            this.b_ill_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(1)))), ((int)(((byte)(20)))));
+            this.b_ill_view.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_ill_view.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(6)))), ((int)(((byte)(64)))));
+            this.b_ill_view.FlatAppearance.BorderSize = 0;
+            this.b_ill_view.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_ill_view.Font = new System.Drawing.Font("JetBrains Mono Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.b_ill_view.ForeColor = System.Drawing.Color.White;
+            this.b_ill_view.ImageKey = "(none)";
+            this.b_ill_view.Location = new System.Drawing.Point(0, 0);
+            this.b_ill_view.Margin = new System.Windows.Forms.Padding(0);
+            this.b_ill_view.Name = "b_ill_view";
+            this.b_ill_view.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.b_ill_view.Size = new System.Drawing.Size(165, 40);
+            this.b_ill_view.TabIndex = 15;
+            this.b_ill_view.Text = "Список";
+            this.b_ill_view.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_ill_view.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.b_ill_view.UseVisualStyleBackColor = false;
+            this.b_ill_view.Click += new System.EventHandler(this.b_ill_view_Click);
+            this.b_ill_view.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.b_ill_view.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
+            // b_ill_add
+            // 
+            this.b_ill_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(1)))), ((int)(((byte)(20)))));
+            this.b_ill_add.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_ill_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(6)))), ((int)(((byte)(64)))));
+            this.b_ill_add.FlatAppearance.BorderSize = 0;
+            this.b_ill_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_ill_add.Font = new System.Drawing.Font("JetBrains Mono Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.b_ill_add.ForeColor = System.Drawing.Color.White;
+            this.b_ill_add.ImageKey = "(none)";
+            this.b_ill_add.Location = new System.Drawing.Point(0, 40);
+            this.b_ill_add.Margin = new System.Windows.Forms.Padding(0);
+            this.b_ill_add.Name = "b_ill_add";
+            this.b_ill_add.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.b_ill_add.Size = new System.Drawing.Size(165, 40);
+            this.b_ill_add.TabIndex = 16;
+            this.b_ill_add.Text = "Добавить";
+            this.b_ill_add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_ill_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.b_ill_add.UseVisualStyleBackColor = false;
+            this.b_ill_add.Click += new System.EventHandler(this.b_ill_add_Click);
+            this.b_ill_add.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.b_ill_add.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
+            // b_ill
+            // 
+            this.b_ill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(2)))), ((int)(((byte)(30)))));
+            this.b_ill.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b_ill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
+            this.b_ill.FlatAppearance.BorderSize = 0;
+            this.b_ill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_ill.Font = new System.Drawing.Font("JetBrains Mono Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.b_ill.ForeColor = System.Drawing.Color.White;
+            this.b_ill.ImageKey = "(none)";
+            this.b_ill.Location = new System.Drawing.Point(0, 625);
+            this.b_ill.Margin = new System.Windows.Forms.Padding(0);
+            this.b_ill.Name = "b_ill";
+            this.b_ill.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.b_ill.Size = new System.Drawing.Size(148, 45);
+            this.b_ill.TabIndex = 14;
+            this.b_ill.Text = "Больничный";
+            this.b_ill.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_ill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.b_ill.UseVisualStyleBackColor = false;
+            this.b_ill.Click += new System.EventHandler(this.b_ill_Click);
+            this.b_ill.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.b_ill.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
             // AttesSubPanel
             // 
             this.AttesSubPanel.AutoSize = true;
@@ -95,7 +397,7 @@
             this.AttesSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.AttesSubPanel.Location = new System.Drawing.Point(0, 545);
             this.AttesSubPanel.Name = "AttesSubPanel";
-            this.AttesSubPanel.Size = new System.Drawing.Size(165, 80);
+            this.AttesSubPanel.Size = new System.Drawing.Size(148, 80);
             this.AttesSubPanel.TabIndex = 13;
             this.AttesSubPanel.Visible = false;
             // 
@@ -143,6 +445,7 @@
             this.b_attes_add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.b_attes_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.b_attes_add.UseVisualStyleBackColor = false;
+            this.b_attes_add.Click += new System.EventHandler(this.b_attes_add_Click);
             this.b_attes_add.MouseEnter += new System.EventHandler(this.button_MouseEnter);
             this.b_attes_add.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
@@ -160,7 +463,7 @@
             this.b_attes.Margin = new System.Windows.Forms.Padding(0);
             this.b_attes.Name = "b_attes";
             this.b_attes.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.b_attes.Size = new System.Drawing.Size(165, 45);
+            this.b_attes.Size = new System.Drawing.Size(148, 45);
             this.b_attes.TabIndex = 12;
             this.b_attes.Text = "Аттестация";
             this.b_attes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,7 +487,7 @@
             this.b_tt.Margin = new System.Windows.Forms.Padding(0);
             this.b_tt.Name = "b_tt";
             this.b_tt.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.b_tt.Size = new System.Drawing.Size(165, 45);
+            this.b_tt.Size = new System.Drawing.Size(148, 45);
             this.b_tt.TabIndex = 10;
             this.b_tt.Text = "ШР";
             this.b_tt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,7 +509,7 @@
             this.RemovedSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.RemovedSubPanel.Location = new System.Drawing.Point(0, 295);
             this.RemovedSubPanel.Name = "RemovedSubPanel";
-            this.RemovedSubPanel.Size = new System.Drawing.Size(165, 160);
+            this.RemovedSubPanel.Size = new System.Drawing.Size(148, 160);
             this.RemovedSubPanel.TabIndex = 4;
             this.RemovedSubPanel.Visible = false;
             // 
@@ -320,7 +623,7 @@
             this.b_removed.Margin = new System.Windows.Forms.Padding(0);
             this.b_removed.Name = "b_removed";
             this.b_removed.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.b_removed.Size = new System.Drawing.Size(165, 45);
+            this.b_removed.Size = new System.Drawing.Size(148, 45);
             this.b_removed.TabIndex = 5;
             this.b_removed.Text = "Увольнение";
             this.b_removed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -342,7 +645,7 @@
             this.SotrSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.SotrSubPanel.Location = new System.Drawing.Point(0, 90);
             this.SotrSubPanel.Name = "SotrSubPanel";
-            this.SotrSubPanel.Size = new System.Drawing.Size(165, 160);
+            this.SotrSubPanel.Size = new System.Drawing.Size(148, 160);
             this.SotrSubPanel.TabIndex = 1;
             this.SotrSubPanel.Visible = false;
             // 
@@ -456,7 +759,7 @@
             this.b_sotr.Margin = new System.Windows.Forms.Padding(0);
             this.b_sotr.Name = "b_sotr";
             this.b_sotr.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.b_sotr.Size = new System.Drawing.Size(165, 45);
+            this.b_sotr.Size = new System.Drawing.Size(148, 45);
             this.b_sotr.TabIndex = 1;
             this.b_sotr.Text = "Сотдруник";
             this.b_sotr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -480,7 +783,7 @@
             this.b_profile.Location = new System.Drawing.Point(0, 0);
             this.b_profile.Name = "b_profile";
             this.b_profile.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.b_profile.Size = new System.Drawing.Size(165, 45);
+            this.b_profile.Size = new System.Drawing.Size(148, 45);
             this.b_profile.TabIndex = 0;
             this.b_profile.Text = "Профиль";
             this.b_profile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -513,29 +816,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // b_exit
-            // 
-            this.b_exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.b_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(2)))), ((int)(((byte)(30)))));
-            this.b_exit.BackgroundImage = global::coursework_forms.Properties.Resources.close;
-            this.b_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.b_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.b_exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
-            this.b_exit.FlatAppearance.BorderSize = 0;
-            this.b_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_exit.Font = new System.Drawing.Font("JetBrains Mono Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.b_exit.ForeColor = System.Drawing.Color.White;
-            this.b_exit.ImageKey = "(none)";
-            this.b_exit.Location = new System.Drawing.Point(1260, 0);
-            this.b_exit.Margin = new System.Windows.Forms.Padding(0);
-            this.b_exit.Name = "b_exit";
-            this.b_exit.Size = new System.Drawing.Size(55, 25);
-            this.b_exit.TabIndex = 7;
-            this.b_exit.UseVisualStyleBackColor = false;
-            this.b_exit.Click += new System.EventHandler(this.b_exit_Click);
-            this.b_exit.MouseEnter += new System.EventHandler(this.b_exit_MouseEnter);
-            this.b_exit.MouseLeave += new System.EventHandler(this.b_exit_MouseLeave);
-            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,6 +835,9 @@
             this.p_top_menu.ResumeLayout(false);
             this.p_side_menu.ResumeLayout(false);
             this.p_side_menu.PerformLayout();
+            this.LeaveSubPanel.ResumeLayout(false);
+            this.RestSubPanel.ResumeLayout(false);
+            this.IllSubPanel.ResumeLayout(false);
             this.AttesSubPanel.ResumeLayout(false);
             this.RemovedSubPanel.ResumeLayout(false);
             this.SotrSubPanel.ResumeLayout(false);
@@ -589,5 +872,17 @@
         private System.Windows.Forms.FlowLayoutPanel AttesSubPanel;
         private System.Windows.Forms.Button b_attes_view;
         private System.Windows.Forms.Button b_attes_add;
+        private System.Windows.Forms.FlowLayoutPanel IllSubPanel;
+        private System.Windows.Forms.Button b_ill_view;
+        private System.Windows.Forms.Button b_ill_add;
+        private System.Windows.Forms.Button b_ill;
+        private System.Windows.Forms.FlowLayoutPanel RestSubPanel;
+        private System.Windows.Forms.Button b_rest_view;
+        private System.Windows.Forms.Button b_rest_add;
+        private System.Windows.Forms.Button b_rest;
+        private System.Windows.Forms.FlowLayoutPanel LeaveSubPanel;
+        private System.Windows.Forms.Button b_leave_view;
+        private System.Windows.Forms.Button b_leave_add;
+        private System.Windows.Forms.Button b_leave;
     }
 }

@@ -79,6 +79,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CourseworkDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\leave\leave_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\leave\leave_add.Designer.cs">
+      <DependentUpon>leave_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\leave\leave_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\leave\leave_view.Designer.cs">
+      <DependentUpon>leave_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\rest\rest_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\rest\rest_add.Designer.cs">
+      <DependentUpon>rest_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Ill\ill_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Ill\ill_add.Designer.cs">
+      <DependentUpon>ill_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\rest\rest_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\rest\rest_view.Designer.cs">
+      <DependentUpon>rest_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Ill\ill_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Ill\ill_view.Designer.cs">
+      <DependentUpon>ill_view.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +144,12 @@
     </Compile>
     <Compile Include="FORMS\attes\attes_view.Designer.cs">
       <DependentUpon>attes_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\attes\attes_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\attes\attes_add.Designer.cs">
+      <DependentUpon>attes_add.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\timetable.cs">
       <SubType>Form</SubType>
@@ -179,6 +221,24 @@
     <Compile Include="FORMS\sotr\sotr_edit.Designer.cs">
       <DependentUpon>sotr_edit.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FORMS\leave\leave_add.resx">
+      <DependentUpon>leave_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\leave\leave_view.resx">
+      <DependentUpon>leave_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\rest\rest_add.resx">
+      <DependentUpon>rest_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Ill\ill_add.resx">
+      <DependentUpon>ill_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\rest\rest_view.resx">
+      <DependentUpon>rest_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Ill\ill_view.resx">
+      <DependentUpon>ill_view.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\attes\attes_view.resx">
       <DependentUpon>attes_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\attes\attes_add.resx">
+      <DependentUpon>attes_add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\timetable.resx">
       <DependentUpon>timetable.cs</DependentUpon>
@@ -316,6 +379,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -27,3 +27,10 @@ C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_for
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.removed_delete.resources
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.timetable.resources
 C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.attes_view.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.attes_add.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.ill_view.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.ill_add.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.rest_add.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.rest_view.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.FORMS.sotr.leave_add.resources
+C:\Users\molok\GitHub\coursework_forms\coursework_forms\obj\Debug\coursework_forms.leave_view.resources

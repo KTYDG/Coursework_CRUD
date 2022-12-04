@@ -229,7 +229,6 @@ namespace coursework_forms {
             this.dgv_sotr.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
             this.dgv_sotr.Size = new System.Drawing.Size(711, 650);
             this.dgv_sotr.TabIndex = 1;
-            this.dgv_sotr.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sotr_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -295,7 +294,7 @@ namespace coursework_forms {
             this.rtb_reason.ForeColor = System.Drawing.Color.White;
             this.rtb_reason.Location = new System.Drawing.Point(15, 50);
             this.rtb_reason.Margin = new System.Windows.Forms.Padding(5);
-            this.rtb_reason.MaxLength = 256;
+            this.rtb_reason.MaxLength = 255;
             this.rtb_reason.Name = "rtb_reason";
             this.rtb_reason.Size = new System.Drawing.Size(409, 585);
             this.rtb_reason.TabIndex = 43;
@@ -347,7 +346,6 @@ namespace coursework_forms {
         public CourseworkDataSetTableAdapters.RemovedTableAdapter removedTableAdapter;
         private CourseworkDataSetTableAdapters.УвольнениеTableAdapter увольнениеTableAdapter;
         private System.Windows.Forms.BindingSource увольнениеBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idсотрудникDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button b_options;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;

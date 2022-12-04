@@ -77,7 +77,39 @@ namespace coursework_forms {
         private void b_attes_view_Click(object sender, EventArgs e) {
             openChildForm(new attes_view(), p_form_view);
         }
-
+        private void b_attes_add_Click(object sender, EventArgs e) {
+            openChildForm(new attes_add(), p_form_view);
+        }
+        private void b_ill_Click(object sender, EventArgs e) {
+            HideSubPanels(IllSubPanel);
+            SubPanelsOnClick(sender, (ShowSubPanel(IllSubPanel)));
+        }
+        private void b_ill_view_Click(object sender, EventArgs e) {
+            openChildForm(new ill_view(), p_form_view);
+        }
+        private void b_ill_add_Click(object sender, EventArgs e) {
+            openChildForm(new ill_add(), p_form_view);
+        }
+        private void b_rest_Click(object sender, EventArgs e) {
+            HideSubPanels(RestSubPanel);
+            SubPanelsOnClick(sender, (ShowSubPanel(RestSubPanel)));
+        }
+        private void b_rest_view_Click(object sender, EventArgs e) {
+            openChildForm(new rest_view(), p_form_view);
+        }
+        private void b_rest_add_Click(object sender, EventArgs e) {
+            openChildForm(new rest_add(), p_form_view);
+        }
+        private void b_leave_Click(object sender, EventArgs e) {
+            HideSubPanels(LeaveSubPanel);
+            SubPanelsOnClick(sender, (ShowSubPanel(LeaveSubPanel)));
+        }
+        private void b_leave_view_Click(object sender, EventArgs e) {
+            openChildForm(new leave_view(), p_form_view);
+        }
+        private void b_leave_add_Click(object sender, EventArgs e) {
+            openChildForm(new leave_add(), p_form_view);
+        }
         private void b_exit_Click(object sender, EventArgs e) {
             login l = Application.OpenForms.OfType<login>().SingleOrDefault();
             this.Close();
@@ -108,6 +140,18 @@ namespace coursework_forms {
             if(RemovedSubPanel.Visible == true && RemovedSubPanel != exept) {
                 b_removed.BackColor = SetDefaultBackColor();
                 RemovedSubPanel.Visible = false;
+            }
+            if(IllSubPanel.Visible == true && IllSubPanel != exept) {
+                b_ill.BackColor = SetDefaultBackColor();
+                IllSubPanel.Visible = false;
+            }
+            if(RestSubPanel.Visible == true && RestSubPanel != exept) {
+                b_rest.BackColor = SetDefaultBackColor();
+                RestSubPanel.Visible = false;
+            }
+            if(LeaveSubPanel.Visible == true && LeaveSubPanel != exept) {
+                b_leave.BackColor = SetDefaultBackColor();
+                LeaveSubPanel.Visible = false;
             }
         }
 

@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_place = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cb_doc = new System.Windows.Forms.CheckBox();
             this.p_top_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sotrBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
@@ -146,7 +148,7 @@
             this.tb_error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_error.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 22F, System.Drawing.FontStyle.Bold);
             this.tb_error.ForeColor = System.Drawing.Color.Orange;
-            this.tb_error.Location = new System.Drawing.Point(344, 569);
+            this.tb_error.Location = new System.Drawing.Point(335, 604);
             this.tb_error.Name = "tb_error";
             this.tb_error.ReadOnly = true;
             this.tb_error.Size = new System.Drawing.Size(764, 39);
@@ -210,12 +212,40 @@
             this.textBox2.Size = new System.Drawing.Size(56, 39);
             this.textBox2.TabIndex = 53;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Crimson;
+            this.label6.Location = new System.Drawing.Point(344, 539);
+            this.label6.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(287, 36);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Создать документ";
+            // 
+            // cb_doc
+            // 
+            this.cb_doc.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cb_doc.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.cb_doc.FlatAppearance.BorderSize = 3;
+            this.cb_doc.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.cb_doc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_doc.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.cb_doc.Location = new System.Drawing.Point(635, 541);
+            this.cb_doc.Name = "cb_doc";
+            this.cb_doc.Size = new System.Drawing.Size(30, 30);
+            this.cb_doc.TabIndex = 64;
+            this.cb_doc.UseVisualStyleBackColor = true;
+            // 
             // removed_remove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(4)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1150, 675);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cb_doc);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.tb_place);
             this.Controls.Add(this.label1);
@@ -253,5 +283,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_place;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox cb_doc;
     }
 }

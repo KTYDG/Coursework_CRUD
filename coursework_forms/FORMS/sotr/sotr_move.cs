@@ -119,12 +119,14 @@ namespace coursework_forms.FORMS.sotr {
                 t.Stop();
             };
             t.Start();
-            if(tb_error.Text == "Перевод произведен") {
-                try {
-                    save();
-                }
-                catch {
-                    MessageBox.Show("Не удалось сохранить документ");
+            if(cb_doc.Checked) {
+                if(tb_error.Text == "Перевод произведен") {
+                    try {
+                        save();
+                    }
+                    catch {
+                        MessageBox.Show("Не удалось сохранить документ");
+                    }
                 }
             }
             int index = cb_sotr.SelectedIndex;

@@ -106,7 +106,7 @@ namespace coursework_forms.FORMS.sotr {
             };
             t.Start();
 
-            if(tb_error.Text == "Сотрудник уволен") {
+            if(tb_error.Text == "Сотрудник уволен" && cb_doc.Checked) {
                 DateTime start = (DateTime)my_command.Parameters["@a_date"].Value;
                 try {
                     save(start);

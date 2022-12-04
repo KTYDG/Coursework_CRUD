@@ -45,7 +45,7 @@ namespace coursework_forms {
             m.Width = 1650;
             this.Width = 1500;
             this.p_filter_options.Width = 350;
-            openChildForm(new common_options(this.removedBindingSource), p_filter_options);
+            openChildForm(new common_options(this.removedBindingSource, "Дата"), p_filter_options);
         }
         private Form activeForm = null;
         public void openChildForm(Form child, Panel To) {
@@ -81,31 +81,25 @@ namespace coursework_forms {
         }
 
         private void b_update_Click(object sender, EventArgs e) {
-            if(ID == "") {
-                this.removedTableAdapter.Fill(this.courseworkDataSet.Removed);
-                return;
-            }
             string connString = @"Data Source=KTYDGIK\SQLKTYDG;Initial Catalog=""Coursework"";Integrated Security=True";
             // создание подключения SqlConnection
             SqlConnection connection = new SqlConnection(connString);
-            SqlCommand comm = new SqlCommand("UPDATE Removed SET Причина = '" + rtb_reason.Text + "' WHERE ID = " + ID + " AND Дата = '" + Date + "'", connection);
+            connection.Open();
+            foreach(DataGridViewRow row in dgv_sotr.Rows) {
+                string ID = dgv_sotr.Rows[row.Index].Cells[0].Value.ToString();
+                string reason = dgv_sotr.Rows[row.Index].Cells[3].Value.ToString();
+                string Date = dgv_sotr.Rows[row.Index].Cells[2].Value.ToString();
+                SqlCommand comm = new SqlCommand("UPDATE Removed SET Причина = '" + reason + "' WHERE ID = " + ID + " AND Дата = '" + Date + "'", connection);
 
-            try {
-                connection.Open();
-                comm.ExecuteNonQuery();
-                connection.Close();
+                try {
+                    comm.ExecuteNonQuery();
+                }
+                catch(Exception ex) {
+                    MessageBox.Show(ex.ToString(), "ОБНОВЛЕНИЕ НЕ ПРОИЗОШЛО");
+                }
             }
-            catch(Exception ex) {
-                MessageBox.Show(ex.ToString(), "ОБНОВЛЕНИЕ НЕ ПРОИЗОШЛО");
-            }
+            connection.Close();
             this.removedTableAdapter.Fill(this.courseworkDataSet.Removed);
-        }
-
-        string ID = "";
-        string Date = "";
-        private void dgv_sotr_CellClick(object sender, DataGridViewCellEventArgs e) {
-            ID = dgv_sotr.Rows[e.RowIndex].Cells[0].Value.ToString();
-            Date = dgv_sotr.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
     }
 }

@@ -38,55 +38,35 @@ namespace coursework_forms {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.b_exit = new System.Windows.Forms.Button();
             this.p_top_menu = new System.Windows.Forms.Panel();
             this.b_options = new System.Windows.Forms.Button();
+            this.b_delete = new System.Windows.Forms.Button();
             this.b_update = new System.Windows.Forms.Button();
+            this.b_exit = new System.Windows.Forms.Button();
             this.p_filter_options = new System.Windows.Forms.Panel();
             this.dgv_sotr = new System.Windows.Forms.DataGridView();
+            this.attesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rtb_reason = new System.Windows.Forms.RichTextBox();
-            this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
             this.attesTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.AttesTableAdapter();
-            this.attesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID_Д = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.описаниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p_top_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sotr)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // b_exit
-            // 
-            this.b_exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.b_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
-            this.b_exit.BackgroundImage = global::coursework_forms.Properties.Resources.close;
-            this.b_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.b_exit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.b_exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
-            this.b_exit.FlatAppearance.BorderSize = 0;
-            this.b_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_exit.Font = new System.Drawing.Font("JetBrains Mono Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.b_exit.ForeColor = System.Drawing.Color.White;
-            this.b_exit.ImageKey = "(none)";
-            this.b_exit.Location = new System.Drawing.Point(0, 0);
-            this.b_exit.Margin = new System.Windows.Forms.Padding(0);
-            this.b_exit.Name = "b_exit";
-            this.b_exit.Size = new System.Drawing.Size(55, 25);
-            this.b_exit.TabIndex = 6;
-            this.b_exit.UseVisualStyleBackColor = false;
-            this.b_exit.Click += new System.EventHandler(this.b_exit_Click);
-            this.b_exit.MouseEnter += new System.EventHandler(this.b_exit_MouseEnter);
-            this.b_exit.MouseLeave += new System.EventHandler(this.b_MouseLeave);
             // 
             // p_top_menu
             // 
             this.p_top_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
             this.p_top_menu.Controls.Add(this.b_options);
+            this.p_top_menu.Controls.Add(this.b_delete);
             this.p_top_menu.Controls.Add(this.b_update);
             this.p_top_menu.Controls.Add(this.b_exit);
             this.p_top_menu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -108,16 +88,40 @@ namespace coursework_forms {
             this.b_options.Font = new System.Drawing.Font("JetBrains Mono Medium", 12F, System.Drawing.FontStyle.Bold);
             this.b_options.ForeColor = System.Drawing.Color.White;
             this.b_options.ImageKey = "(none)";
-            this.b_options.Location = new System.Drawing.Point(110, 0);
+            this.b_options.Location = new System.Drawing.Point(165, 0);
             this.b_options.Margin = new System.Windows.Forms.Padding(0);
             this.b_options.Name = "b_options";
             this.b_options.Size = new System.Drawing.Size(55, 25);
-            this.b_options.TabIndex = 25;
+            this.b_options.TabIndex = 27;
             this.b_options.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.b_options.UseVisualStyleBackColor = false;
             this.b_options.Click += new System.EventHandler(this.b_options_Click);
             this.b_options.MouseEnter += new System.EventHandler(this.b_options_MouseEnter);
             this.b_options.MouseLeave += new System.EventHandler(this.b_MouseLeave);
+            // 
+            // b_delete
+            // 
+            this.b_delete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.b_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
+            this.b_delete.BackgroundImage = global::coursework_forms.Properties.Resources.delete;
+            this.b_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.b_delete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.b_delete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
+            this.b_delete.FlatAppearance.BorderSize = 0;
+            this.b_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_delete.Font = new System.Drawing.Font("JetBrains Mono Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.b_delete.ForeColor = System.Drawing.Color.White;
+            this.b_delete.ImageKey = "(none)";
+            this.b_delete.Location = new System.Drawing.Point(110, 0);
+            this.b_delete.Margin = new System.Windows.Forms.Padding(0);
+            this.b_delete.Name = "b_delete";
+            this.b_delete.Size = new System.Drawing.Size(55, 25);
+            this.b_delete.TabIndex = 26;
+            this.b_delete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.b_delete.UseVisualStyleBackColor = false;
+            this.b_delete.Click += new System.EventHandler(this.b_delete_Click);
+            this.b_delete.MouseEnter += new System.EventHandler(this.b_exit_MouseEnter);
+            this.b_delete.MouseLeave += new System.EventHandler(this.b_MouseLeave);
             // 
             // b_update
             // 
@@ -144,6 +148,29 @@ namespace coursework_forms {
             this.b_update.MouseDown += new System.Windows.Forms.MouseEventHandler(this.b_update_MouseDown);
             this.b_update.MouseEnter += new System.EventHandler(this.b_update_MouseEnter);
             this.b_update.MouseLeave += new System.EventHandler(this.b_update_Leave);
+            // 
+            // b_exit
+            // 
+            this.b_exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.b_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
+            this.b_exit.BackgroundImage = global::coursework_forms.Properties.Resources.close;
+            this.b_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.b_exit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.b_exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
+            this.b_exit.FlatAppearance.BorderSize = 0;
+            this.b_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_exit.Font = new System.Drawing.Font("JetBrains Mono Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.b_exit.ForeColor = System.Drawing.Color.White;
+            this.b_exit.ImageKey = "(none)";
+            this.b_exit.Location = new System.Drawing.Point(0, 0);
+            this.b_exit.Margin = new System.Windows.Forms.Padding(0);
+            this.b_exit.Name = "b_exit";
+            this.b_exit.Size = new System.Drawing.Size(55, 25);
+            this.b_exit.TabIndex = 6;
+            this.b_exit.UseVisualStyleBackColor = false;
+            this.b_exit.Click += new System.EventHandler(this.b_exit_Click);
+            this.b_exit.MouseEnter += new System.EventHandler(this.b_exit_MouseEnter);
+            this.b_exit.MouseLeave += new System.EventHandler(this.b_MouseLeave);
             // 
             // p_filter_options
             // 
@@ -180,6 +207,7 @@ namespace coursework_forms {
             this.dgv_sotr.ColumnHeadersHeight = 40;
             this.dgv_sotr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_sotr.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Д,
             this.iDDataGridViewTextBoxColumn,
             this.фИОDataGridViewTextBoxColumn,
             this.датаDataGridViewTextBoxColumn,
@@ -209,7 +237,8 @@ namespace coursework_forms {
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_sotr.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_sotr.RowHeadersVisible = false;
+            this.dgv_sotr.RowHeadersWidth = 20;
+            this.dgv_sotr.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Orange;
@@ -221,7 +250,16 @@ namespace coursework_forms {
             this.dgv_sotr.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
             this.dgv_sotr.Size = new System.Drawing.Size(711, 650);
             this.dgv_sotr.TabIndex = 1;
-            this.dgv_sotr.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sotr_CellClick);
+            // 
+            // attesBindingSource
+            // 
+            this.attesBindingSource.DataMember = "Attes";
+            this.attesBindingSource.DataSource = this.courseworkDataSet;
+            // 
+            // courseworkDataSet
+            // 
+            this.courseworkDataSet.DataSetName = "CourseworkDataSet";
+            this.courseworkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -244,33 +282,32 @@ namespace coursework_forms {
             this.rtb_reason.ForeColor = System.Drawing.Color.White;
             this.rtb_reason.Location = new System.Drawing.Point(15, 50);
             this.rtb_reason.Margin = new System.Windows.Forms.Padding(5);
-            this.rtb_reason.MaxLength = 256;
+            this.rtb_reason.MaxLength = 255;
             this.rtb_reason.Name = "rtb_reason";
             this.rtb_reason.Size = new System.Drawing.Size(409, 585);
             this.rtb_reason.TabIndex = 43;
             this.rtb_reason.Text = "";
             // 
-            // courseworkDataSet
-            // 
-            this.courseworkDataSet.DataSetName = "CourseworkDataSet";
-            this.courseworkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // attesTableAdapter
             // 
             this.attesTableAdapter.ClearBeforeFill = true;
             // 
-            // attesBindingSource
+            // ID_Д
             // 
-            this.attesBindingSource.DataMember = "Attes";
-            this.attesBindingSource.DataSource = this.courseworkDataSet;
+            this.ID_Д.DataPropertyName = "ID_Д";
+            this.ID_Д.HeaderText = "ID_Д";
+            this.ID_Д.Name = "ID_Д";
+            this.ID_Д.ReadOnly = true;
+            this.ID_Д.Width = 40;
             // 
             // iDDataGridViewTextBoxColumn
             // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 30;
+            this.iDDataGridViewTextBoxColumn.Width = 41;
             // 
             // фИОDataGridViewTextBoxColumn
             // 
@@ -312,9 +349,9 @@ namespace coursework_forms {
             this.Load += new System.EventHandler(this.sotr_view_Load);
             this.p_top_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sotr)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -327,11 +364,12 @@ namespace coursework_forms {
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox rtb_reason;
         private System.Windows.Forms.Button b_update;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idсотрудникDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button b_options;
         private CourseworkDataSet courseworkDataSet;
         private BindingSource attesBindingSource;
         private CourseworkDataSetTableAdapters.AttesTableAdapter attesTableAdapter;
+        private Button b_options;
+        private Button b_delete;
+        private DataGridViewTextBoxColumn ID_Д;
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn датаDataGridViewTextBoxColumn;

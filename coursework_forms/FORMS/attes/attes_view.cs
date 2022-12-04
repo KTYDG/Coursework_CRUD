@@ -43,7 +43,7 @@ namespace coursework_forms {
             m.Width = 1650;
             this.Width = 1500;
             this.p_filter_options.Width = 350;
-            openChildForm(new common_options(this.attesBindingSource), p_filter_options);
+            openChildForm(new common_options(this.attesBindingSource, "Дата"), p_filter_options);
         }
         private Form activeForm = null;
         public void openChildForm(Form child, Panel To) {
@@ -79,31 +79,44 @@ namespace coursework_forms {
         }
 
         private void b_update_Click(object sender, EventArgs e) {
-            if(ID == "") {
-                this.attesTableAdapter.Fill(this.courseworkDataSet.Attes);
-                return;
-            }
             string connString = @"Data Source=KTYDGIK\SQLKTYDG;Initial Catalog=""Coursework"";Integrated Security=True";
             // создание подключения SqlConnection
             SqlConnection connection = new SqlConnection(connString);
-            SqlCommand comm = new SqlCommand("UPDATE Attes SET Описание = '" + rtb_reason.Text + "' WHERE ID = " + ID + " AND Дата = '" + Date + "'", connection);
-
-            try {
-                connection.Open();
-                comm.ExecuteNonQuery();
-                connection.Close();
+            connection.Open();
+            foreach(DataGridViewRow row in dgv_sotr.Rows) {
+                string ID = dgv_sotr.Rows[row.Index].Cells[0].Value.ToString();
+                string reason = dgv_sotr.Rows[row.Index].Cells[4].Value.ToString();
+                SqlCommand comm = new SqlCommand("UPDATE Attes SET Описание = '" + reason + "' WHERE ID_Д = " + ID, connection);
+                try {
+                    comm.ExecuteNonQuery();
+                }
+                catch(Exception ex) {
+                    MessageBox.Show(ex.ToString(), "ОБНОВЛЕНИЕ НЕ ПРОИЗОШЛО");
+                }
             }
-            catch(Exception ex) {
-                MessageBox.Show(ex.ToString(), "ОБНОВЛЕНИЕ НЕ ПРОИЗОШЛО");
-            }
+            connection.Close();
             this.attesTableAdapter.Fill(this.courseworkDataSet.Attes);
         }
+        private void b_delete_Click(object sender, EventArgs e) {
+            foreach(DataGridViewRow item in this.dgv_sotr.SelectedRows) {
+                if(dgv_sotr.Rows[item.Index].Cells[4].Value.ToString() == "Прием на работу")
+                    continue;
+                string id = dgv_sotr.Rows[item.Index].Cells[0].Value.ToString();
+                string connString = @"Data Source=KTYDGIK\SQLKTYDG;Initial Catalog=""Coursework"";Integrated Security=True";
+                // создание подключения SqlConnection
+                SqlConnection connection = new SqlConnection(connString);
+                SqlCommand comm = new SqlCommand("DELETE FROM Аттестация WHERE id_аттестация = " + id, connection);
 
-        string ID = "";
-        string Date = "";
-        private void dgv_sotr_CellClick(object sender, DataGridViewCellEventArgs e) {
-            ID = dgv_sotr.Rows[e.RowIndex].Cells[0].Value.ToString();
-            Date = dgv_sotr.Rows[e.RowIndex].Cells[2].Value.ToString();
+                try {
+                    connection.Open();
+                    comm.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch(Exception ex) {
+                    MessageBox.Show(ex.ToString(), "УДАЛЕНИЕ НЕ ПРОИЗОШЛО");
+                }
+            }
+            this.attesTableAdapter.Fill(this.courseworkDataSet.Attes);
         }
     }
 }
