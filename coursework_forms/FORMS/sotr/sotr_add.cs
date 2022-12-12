@@ -46,9 +46,12 @@ namespace coursework_forms.FORMS.sotr {
         }
 
         private void sotr_add_Load(object sender, EventArgs e) {
-            // TODO: This line of code loads data into the 'courseworkDataSet.ШтатноеРасписание' table. You can move, or remove it, as needed.
-            this.штатноеРасписаниеTableAdapter.Fill(this.courseworkDataSet.ШтатноеРасписание);
+            // TODO: This line of code loads data into the 'courseworkDataSet.MoveAdd1' table. You can move, or remove it, as needed.
+            this.moveAdd1TableAdapter.Fill(this.courseworkDataSet.MoveAdd1);
+            // TODO: This line of code loads data into the 'courseworkDataSet.ШтатноеРасписание1' table. You can move, or remove it, as needed.
+            this.штатноеРасписание1TableAdapter.Fill(this.courseworkDataSet.ШтатноеРасписание1);
 
+            moveAdd1BindingSource.Filter = "Отдел = '" + comboBox1.SelectedValue.ToString() + "'";
         }
 
         private void tb_salary_TextChanged(object sender, EventArgs e) {
@@ -208,7 +211,7 @@ namespace coursework_forms.FORMS.sotr {
 
             // настройка объект command 
             my_command2.Connection = connection;
-            my_command2.CommandText = String.Format("INSERT INTO Сотрудник VALUES({0},{1},'{2}','{3}','{4}','{5}','{6}',{7},'{8}',{9},{10})",
+            my_command2.CommandText = String.Format("INSERT INTO Сотрудник VALUES({0},{1},'{2}','{3}','{4}','{5}','{6}',{7},'{8}',{9})",
                 tb_td.Text,
                 cb_place.SelectedValue.ToString(),
                 f[0], f[1], f[2],
@@ -216,7 +219,6 @@ namespace coursework_forms.FORMS.sotr {
                 cb_gender.Text,
                 tb_phone.Text,
                 tb_mail.Text,
-                tb_salary.Text,
                 tb_stage.Text
                 );
 
@@ -300,6 +302,11 @@ namespace coursework_forms.FORMS.sotr {
             d.Range.Replace("$5", tb_salary.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
             // Save the Word document
             d.Save(Path.GetFullPath(saveFileDialog1.FileName));
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            if(comboBox1.SelectedValue != null)
+                moveAdd1BindingSource.Filter = "Отдел = '" + comboBox1.SelectedValue.ToString() + "'";
         }
     }
 }

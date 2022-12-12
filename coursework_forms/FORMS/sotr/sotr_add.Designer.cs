@@ -36,7 +36,6 @@
             this.l_gender = new System.Windows.Forms.Label();
             this.tb_stage = new System.Windows.Forms.TextBox();
             this.l_stage = new System.Windows.Forms.Label();
-            this.tb_salary = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtm_birth = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,17 +43,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cb_place = new System.Windows.Forms.ComboBox();
-            this.штатноеРасписаниеBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
-            this.штатноеРасписаниеTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.ШтатноеРасписаниеTableAdapter();
             this.b_add = new System.Windows.Forms.Button();
             this.tb_error = new System.Windows.Forms.TextBox();
             this.cb_gender = new System.Windows.Forms.ComboBox();
             this.cb_doc = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.штатноеРасписание1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.штатноеРасписание1TableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.ШтатноеРасписание1TableAdapter();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tb_salary = new System.Windows.Forms.TextBox();
+            this.moveAdd1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.moveAdd1TableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.MoveAdd1TableAdapter();
             this.p_top_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.штатноеРасписаниеBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.штатноеРасписание1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moveAdd1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // p_top_menu
@@ -168,7 +173,7 @@
             this.l_gender.AutoSize = true;
             this.l_gender.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_gender.ForeColor = System.Drawing.Color.Crimson;
-            this.l_gender.Location = new System.Drawing.Point(87, 288);
+            this.l_gender.Location = new System.Drawing.Point(87, 293);
             this.l_gender.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.l_gender.Name = "l_gender";
             this.l_gender.Size = new System.Drawing.Size(66, 36);
@@ -181,10 +186,10 @@
             this.tb_stage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_stage.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_stage.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_stage.Location = new System.Drawing.Point(949, 329);
+            this.tb_stage.Location = new System.Drawing.Point(944, 334);
             this.tb_stage.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.tb_stage.Name = "tb_stage";
-            this.tb_stage.Size = new System.Drawing.Size(111, 36);
+            this.tb_stage.Size = new System.Drawing.Size(116, 36);
             this.tb_stage.TabIndex = 30;
             this.tb_stage.TextChanged += new System.EventHandler(this.tb_stage_TextChanged);
             // 
@@ -193,37 +198,24 @@
             this.l_stage.AutoSize = true;
             this.l_stage.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_stage.ForeColor = System.Drawing.Color.Crimson;
-            this.l_stage.Location = new System.Drawing.Point(943, 288);
+            this.l_stage.Location = new System.Drawing.Point(938, 293);
             this.l_stage.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.l_stage.Name = "l_stage";
             this.l_stage.Size = new System.Drawing.Size(83, 36);
             this.l_stage.TabIndex = 29;
             this.l_stage.Text = "Стаж";
             // 
-            // tb_salary
-            // 
-            this.tb_salary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
-            this.tb_salary.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_salary.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_salary.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_salary.Location = new System.Drawing.Point(534, 329);
-            this.tb_salary.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.tb_salary.Name = "tb_salary";
-            this.tb_salary.Size = new System.Drawing.Size(392, 36);
-            this.tb_salary.TabIndex = 32;
-            this.tb_salary.TextChanged += new System.EventHandler(this.tb_salary_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(528, 288);
+            this.label1.Location = new System.Drawing.Point(87, 396);
             this.label1.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(287, 36);
+            this.label1.Size = new System.Drawing.Size(100, 36);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Заработная плата";
+            this.label1.Text = "Отдел";
             // 
             // dtm_birth
             // 
@@ -235,7 +227,7 @@
             this.dtm_birth.CustomFormat = "dd.MM.yyyy";
             this.dtm_birth.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
             this.dtm_birth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtm_birth.Location = new System.Drawing.Point(193, 332);
+            this.dtm_birth.Location = new System.Drawing.Point(193, 334);
             this.dtm_birth.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.dtm_birth.MaxDate = new System.DateTime(2022, 12, 3, 0, 0, 0, 0);
             this.dtm_birth.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
@@ -249,7 +241,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(187, 288);
+            this.label2.Location = new System.Drawing.Point(187, 293);
             this.label2.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(236, 36);
@@ -287,7 +279,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(87, 396);
+            this.label4.Location = new System.Drawing.Point(589, 396);
             this.label4.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(168, 36);
@@ -297,32 +289,22 @@
             // cb_place
             // 
             this.cb_place.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
-            this.cb_place.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.штатноеРасписаниеBindingSource, "id_должность", true));
-            this.cb_place.DataSource = this.штатноеРасписаниеBindingSource;
+            this.cb_place.DataSource = this.moveAdd1BindingSource;
             this.cb_place.DisplayMember = "Должность";
             this.cb_place.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_place.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_place.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.cb_place.ForeColor = System.Drawing.Color.Crimson;
-            this.cb_place.Location = new System.Drawing.Point(93, 440);
+            this.cb_place.Location = new System.Drawing.Point(595, 440);
             this.cb_place.Name = "cb_place";
-            this.cb_place.Size = new System.Drawing.Size(967, 39);
+            this.cb_place.Size = new System.Drawing.Size(465, 39);
             this.cb_place.TabIndex = 38;
-            this.cb_place.ValueMember = "id_должность";
-            // 
-            // штатноеРасписаниеBindingSource
-            // 
-            this.штатноеРасписаниеBindingSource.DataMember = "ШтатноеРасписание";
-            this.штатноеРасписаниеBindingSource.DataSource = this.courseworkDataSet;
+            this.cb_place.ValueMember = "ID";
             // 
             // courseworkDataSet
             // 
             this.courseworkDataSet.DataSetName = "CourseworkDataSet";
             this.courseworkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // штатноеРасписаниеTableAdapter
-            // 
-            this.штатноеРасписаниеTableAdapter.ClearBeforeFill = true;
             // 
             // b_add
             // 
@@ -402,12 +384,74 @@
             this.label5.TabIndex = 61;
             this.label5.Text = "Создать документ";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
+            this.comboBox1.DataSource = this.штатноеРасписание1BindingSource;
+            this.comboBox1.DisplayMember = "Отдел";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.comboBox1.ForeColor = System.Drawing.Color.Crimson;
+            this.comboBox1.Location = new System.Drawing.Point(93, 440);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(485, 39);
+            this.comboBox1.TabIndex = 62;
+            this.comboBox1.ValueMember = "Отдел";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // штатноеРасписание1BindingSource
+            // 
+            this.штатноеРасписание1BindingSource.DataMember = "ШтатноеРасписание1";
+            this.штатноеРасписание1BindingSource.DataSource = this.courseworkDataSet;
+            // 
+            // штатноеРасписание1TableAdapter
+            // 
+            this.штатноеРасписание1TableAdapter.ClearBeforeFill = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Crimson;
+            this.label6.Location = new System.Drawing.Point(539, 293);
+            this.label6.Margin = new System.Windows.Forms.Padding(25, 25, 25, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(287, 36);
+            this.label6.TabIndex = 63;
+            this.label6.Text = "Заработная плата";
+            // 
+            // tb_salary
+            // 
+            this.tb_salary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
+            this.tb_salary.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_salary.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_salary.ForeColor = System.Drawing.Color.Crimson;
+            this.tb_salary.Location = new System.Drawing.Point(534, 334);
+            this.tb_salary.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.tb_salary.Name = "tb_salary";
+            this.tb_salary.ReadOnly = true;
+            this.tb_salary.Size = new System.Drawing.Size(385, 36);
+            this.tb_salary.TabIndex = 64;
+            // 
+            // moveAdd1BindingSource
+            // 
+            this.moveAdd1BindingSource.DataMember = "MoveAdd1";
+            this.moveAdd1BindingSource.DataSource = this.courseworkDataSet;
+            // 
+            // moveAdd1TableAdapter
+            // 
+            this.moveAdd1TableAdapter.ClearBeforeFill = true;
+            // 
             // sotr_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(4)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1150, 675);
+            this.Controls.Add(this.tb_salary);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cb_doc);
             this.Controls.Add(this.cb_gender);
@@ -419,7 +463,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtm_birth);
-            this.Controls.Add(this.tb_salary);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_stage);
             this.Controls.Add(this.l_stage);
@@ -436,8 +479,9 @@
             this.Text = "sotr_add";
             this.Load += new System.EventHandler(this.sotr_add_Load);
             this.p_top_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.штатноеРасписаниеBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.штатноеРасписание1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moveAdd1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +501,6 @@
         private System.Windows.Forms.Label l_gender;
         private System.Windows.Forms.TextBox tb_stage;
         private System.Windows.Forms.Label l_stage;
-        private System.Windows.Forms.TextBox tb_salary;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtm_birth;
         private System.Windows.Forms.Label label2;
@@ -465,13 +508,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private CourseworkDataSet courseworkDataSet;
-        private System.Windows.Forms.BindingSource штатноеРасписаниеBindingSource;
-        private CourseworkDataSetTableAdapters.ШтатноеРасписаниеTableAdapter штатноеРасписаниеTableAdapter;
         private System.Windows.Forms.Button b_add;
         private System.Windows.Forms.TextBox tb_error;
         private System.Windows.Forms.ComboBox cb_gender;
         private System.Windows.Forms.ComboBox cb_place;
         private System.Windows.Forms.CheckBox cb_doc;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource штатноеРасписание1BindingSource;
+        private CourseworkDataSetTableAdapters.ШтатноеРасписание1TableAdapter штатноеРасписание1TableAdapter;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tb_salary;
+        private System.Windows.Forms.BindingSource moveAdd1BindingSource;
+        private CourseworkDataSetTableAdapters.MoveAdd1TableAdapter moveAdd1TableAdapter;
     }
 }

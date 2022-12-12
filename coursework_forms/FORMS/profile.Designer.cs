@@ -82,11 +82,11 @@
             this.tb_pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_pass.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_pass.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_pass.Location = new System.Drawing.Point(574, 259);
+            this.tb_pass.Location = new System.Drawing.Point(561, 259);
             this.tb_pass.Margin = new System.Windows.Forms.Padding(0);
             this.tb_pass.Name = "tb_pass";
             this.tb_pass.PasswordChar = '#';
-            this.tb_pass.Size = new System.Drawing.Size(362, 39);
+            this.tb_pass.Size = new System.Drawing.Size(414, 39);
             this.tb_pass.TabIndex = 11;
             // 
             // tb_id
@@ -95,11 +95,11 @@
             this.tb_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_id.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_id.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_id.Location = new System.Drawing.Point(574, 176);
+            this.tb_id.Location = new System.Drawing.Point(561, 176);
             this.tb_id.Margin = new System.Windows.Forms.Padding(0);
             this.tb_id.Name = "tb_id";
             this.tb_id.ReadOnly = true;
-            this.tb_id.Size = new System.Drawing.Size(362, 39);
+            this.tb_id.Size = new System.Drawing.Size(414, 39);
             this.tb_id.TabIndex = 12;
             // 
             // l_pass
@@ -107,7 +107,7 @@
             this.l_pass.AutoSize = true;
             this.l_pass.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_pass.ForeColor = System.Drawing.Color.Crimson;
-            this.l_pass.Location = new System.Drawing.Point(568, 225);
+            this.l_pass.Location = new System.Drawing.Point(555, 225);
             this.l_pass.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
             this.l_pass.Name = "l_pass";
             this.l_pass.Size = new System.Drawing.Size(125, 39);
@@ -119,7 +119,7 @@
             this.l_id.AutoSize = true;
             this.l_id.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_id.ForeColor = System.Drawing.Color.Crimson;
-            this.l_id.Location = new System.Drawing.Point(568, 140);
+            this.l_id.Location = new System.Drawing.Point(555, 140);
             this.l_id.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
             this.l_id.Name = "l_id";
             this.l_id.Size = new System.Drawing.Size(53, 39);
@@ -132,10 +132,10 @@
             this.tb_fio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_fio.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_fio.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_fio.Location = new System.Drawing.Point(574, 344);
+            this.tb_fio.Location = new System.Drawing.Point(561, 344);
             this.tb_fio.Margin = new System.Windows.Forms.Padding(0);
             this.tb_fio.Name = "tb_fio";
-            this.tb_fio.Size = new System.Drawing.Size(520, 39);
+            this.tb_fio.Size = new System.Drawing.Size(568, 39);
             this.tb_fio.TabIndex = 14;
             // 
             // l_fio
@@ -143,7 +143,7 @@
             this.l_fio.AutoSize = true;
             this.l_fio.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_fio.ForeColor = System.Drawing.Color.Crimson;
-            this.l_fio.Location = new System.Drawing.Point(568, 308);
+            this.l_fio.Location = new System.Drawing.Point(555, 308);
             this.l_fio.Margin = new System.Windows.Forms.Padding(25, 10, 0, 0);
             this.l_fio.Name = "l_fio";
             this.l_fio.Size = new System.Drawing.Size(71, 39);
@@ -165,10 +165,10 @@
             this.tb_mail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_mail.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_mail.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_mail.Location = new System.Drawing.Point(574, 429);
+            this.tb_mail.Location = new System.Drawing.Point(561, 429);
             this.tb_mail.Margin = new System.Windows.Forms.Padding(0);
             this.tb_mail.Name = "tb_mail";
-            this.tb_mail.Size = new System.Drawing.Size(520, 39);
+            this.tb_mail.Size = new System.Drawing.Size(568, 39);
             this.tb_mail.TabIndex = 18;
             // 
             // l_mail
@@ -176,7 +176,7 @@
             this.l_mail.AutoSize = true;
             this.l_mail.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_mail.ForeColor = System.Drawing.Color.Crimson;
-            this.l_mail.Location = new System.Drawing.Point(568, 393);
+            this.l_mail.Location = new System.Drawing.Point(555, 393);
             this.l_mail.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
             this.l_mail.Name = "l_mail";
             this.l_mail.Size = new System.Drawing.Size(107, 39);
@@ -189,10 +189,10 @@
             this.tb_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_phone.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_phone.ForeColor = System.Drawing.Color.Crimson;
-            this.tb_phone.Location = new System.Drawing.Point(573, 514);
+            this.tb_phone.Location = new System.Drawing.Point(560, 514);
             this.tb_phone.Margin = new System.Windows.Forms.Padding(0);
             this.tb_phone.Name = "tb_phone";
-            this.tb_phone.Size = new System.Drawing.Size(520, 39);
+            this.tb_phone.Size = new System.Drawing.Size(568, 39);
             this.tb_phone.TabIndex = 20;
             // 
             // l_phone
@@ -200,7 +200,7 @@
             this.l_phone.AutoSize = true;
             this.l_phone.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_phone.ForeColor = System.Drawing.Color.Crimson;
-            this.l_phone.Location = new System.Drawing.Point(567, 478);
+            this.l_phone.Location = new System.Drawing.Point(554, 478);
             this.l_phone.Margin = new System.Windows.Forms.Padding(25, 10, 3, 0);
             this.l_phone.Name = "l_phone";
             this.l_phone.Size = new System.Drawing.Size(143, 39);
@@ -213,9 +213,9 @@
             this.tb_error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_error.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_error.ForeColor = System.Drawing.Color.Orange;
-            this.tb_error.Location = new System.Drawing.Point(574, 88);
+            this.tb_error.Location = new System.Drawing.Point(561, 88);
             this.tb_error.Name = "tb_error";
-            this.tb_error.Size = new System.Drawing.Size(520, 39);
+            this.tb_error.Size = new System.Drawing.Size(567, 39);
             this.tb_error.TabIndex = 22;
             this.tb_error.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -229,10 +229,10 @@
             this.b_logout.ForeColor = System.Drawing.Color.White;
             this.b_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.b_logout.ImageKey = "(none)";
-            this.b_logout.Location = new System.Drawing.Point(778, 576);
+            this.b_logout.Location = new System.Drawing.Point(765, 576);
             this.b_logout.Name = "b_logout";
             this.b_logout.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.b_logout.Size = new System.Drawing.Size(316, 73);
+            this.b_logout.Size = new System.Drawing.Size(363, 73);
             this.b_logout.TabIndex = 23;
             this.b_logout.Text = "Выйти из профиля";
             this.b_logout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -255,7 +255,7 @@
             this.b_update.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_update.ForeColor = System.Drawing.Color.White;
             this.b_update.ImageKey = "(none)";
-            this.b_update.Location = new System.Drawing.Point(962, 176);
+            this.b_update.Location = new System.Drawing.Point(996, 176);
             this.b_update.Margin = new System.Windows.Forms.Padding(0);
             this.b_update.Name = "b_update";
             this.b_update.Size = new System.Drawing.Size(132, 122);
@@ -277,7 +277,7 @@
             this.b_show_password.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(4)))), ((int)(((byte)(51)))));
             this.b_show_password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b_show_password.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_show_password.Location = new System.Drawing.Point(528, 259);
+            this.b_show_password.Location = new System.Drawing.Point(515, 259);
             this.b_show_password.Margin = new System.Windows.Forms.Padding(10);
             this.b_show_password.Name = "b_show_password";
             this.b_show_password.Size = new System.Drawing.Size(36, 39);

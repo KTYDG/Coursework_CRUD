@@ -30,11 +30,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_sotr = new System.Windows.Forms.DataGridView();
-            this.idдолжностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.отделDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.количествоМестDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.количествоСотрудниковDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.штатноеРасписаниеBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
             this.b_exit = new System.Windows.Forms.Button();
@@ -42,6 +37,12 @@
             this.b_update = new System.Windows.Forms.Button();
             this.tableAdapterManager = new coursework_forms.CourseworkDataSetTableAdapters.TableAdapterManager();
             this.штатноеРасписаниеTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.ШтатноеРасписаниеTableAdapter();
+            this.idдолжностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.отделDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количествоМестDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количествоСотрудниковDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sotr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.штатноеРасписаниеBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
@@ -59,8 +60,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
             this.dgv_sotr.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_sotr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgv_sotr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_sotr.AutoGenerateColumns = false;
             this.dgv_sotr.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(4)))), ((int)(((byte)(51)))));
@@ -82,7 +83,8 @@
             this.отделDataGridViewTextBoxColumn,
             this.должностьDataGridViewTextBoxColumn,
             this.количествоМестDataGridViewTextBoxColumn,
-            this.количествоСотрудниковDataGridViewTextBoxColumn});
+            this.количествоСотрудниковDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1});
             this.dgv_sotr.DataSource = this.штатноеРасписаниеBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(16)))), ((int)(((byte)(105)))));
@@ -121,42 +123,6 @@
             this.dgv_sotr.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_sotr_CellBeginEdit);
             this.dgv_sotr.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sotr_CellEndEdit);
             this.dgv_sotr.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.drg_DataError);
-            // 
-            // idдолжностьDataGridViewTextBoxColumn
-            // 
-            this.idдолжностьDataGridViewTextBoxColumn.DataPropertyName = "id_должность";
-            this.idдолжностьDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idдолжностьDataGridViewTextBoxColumn.Name = "idдолжностьDataGridViewTextBoxColumn";
-            this.idдолжностьDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idдолжностьDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // отделDataGridViewTextBoxColumn
-            // 
-            this.отделDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.отделDataGridViewTextBoxColumn.DataPropertyName = "Отдел";
-            this.отделDataGridViewTextBoxColumn.HeaderText = "Отдел";
-            this.отделDataGridViewTextBoxColumn.Name = "отделDataGridViewTextBoxColumn";
-            // 
-            // должностьDataGridViewTextBoxColumn
-            // 
-            this.должностьDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.должностьDataGridViewTextBoxColumn.DataPropertyName = "Должность";
-            this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
-            this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
-            // 
-            // количествоМестDataGridViewTextBoxColumn
-            // 
-            this.количествоМестDataGridViewTextBoxColumn.DataPropertyName = "Количество мест";
-            this.количествоМестDataGridViewTextBoxColumn.HeaderText = "Кол-во мест";
-            this.количествоМестDataGridViewTextBoxColumn.Name = "количествоМестDataGridViewTextBoxColumn";
-            this.количествоМестDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // количествоСотрудниковDataGridViewTextBoxColumn
-            // 
-            this.количествоСотрудниковDataGridViewTextBoxColumn.DataPropertyName = "Количество сотрудников";
-            this.количествоСотрудниковDataGridViewTextBoxColumn.HeaderText = "Кол-во сотрудников";
-            this.количествоСотрудниковDataGridViewTextBoxColumn.Name = "количествоСотрудниковDataGridViewTextBoxColumn";
-            this.количествоСотрудниковDataGridViewTextBoxColumn.Width = 140;
             // 
             // штатноеРасписаниеBindingSource
             // 
@@ -245,6 +211,50 @@
             // 
             this.штатноеРасписаниеTableAdapter.ClearBeforeFill = true;
             // 
+            // idдолжностьDataGridViewTextBoxColumn
+            // 
+            this.idдолжностьDataGridViewTextBoxColumn.DataPropertyName = "id_должность";
+            this.idдолжностьDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idдолжностьDataGridViewTextBoxColumn.Name = "idдолжностьDataGridViewTextBoxColumn";
+            this.idдолжностьDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idдолжностьDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // отделDataGridViewTextBoxColumn
+            // 
+            this.отделDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.отделDataGridViewTextBoxColumn.DataPropertyName = "Отдел";
+            this.отделDataGridViewTextBoxColumn.HeaderText = "Отдел";
+            this.отделDataGridViewTextBoxColumn.Name = "отделDataGridViewTextBoxColumn";
+            // 
+            // должностьDataGridViewTextBoxColumn
+            // 
+            this.должностьDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.должностьDataGridViewTextBoxColumn.DataPropertyName = "Должность";
+            this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
+            // 
+            // количествоМестDataGridViewTextBoxColumn
+            // 
+            this.количествоМестDataGridViewTextBoxColumn.DataPropertyName = "Количество мест";
+            this.количествоМестDataGridViewTextBoxColumn.HeaderText = "Кол-во мест";
+            this.количествоМестDataGridViewTextBoxColumn.Name = "количествоМестDataGridViewTextBoxColumn";
+            this.количествоМестDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // количествоСотрудниковDataGridViewTextBoxColumn
+            // 
+            this.количествоСотрудниковDataGridViewTextBoxColumn.DataPropertyName = "Количество сотрудников";
+            this.количествоСотрудниковDataGridViewTextBoxColumn.HeaderText = "Кол-во сотрудников";
+            this.количествоСотрудниковDataGridViewTextBoxColumn.Name = "количествоСотрудниковDataGridViewTextBoxColumn";
+            this.количествоСотрудниковDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Заработная плата";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Заработная плата";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 83;
+            // 
             // timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,5 +290,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn количествоМестDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn количествоСотрудниковDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

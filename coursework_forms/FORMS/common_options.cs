@@ -46,11 +46,13 @@ namespace coursework_forms {
         }
         private void tb_id_change(object sender, EventArgs e) {
             if(((TextBox)sender).Text.Length != 0 && ((TextBox)sender).Text.All(char.IsDigit) && ((TextBox)sender).Text != "0") {
-
                 string option = delete_option(bs.Filter, "ID =");
                 if(option.Length != 0)
                     option += " AND ";
                 bs.Filter = option + "ID = " + ((TextBox)sender).Text;
+            }
+            else {
+                bs.Filter = delete_option(bs.Filter, "ID =");
             }
         }
         private void tb_fio_Leave(object sender, EventArgs e) {
@@ -67,6 +69,9 @@ namespace coursework_forms {
                 if(option.Length != 0)
                     option += " AND ";
                 bs.Filter = option + "ФИО LIKE '%" + ((TextBox)sender).Text + "%'";
+            }
+            else {
+                bs.Filter = delete_option(bs.Filter, "ФИО LIKE");
             }
         }
         private void b_clear_Click(object sender, EventArgs e) {
@@ -126,6 +131,9 @@ namespace coursework_forms {
                 option += date + " > " + "'" + dtp_from.Text + "'";
                 bs.Filter = option;
             }
+            else {
+                bs.Filter = delete_option(bs.Filter, date + " >");
+            }
         }
 
         private void dtp_to_CloseUp(object sender, EventArgs e) {
@@ -136,6 +144,9 @@ namespace coursework_forms {
                     option += " AND ";
                 option += date + " <" + "'" + dtp_to.Text + "'";
                 bs.Filter = option;
+            }
+            else {
+                bs.Filter = delete_option(bs.Filter, date + " <");
             }
         }
     }

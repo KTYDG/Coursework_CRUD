@@ -69,6 +69,7 @@ namespace coursework_forms {
         }
 
         string amount_before = "";
+        string salary_before = "";
         private void dgv_sotr_CellEndEdit(object sender, DataGridViewCellEventArgs e) {
             int col = e.ColumnIndex;
             int row = e.RowIndex;
@@ -91,6 +92,16 @@ namespace coursework_forms {
                     MessageBox.Show(String.Format("Неверный формат введеных данных в столбце: {0}", col_name));
                 }
             }
+            if(col == 5) {
+                if(dgv_sotr.Rows[row].Cells[2].Value.ToString() == "Генеральный Директор") {
+                    dgv_sotr.Rows[row].Cells[col].Value = salary_before;
+                    MessageBox.Show(String.Format("Нельзя изменить зарплату у этой ячейки в столбце: {0}", col_name));
+                }
+                if(dgv_sotr.Rows[row].Cells[col].Value.ToString()[0] == '-') {
+                    dgv_sotr.Rows[row].Cells[col].Value = salary_before;
+                    MessageBox.Show(String.Format("Неверный формат введеных данных в столбце: {0}", col_name));
+                }
+            }
         }
 
         private void dgv_sotr_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e) {
@@ -98,6 +109,9 @@ namespace coursework_forms {
             int row = e.RowIndex;
             if(col == 3) {
                 amount_before = dgv_sotr.Rows[row].Cells[col].Value.ToString();
+            }
+            if(col == 5) {
+                salary_before = dgv_sotr.Rows[row].Cells[col].Value.ToString();
             }
         }
     }

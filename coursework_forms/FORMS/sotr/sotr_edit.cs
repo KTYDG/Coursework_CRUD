@@ -1,4 +1,5 @@
-﻿using Microsoft.Office.Interop.Word;
+﻿using Aspose.Words.Tables;
+using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,19 +30,7 @@ namespace coursework_forms {
             // TODO: This line of code loads data into the 'courseworkDataSet.Сотрудник' table. You can move, or remove it, as needed.
             this.сотрудникTableAdapter.Fill(this.courseworkDataSet.Сотрудник);
 
-            string connString = @"Data Source=KTYDGIK\SQLKTYDG;Initial Catalog=""Coursework"";Integrated Security=True";
-            // создание подключения SqlConnection
-            SqlConnection connection = new SqlConnection(connString);
-            SqlCommand comm = new SqlCommand("SELECT id_сотрудник FROM Увольнение", connection);
 
-            connection.Open();
-            SqlDataReader reader = comm.ExecuteReader();
-            while(reader.Read()) {
-                int row = Convert.ToInt32(reader.GetValue(0).ToString());
-                dgv_sotr.Rows[row - 1].DefaultCellStyle.BackColor = Color.Crimson;
-            }
-            reader.Close();
-            connection.Close();
         }
         private void b_exit_Click(object sender, EventArgs e) {
             this.Close();
@@ -134,6 +123,25 @@ namespace coursework_forms {
             if(col == 11) {
                 stage_before = dgv_sotr.Rows[row].Cells[col].Value.ToString();
             }
+        }
+
+        private void dgv_sotr_Paint(object sender, PaintEventArgs e) {
+            string connString = @"Data Source=KTYDGIK\SQLKTYDG;Initial Catalog=""Coursework"";Integrated Security=True";
+            // создание подключения SqlConnection
+            SqlConnection connection = new SqlConnection(connString);
+            SqlCommand comm = new SqlCommand("SELECT id_сотрудник FROM Увольнение", connection);
+
+            connection.Open();
+            SqlDataReader reader = comm.ExecuteReader();
+            while(reader.Read()) {
+                int id = Convert.ToInt32(reader.GetValue(0).ToString());
+                foreach(DataGridViewRow row in dgv_sotr.Rows) {
+                    if(dgv_sotr.Rows[row.Index].Cells[0].Value.ToString() == id.ToString())
+                        dgv_sotr.Rows[row.Index].DefaultCellStyle.BackColor = Color.Crimson;
+                }
+            }
+            reader.Close();
+            connection.Close();
         }
     }
 }

@@ -29,17 +29,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.sotrBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
             this.b_exit = new System.Windows.Forms.Button();
             this.p_top_menu = new System.Windows.Forms.Panel();
             this.b_options = new System.Windows.Forms.Button();
-            this.sotrTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.SotrTableAdapter();
             this.p_filter_options = new System.Windows.Forms.Panel();
             this.dgv_sotr = new System.Windows.Forms.DataGridView();
+            this.sotrBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
+            this.sotrTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.SotrTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.тДDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.отделDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаРожденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.полDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,21 +48,11 @@
             this.почтаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.зПDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.стажDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.sotrBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
             this.p_top_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sotr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sotrBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // sotrBindingSource
-            // 
-            this.sotrBindingSource.DataMember = "Sotr";
-            this.sotrBindingSource.DataSource = this.courseworkDataSet;
-            // 
-            // courseworkDataSet
-            // 
-            this.courseworkDataSet.DataSetName = "CourseworkDataSet";
-            this.courseworkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // b_exit
             // 
@@ -121,10 +112,6 @@
             this.b_options.MouseEnter += new System.EventHandler(this.b_options_MouseEnter);
             this.b_options.MouseLeave += new System.EventHandler(this.b_MouseLeave);
             // 
-            // sotrTableAdapter
-            // 
-            this.sotrTableAdapter.ClearBeforeFill = true;
-            // 
             // p_filter_options
             // 
             this.p_filter_options.Dock = System.Windows.Forms.DockStyle.Right;
@@ -164,7 +151,8 @@
             this.dgv_sotr.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.тДDataGridViewTextBoxColumn,
-            this.должностьDataGridViewTextBoxColumn,
+            this.отделDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
             this.фИОDataGridViewTextBoxColumn,
             this.датаРожденияDataGridViewTextBoxColumn,
             this.полDataGridViewTextBoxColumn,
@@ -209,9 +197,23 @@
             this.dgv_sotr.Size = new System.Drawing.Size(1150, 650);
             this.dgv_sotr.TabIndex = 1;
             // 
+            // sotrBindingSource
+            // 
+            this.sotrBindingSource.DataMember = "Sotr";
+            this.sotrBindingSource.DataSource = this.courseworkDataSet;
+            // 
+            // courseworkDataSet
+            // 
+            this.courseworkDataSet.DataSetName = "CourseworkDataSet";
+            this.courseworkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sotrTableAdapter
+            // 
+            this.sotrTableAdapter.ClearBeforeFill = true;
+            // 
             // iDDataGridViewTextBoxColumn
             // 
-            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
@@ -223,18 +225,29 @@
             this.тДDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.тДDataGridViewTextBoxColumn.DataPropertyName = "ТД";
             this.тДDataGridViewTextBoxColumn.HeaderText = "ТД";
+            this.тДDataGridViewTextBoxColumn.MinimumWidth = 50;
             this.тДDataGridViewTextBoxColumn.Name = "тДDataGridViewTextBoxColumn";
             this.тДDataGridViewTextBoxColumn.ReadOnly = true;
-            this.тДDataGridViewTextBoxColumn.Width = 43;
+            this.тДDataGridViewTextBoxColumn.Width = 50;
             // 
-            // должностьDataGridViewTextBoxColumn
+            // отделDataGridViewTextBoxColumn
             // 
-            this.должностьDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.должностьDataGridViewTextBoxColumn.DataPropertyName = "Должность";
-            this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
-            this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
-            this.должностьDataGridViewTextBoxColumn.ReadOnly = true;
-            this.должностьDataGridViewTextBoxColumn.Width = 60;
+            this.отделDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.отделDataGridViewTextBoxColumn.DataPropertyName = "Отдел";
+            this.отделDataGridViewTextBoxColumn.HeaderText = "Отдел";
+            this.отделDataGridViewTextBoxColumn.MinimumWidth = 65;
+            this.отделDataGridViewTextBoxColumn.Name = "отделDataGridViewTextBoxColumn";
+            this.отделDataGridViewTextBoxColumn.ReadOnly = true;
+            this.отделDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Должность";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Должность";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 60;
             // 
             // фИОDataGridViewTextBoxColumn
             // 
@@ -254,42 +267,53 @@
             // 
             // полDataGridViewTextBoxColumn
             // 
+            this.полDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.полDataGridViewTextBoxColumn.DataPropertyName = "Пол";
             this.полDataGridViewTextBoxColumn.HeaderText = "Пол";
+            this.полDataGridViewTextBoxColumn.MinimumWidth = 50;
             this.полDataGridViewTextBoxColumn.Name = "полDataGridViewTextBoxColumn";
             this.полDataGridViewTextBoxColumn.ReadOnly = true;
-            this.полDataGridViewTextBoxColumn.Width = 40;
+            this.полDataGridViewTextBoxColumn.Width = 50;
             // 
             // телефонDataGridViewTextBoxColumn
             // 
+            this.телефонDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.телефонDataGridViewTextBoxColumn.DataPropertyName = "Телефон";
             this.телефонDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.телефонDataGridViewTextBoxColumn.MinimumWidth = 75;
             this.телефонDataGridViewTextBoxColumn.Name = "телефонDataGridViewTextBoxColumn";
             this.телефонDataGridViewTextBoxColumn.ReadOnly = true;
+            this.телефонDataGridViewTextBoxColumn.Width = 75;
             // 
             // почтаDataGridViewTextBoxColumn
             // 
             this.почтаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.почтаDataGridViewTextBoxColumn.DataPropertyName = "Почта";
             this.почтаDataGridViewTextBoxColumn.HeaderText = "Почта";
+            this.почтаDataGridViewTextBoxColumn.MinimumWidth = 65;
             this.почтаDataGridViewTextBoxColumn.Name = "почтаDataGridViewTextBoxColumn";
             this.почтаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.почтаDataGridViewTextBoxColumn.Width = 46;
+            this.почтаDataGridViewTextBoxColumn.Width = 65;
             // 
             // зПDataGridViewTextBoxColumn
             // 
+            this.зПDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.зПDataGridViewTextBoxColumn.DataPropertyName = "ЗП";
             this.зПDataGridViewTextBoxColumn.HeaderText = "ЗП";
+            this.зПDataGridViewTextBoxColumn.MinimumWidth = 55;
             this.зПDataGridViewTextBoxColumn.Name = "зПDataGridViewTextBoxColumn";
             this.зПDataGridViewTextBoxColumn.ReadOnly = true;
+            this.зПDataGridViewTextBoxColumn.Width = 55;
             // 
             // стажDataGridViewTextBoxColumn
             // 
+            this.стажDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.стажDataGridViewTextBoxColumn.DataPropertyName = "Стаж";
             this.стажDataGridViewTextBoxColumn.HeaderText = "Стаж";
+            this.стажDataGridViewTextBoxColumn.MinimumWidth = 60;
             this.стажDataGridViewTextBoxColumn.Name = "стажDataGridViewTextBoxColumn";
             this.стажDataGridViewTextBoxColumn.ReadOnly = true;
-            this.стажDataGridViewTextBoxColumn.Width = 40;
+            this.стажDataGridViewTextBoxColumn.Width = 60;
             // 
             // sotr_view
             // 
@@ -304,10 +328,10 @@
             this.Name = "sotr_view";
             this.Text = "sotr_view";
             this.Load += new System.EventHandler(this.sotr_view_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sotrBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).EndInit();
             this.p_top_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sotr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sotrBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,15 +339,16 @@
         #endregion
         private System.Windows.Forms.Button b_exit;
         private System.Windows.Forms.Panel p_top_menu;
-        private CourseworkDataSet courseworkDataSet;
-        public System.Windows.Forms.BindingSource sotrBindingSource;
-        private CourseworkDataSetTableAdapters.SotrTableAdapter sotrTableAdapter;
         private System.Windows.Forms.Button b_options;
         private System.Windows.Forms.Panel p_filter_options;
         private System.Windows.Forms.DataGridView dgv_sotr;
+        private CourseworkDataSet courseworkDataSet;
+        public System.Windows.Forms.BindingSource sotrBindingSource;
+        private CourseworkDataSetTableAdapters.SotrTableAdapter sotrTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn тДDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn отделDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датаРожденияDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn полDataGridViewTextBoxColumn;

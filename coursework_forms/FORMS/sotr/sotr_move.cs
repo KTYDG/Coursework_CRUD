@@ -39,10 +39,15 @@ namespace coursework_forms.FORMS.sotr {
         }
 
         private void sotr_add_Load(object sender, EventArgs e) {
-            // TODO: This line of code loads data into the 'courseworkDataSet.ШтатноеРасписание' table. You can move, or remove it, as needed.
-            this.штатноеРасписаниеTableAdapter.Fill(this.courseworkDataSet.ШтатноеРасписание);
+            // TODO: This line of code loads data into the 'courseworkDataSet.ШтатноеРасписание1' table. You can move, or remove it, as needed.
+            this.штатноеРасписание1TableAdapter.Fill(this.courseworkDataSet.ШтатноеРасписание1);
+            // TODO: This line of code loads data into the 'courseworkDataSet.MoveAdd1' table. You can move, or remove it, as needed.
+            this.moveAdd1TableAdapter.Fill(this.courseworkDataSet.MoveAdd1);
+
             // TODO: This line of code loads data into the 'courseworkDataSet.Sotr' table. You can move, or remove it, as needed.
             this.sotrTableAdapter.Fill(this.courseworkDataSet.Sotr);
+
+            moveAdd1BindingSource.Filter = "Отдел = '" + cb_after.SelectedValue.ToString() + "'";
         }
 
         private void b_move_Click(object sender, EventArgs e) {
@@ -73,7 +78,6 @@ namespace coursework_forms.FORMS.sotr {
             my_command.Parameters.Add("@ID", SqlDbType.Int);
             my_command.Parameters.Add("@b", SqlDbType.VarChar, 80);
             my_command.Parameters.Add("@after", SqlDbType.Int);
-            my_command.Parameters.Add("@salary", SqlDbType.Int);
             my_command.Parameters.Add("@res", SqlDbType.VarChar, 60);
 
             try {
@@ -81,13 +85,6 @@ namespace coursework_forms.FORMS.sotr {
             }
             catch {
                 tb_error.Text = "ID не существует";
-                return;
-            }
-            try {
-                my_command.Parameters["@Salary"].Value = Convert.ToInt32(tb_salary.Text);
-            }
-            catch {
-                tb_error.Text = "Неверный формат ЗП";
                 return;
             }
             my_command.Parameters["@b"].Value = tb_place.Text;
@@ -175,8 +172,8 @@ namespace coursework_forms.FORMS.sotr {
             d.Range.Replace("ДТ", today.ToString("dd.MM.yyyy"), new FindReplaceOptions(FindReplaceDirection.Forward));
             d.Range.Replace("ID", cb_sotr.SelectedValue.ToString(), new FindReplaceOptions(FindReplaceDirection.Forward));
             d.Range.Replace("ФИО", cb_sotr.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
-            d.Range.Replace("ДЖН", tb_place.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
-            d.Range.Replace("ДДН", cb_place.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("ДЖН", tb_before.Text + " - " + tb_place.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
+            d.Range.Replace("ДДН", cb_after.Text + " - " + cb_place.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
             d.Range.Replace("ЗП", tb_salary.Text, new FindReplaceOptions(FindReplaceDirection.Forward));
             // Save the Word document
             d.Save(Path.GetFullPath(saveFileDialog1.FileName));
@@ -198,5 +195,12 @@ namespace coursework_forms.FORMS.sotr {
                 tb_error.Text = "";
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            if(cb_after.SelectedValue != null)
+                moveAdd1BindingSource.Filter = "Отдел = '" + cb_after.SelectedValue.ToString() + "'";
+
+        }
+
     }
 }

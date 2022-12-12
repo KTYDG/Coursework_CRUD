@@ -72,7 +72,7 @@ namespace coursework_forms {
             this.tb_id.Location = new System.Drawing.Point(154, 179);
             this.tb_id.Name = "tb_id";
             this.tb_id.Size = new System.Drawing.Size(189, 36);
-            this.tb_id.TabIndex = 3;
+            this.tb_id.TabIndex = 1;
             // 
             // tb_pass
             // 
@@ -84,7 +84,7 @@ namespace coursework_forms {
             this.tb_pass.Name = "tb_pass";
             this.tb_pass.PasswordChar = '#';
             this.tb_pass.Size = new System.Drawing.Size(189, 36);
-            this.tb_pass.TabIndex = 3;
+            this.tb_pass.TabIndex = 2;
             // 
             // tb_error
             // 
@@ -97,6 +97,7 @@ namespace coursework_forms {
             this.tb_error.ReadOnly = true;
             this.tb_error.Size = new System.Drawing.Size(350, 30);
             this.tb_error.TabIndex = 5;
+            this.tb_error.TabStop = false;
             this.tb_error.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // p_top_menu
@@ -129,6 +130,7 @@ namespace coursework_forms {
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 25);
             this.button1.TabIndex = 6;
+            this.button1.TabStop = false;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseEnter += new System.EventHandler(this.b_exit_MouseEnter);
@@ -171,7 +173,7 @@ namespace coursework_forms {
             this.b_login.Name = "b_login";
             this.b_login.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.b_login.Size = new System.Drawing.Size(315, 45);
-            this.b_login.TabIndex = 7;
+            this.b_login.TabIndex = 3;
             this.b_login.Text = "Вход";
             this.b_login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.b_login.UseVisualStyleBackColor = false;

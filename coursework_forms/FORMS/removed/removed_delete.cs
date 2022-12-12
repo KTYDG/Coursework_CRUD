@@ -16,7 +16,6 @@ namespace coursework_forms.FORMS.sotr {
     public partial class removed_delete: Form {
         public removed_delete() {
             InitializeComponent();
-
         }
 
         private void b_exit_Click(object sender, EventArgs e) {
@@ -39,8 +38,8 @@ namespace coursework_forms.FORMS.sotr {
         }
 
         private void sotr_add_Load(object sender, EventArgs e) {
-            // TODO: This line of code loads data into the 'courseworkDataSet.Sotr' table. You can move, or remove it, as needed.
-            this.sotrTableAdapter.Fill(this.courseworkDataSet.Sotr);
+            // TODO: This line of code loads data into the 'courseworkDataSet.Removed' table. You can move, or remove it, as needed.
+            this.removedTableAdapter.Fill(this.courseworkDataSet.Removed);
         }
 
         private void b_remove_Click(object sender, EventArgs e) {

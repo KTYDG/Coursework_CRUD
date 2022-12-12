@@ -29,19 +29,19 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label4 = new System.Windows.Forms.Label();
             this.cb_sotr = new System.Windows.Forms.ComboBox();
-            this.sotrBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
             this.b_remove = new System.Windows.Forms.Button();
             this.tb_error = new System.Windows.Forms.TextBox();
-            this.sotrTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.SotrTableAdapter();
             this.rtb_reason = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_place = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.removedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.removedTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.RemovedTableAdapter();
             this.p_top_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sotrBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.removedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // p_top_menu
@@ -94,7 +94,7 @@
             this.cb_sotr.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_sotr.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_sotr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
-            this.cb_sotr.DataSource = this.sotrBindingSource;
+            this.cb_sotr.DataSource = this.removedBindingSource;
             this.cb_sotr.DisplayMember = "ФИО";
             this.cb_sotr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_sotr.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
@@ -107,11 +107,6 @@
             this.cb_sotr.Size = new System.Drawing.Size(508, 39);
             this.cb_sotr.TabIndex = 38;
             this.cb_sotr.ValueMember = "ID";
-            // 
-            // sotrBindingSource
-            // 
-            this.sotrBindingSource.DataMember = "Sotr";
-            this.sotrBindingSource.DataSource = this.courseworkDataSet;
             // 
             // courseworkDataSet
             // 
@@ -154,10 +149,6 @@
             this.tb_error.TabIndex = 40;
             this.tb_error.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // sotrTableAdapter
-            // 
-            this.sotrTableAdapter.ClearBeforeFill = true;
-            // 
             // rtb_reason
             // 
             this.rtb_reason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
@@ -187,7 +178,7 @@
             // 
             this.tb_place.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
             this.tb_place.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_place.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sotrBindingSource, "Должность", true));
+            this.tb_place.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.removedBindingSource, "Должность", true));
             this.tb_place.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 22F, System.Drawing.FontStyle.Bold);
             this.tb_place.ForeColor = System.Drawing.Color.Crimson;
             this.tb_place.Location = new System.Drawing.Point(627, 141);
@@ -201,7 +192,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sotrBindingSource, "ID", true));
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.removedBindingSource, "ID", true));
             this.textBox2.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 22F, System.Drawing.FontStyle.Bold);
             this.textBox2.ForeColor = System.Drawing.Color.Crimson;
             this.textBox2.Location = new System.Drawing.Point(40, 141);
@@ -222,6 +213,15 @@
             this.label2.Size = new System.Drawing.Size(949, 36);
             this.label2.TabIndex = 54;
             this.label2.Text = "ПРОИЗОЙДЕЕТ ПОЛНОЕ УДАЛЕННИЕ ДАННЫХ О СОТРУДНИКЕ В БД ❗";
+            // 
+            // removedBindingSource
+            // 
+            this.removedBindingSource.DataMember = "Removed";
+            this.removedBindingSource.DataSource = this.courseworkDataSet;
+            // 
+            // removedTableAdapter
+            // 
+            this.removedTableAdapter.ClearBeforeFill = true;
             // 
             // removed_delete
             // 
@@ -244,8 +244,8 @@
             this.Text = "sotr_add";
             this.Load += new System.EventHandler(this.sotr_add_Load);
             this.p_top_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sotrBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.removedBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,12 +261,12 @@
         private CourseworkDataSet courseworkDataSet;
         private System.Windows.Forms.Button b_remove;
         private System.Windows.Forms.TextBox tb_error;
-        private System.Windows.Forms.BindingSource sotrBindingSource;
-        private CourseworkDataSetTableAdapters.SotrTableAdapter sotrTableAdapter;
         private System.Windows.Forms.RichTextBox rtb_reason;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_place;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource removedBindingSource;
+        private CourseworkDataSetTableAdapters.RemovedTableAdapter removedTableAdapter;
     }
 }

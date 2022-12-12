@@ -2,5 +2,7 @@
 
 
     partial class CourseworkDataSet {
+        partial class DataTable1DataTable {
+        }
     }
 }

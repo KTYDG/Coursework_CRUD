@@ -30,18 +30,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_sotr = new System.Windows.Forms.DataGridView();
-            this.idсотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idтрудовойДоговорDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idдолжностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датаРожденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.полDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.телефонDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.почтаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.заработнаяПлатаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.стажDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
             this.b_exit = new System.Windows.Forms.Button();
@@ -49,6 +37,17 @@
             this.b_update = new System.Windows.Forms.Button();
             this.сотрудникTableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.СотрудникTableAdapter();
             this.tableAdapterManager = new coursework_forms.CourseworkDataSetTableAdapters.TableAdapterManager();
+            this.idсотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idтрудовойДоговорDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idдолжностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаРожденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.полDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.телефонDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.почтаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.стажDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sotr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
@@ -88,14 +87,13 @@
             this.idсотрудникDataGridViewTextBoxColumn,
             this.idтрудовойДоговорDataGridViewTextBoxColumn,
             this.idдолжностьDataGridViewTextBoxColumn,
-            this.имяDataGridViewTextBoxColumn,
             this.фамилияDataGridViewTextBoxColumn,
+            this.имяDataGridViewTextBoxColumn,
             this.отчествоDataGridViewTextBoxColumn,
             this.датаРожденияDataGridViewTextBoxColumn,
             this.полDataGridViewTextBoxColumn,
             this.телефонDataGridViewTextBoxColumn,
             this.почтаDataGridViewTextBoxColumn,
-            this.заработнаяПлатаDataGridViewTextBoxColumn,
             this.стажDataGridViewTextBoxColumn});
             this.dgv_sotr.DataSource = this.сотрудникBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -135,90 +133,7 @@
             this.dgv_sotr.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_sotr_CellBeginEdit);
             this.dgv_sotr.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sotr_CellEndEdit);
             this.dgv_sotr.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.drg_DataError);
-            // 
-            // idсотрудникDataGridViewTextBoxColumn
-            // 
-            this.idсотрудникDataGridViewTextBoxColumn.DataPropertyName = "id_сотрудник";
-            this.idсотрудникDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idсотрудникDataGridViewTextBoxColumn.Name = "idсотрудникDataGridViewTextBoxColumn";
-            this.idсотрудникDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idсотрудникDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // idтрудовойДоговорDataGridViewTextBoxColumn
-            // 
-            this.idтрудовойДоговорDataGridViewTextBoxColumn.DataPropertyName = "id_трудовойДоговор";
-            this.idтрудовойДоговорDataGridViewTextBoxColumn.HeaderText = "ТД";
-            this.idтрудовойДоговорDataGridViewTextBoxColumn.Name = "idтрудовойДоговорDataGridViewTextBoxColumn";
-            this.idтрудовойДоговорDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // idдолжностьDataGridViewTextBoxColumn
-            // 
-            this.idдолжностьDataGridViewTextBoxColumn.DataPropertyName = "id_должность";
-            this.idдолжностьDataGridViewTextBoxColumn.HeaderText = "Должность";
-            this.idдолжностьDataGridViewTextBoxColumn.Name = "idдолжностьDataGridViewTextBoxColumn";
-            this.idдолжностьDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // имяDataGridViewTextBoxColumn
-            // 
-            this.имяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
-            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
-            // 
-            // фамилияDataGridViewTextBoxColumn
-            // 
-            this.фамилияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
-            // 
-            // отчествоDataGridViewTextBoxColumn
-            // 
-            this.отчествоDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "Отчество";
-            this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
-            // 
-            // датаРожденияDataGridViewTextBoxColumn
-            // 
-            this.датаРожденияDataGridViewTextBoxColumn.DataPropertyName = "Дата рождения";
-            this.датаРожденияDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.датаРожденияDataGridViewTextBoxColumn.Name = "датаРожденияDataGridViewTextBoxColumn";
-            this.датаРожденияDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // полDataGridViewTextBoxColumn
-            // 
-            this.полDataGridViewTextBoxColumn.DataPropertyName = "Пол";
-            this.полDataGridViewTextBoxColumn.HeaderText = "Пол";
-            this.полDataGridViewTextBoxColumn.Name = "полDataGridViewTextBoxColumn";
-            this.полDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // телефонDataGridViewTextBoxColumn
-            // 
-            this.телефонDataGridViewTextBoxColumn.DataPropertyName = "Телефон";
-            this.телефонDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.телефонDataGridViewTextBoxColumn.Name = "телефонDataGridViewTextBoxColumn";
-            // 
-            // почтаDataGridViewTextBoxColumn
-            // 
-            this.почтаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.почтаDataGridViewTextBoxColumn.DataPropertyName = "Почта";
-            this.почтаDataGridViewTextBoxColumn.FillWeight = 110F;
-            this.почтаDataGridViewTextBoxColumn.HeaderText = "Почта";
-            this.почтаDataGridViewTextBoxColumn.Name = "почтаDataGridViewTextBoxColumn";
-            // 
-            // заработнаяПлатаDataGridViewTextBoxColumn
-            // 
-            this.заработнаяПлатаDataGridViewTextBoxColumn.DataPropertyName = "Заработная плата";
-            this.заработнаяПлатаDataGridViewTextBoxColumn.HeaderText = "ЗП";
-            this.заработнаяПлатаDataGridViewTextBoxColumn.Name = "заработнаяПлатаDataGridViewTextBoxColumn";
-            // 
-            // стажDataGridViewTextBoxColumn
-            // 
-            this.стажDataGridViewTextBoxColumn.DataPropertyName = "Стаж";
-            this.стажDataGridViewTextBoxColumn.HeaderText = "Стаж";
-            this.стажDataGridViewTextBoxColumn.Name = "стажDataGridViewTextBoxColumn";
-            this.стажDataGridViewTextBoxColumn.Width = 40;
+            this.dgv_sotr.Paint += new System.Windows.Forms.PaintEventHandler(this.dgv_sotr_Paint);
             // 
             // сотрудникBindingSource
             // 
@@ -307,6 +222,91 @@
             this.tableAdapterManager.УвольнениеTableAdapter = null;
             this.tableAdapterManager.ШтатноеРасписаниеTableAdapter = null;
             // 
+            // idсотрудникDataGridViewTextBoxColumn
+            // 
+            this.idсотрудникDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idсотрудникDataGridViewTextBoxColumn.DataPropertyName = "id_сотрудник";
+            this.idсотрудникDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idсотрудникDataGridViewTextBoxColumn.Name = "idсотрудникDataGridViewTextBoxColumn";
+            this.idсотрудникDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idсотрудникDataGridViewTextBoxColumn.Width = 41;
+            // 
+            // idтрудовойДоговорDataGridViewTextBoxColumn
+            // 
+            this.idтрудовойДоговорDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idтрудовойДоговорDataGridViewTextBoxColumn.DataPropertyName = "id_трудовойДоговор";
+            this.idтрудовойДоговорDataGridViewTextBoxColumn.HeaderText = "ТД";
+            this.idтрудовойДоговорDataGridViewTextBoxColumn.MinimumWidth = 50;
+            this.idтрудовойДоговорDataGridViewTextBoxColumn.Name = "idтрудовойДоговорDataGridViewTextBoxColumn";
+            this.idтрудовойДоговорDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // idдолжностьDataGridViewTextBoxColumn
+            // 
+            this.idдолжностьDataGridViewTextBoxColumn.DataPropertyName = "id_должность";
+            this.idдолжностьDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.idдолжностьDataGridViewTextBoxColumn.Name = "idдолжностьDataGridViewTextBoxColumn";
+            this.idдолжностьDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // фамилияDataGridViewTextBoxColumn
+            // 
+            this.фамилияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
+            // 
+            // имяDataGridViewTextBoxColumn
+            // 
+            this.имяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            // 
+            // отчествоDataGridViewTextBoxColumn
+            // 
+            this.отчествоDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "Отчество";
+            this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
+            // 
+            // датаРожденияDataGridViewTextBoxColumn
+            // 
+            this.датаРожденияDataGridViewTextBoxColumn.DataPropertyName = "Дата рождения";
+            this.датаРожденияDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+            this.датаРожденияDataGridViewTextBoxColumn.Name = "датаРожденияDataGridViewTextBoxColumn";
+            this.датаРожденияDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // полDataGridViewTextBoxColumn
+            // 
+            this.полDataGridViewTextBoxColumn.DataPropertyName = "Пол";
+            this.полDataGridViewTextBoxColumn.HeaderText = "Пол";
+            this.полDataGridViewTextBoxColumn.Name = "полDataGridViewTextBoxColumn";
+            this.полDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // телефонDataGridViewTextBoxColumn
+            // 
+            this.телефонDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.телефонDataGridViewTextBoxColumn.DataPropertyName = "Телефон";
+            this.телефонDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.телефонDataGridViewTextBoxColumn.MinimumWidth = 75;
+            this.телефонDataGridViewTextBoxColumn.Name = "телефонDataGridViewTextBoxColumn";
+            this.телефонDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // почтаDataGridViewTextBoxColumn
+            // 
+            this.почтаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.почтаDataGridViewTextBoxColumn.DataPropertyName = "Почта";
+            this.почтаDataGridViewTextBoxColumn.FillWeight = 110F;
+            this.почтаDataGridViewTextBoxColumn.HeaderText = "Почта";
+            this.почтаDataGridViewTextBoxColumn.Name = "почтаDataGridViewTextBoxColumn";
+            this.почтаDataGridViewTextBoxColumn.Width = 46;
+            // 
+            // стажDataGridViewTextBoxColumn
+            // 
+            this.стажDataGridViewTextBoxColumn.DataPropertyName = "Стаж";
+            this.стажDataGridViewTextBoxColumn.HeaderText = "Стаж";
+            this.стажDataGridViewTextBoxColumn.Name = "стажDataGridViewTextBoxColumn";
+            this.стажDataGridViewTextBoxColumn.Width = 40;
+            // 
             // sotr_edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,18 +336,17 @@
         private System.Windows.Forms.BindingSource сотрудникBindingSource;
         private CourseworkDataSetTableAdapters.СотрудникTableAdapter сотрудникTableAdapter;
         private CourseworkDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Button b_update;
         private System.Windows.Forms.DataGridViewTextBoxColumn idсотрудникDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idтрудовойДоговорDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idдолжностьDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датаРожденияDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn полDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn телефонDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn почтаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn заработнаяПлатаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn стажDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button b_update;
     }
 }
