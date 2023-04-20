@@ -126,7 +126,7 @@
             this.p_side_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.p_side_menu.Location = new System.Drawing.Point(0, 25);
             this.p_side_menu.Name = "p_side_menu";
-            this.p_side_menu.Size = new System.Drawing.Size(165, 675);
+            this.p_side_menu.Size = new System.Drawing.Size(165, 676);
             this.p_side_menu.TabIndex = 2;
             // 
             // LeaveSubPanel
@@ -761,7 +761,7 @@
             this.b_sotr.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.b_sotr.Size = new System.Drawing.Size(148, 45);
             this.b_sotr.TabIndex = 1;
-            this.b_sotr.Text = "Сотдруник";
+            this.b_sotr.Text = "Сотрудник";
             this.b_sotr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.b_sotr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.b_sotr.UseVisualStyleBackColor = false;
@@ -796,7 +796,7 @@
             // p_form_view
             // 
             this.p_form_view.Controls.Add(this.pictureBox1);
-            this.p_form_view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.p_form_view.Dock = System.Windows.Forms.DockStyle.Top;
             this.p_form_view.Location = new System.Drawing.Point(165, 25);
             this.p_form_view.Name = "p_form_view";
             this.p_form_view.Size = new System.Drawing.Size(1150, 675);
@@ -804,8 +804,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::coursework_forms.Properties.Resources.HR_Form;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -822,7 +822,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(4)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1315, 700);
+            this.ClientSize = new System.Drawing.Size(1315, 701);
             this.Controls.Add(this.p_form_view);
             this.Controls.Add(this.p_side_menu);
             this.Controls.Add(this.p_top_menu);

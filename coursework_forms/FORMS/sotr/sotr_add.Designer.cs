@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cb_place = new System.Windows.Forms.ComboBox();
+            this.moveAdd1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseworkDataSet = new coursework_forms.CourseworkDataSet();
             this.b_add = new System.Windows.Forms.Button();
             this.tb_error = new System.Windows.Forms.TextBox();
@@ -54,12 +55,11 @@
             this.штатноеРасписание1TableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.ШтатноеРасписание1TableAdapter();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_salary = new System.Windows.Forms.TextBox();
-            this.moveAdd1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.moveAdd1TableAdapter = new coursework_forms.CourseworkDataSetTableAdapters.MoveAdd1TableAdapter();
             this.p_top_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moveAdd1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.штатноеРасписание1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moveAdd1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // p_top_menu
@@ -301,6 +301,11 @@
             this.cb_place.TabIndex = 38;
             this.cb_place.ValueMember = "ID";
             // 
+            // moveAdd1BindingSource
+            // 
+            this.moveAdd1BindingSource.DataMember = "MoveAdd1";
+            this.moveAdd1BindingSource.DataSource = this.courseworkDataSet;
+            // 
             // courseworkDataSet
             // 
             this.courseworkDataSet.DataSetName = "CourseworkDataSet";
@@ -425,6 +430,7 @@
             // 
             this.tb_salary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(6)))), ((int)(((byte)(42)))));
             this.tb_salary.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_salary.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.moveAdd1BindingSource, "Заработная плата", true));
             this.tb_salary.Font = new System.Drawing.Font("JetBrains Mono NL Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_salary.ForeColor = System.Drawing.Color.Crimson;
             this.tb_salary.Location = new System.Drawing.Point(534, 334);
@@ -433,11 +439,6 @@
             this.tb_salary.ReadOnly = true;
             this.tb_salary.Size = new System.Drawing.Size(385, 36);
             this.tb_salary.TabIndex = 64;
-            // 
-            // moveAdd1BindingSource
-            // 
-            this.moveAdd1BindingSource.DataMember = "MoveAdd1";
-            this.moveAdd1BindingSource.DataSource = this.courseworkDataSet;
             // 
             // moveAdd1TableAdapter
             // 
@@ -479,9 +480,9 @@
             this.Text = "sotr_add";
             this.Load += new System.EventHandler(this.sotr_add_Load);
             this.p_top_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.moveAdd1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseworkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.штатноеРасписание1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moveAdd1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

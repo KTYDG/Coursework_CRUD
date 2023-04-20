@@ -36,16 +36,6 @@ namespace coursework_forms {
             this.Close();
         }
 
-
-
-        private void button_MouseEnter(object sender, EventArgs e) {
-            ((Button)sender).ForeColor = Color.Crimson;
-        }
-
-        private void button_MouseLeave(object sender, EventArgs e) {
-            ((Button)sender).ForeColor = Color.White;
-        }
-
         private void b_exit_MouseEnter(object sender, EventArgs e) {
             ((Button)sender).BackColor = Color.Red;
         }

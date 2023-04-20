@@ -111,15 +111,21 @@ namespace coursework_forms {
 
             string fio = tb_fio.Text;
             string[] f = fio.Split(' ');
-            if(f.Length != 3) {
+            if(f.Length != 3 && f.Length != 2) {
                 tb_error.Text = "Неверный формат ФИО";
                 return;
             }
             my_command.Parameters["@id"].Value = Convert.ToInt32(tb_id.Text);
             my_command.Parameters["@password"].Value = tb_pass.Text;
-            my_command.Parameters["@f"].Value = f[0];
-            my_command.Parameters["@i"].Value = f[1];
-            my_command.Parameters["@o"].Value = f[2];
+            my_command.Parameters["@f"].Value = f[1];
+            my_command.Parameters["@i"].Value = f[0];
+            if(f.Length == 3) {
+                my_command.Parameters["@o"].Value = f[2];
+            }
+            else {
+                my_command.Parameters["@o"].Value = "";
+            }
+
             if(!tb_mail.Text.Contains("@")) {
                 tb_error.Text = "Неверный формат почты";
                 return;
@@ -138,7 +144,7 @@ namespace coursework_forms {
                 tb_error.Text = "Неверный формат телефона";
                 return;
             }
-            if(Convert.ToInt64(tb_phone.Text) <= 0 || tb_phone.Text.Length < 10) {
+            if(Convert.ToInt64(tb_phone.Text) <= 0 || tb_phone.Text.Length != 10) {
                 tb_error.Text = "Неверный формат телефона";
                 return;
             }

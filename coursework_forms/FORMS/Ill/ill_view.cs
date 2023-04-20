@@ -20,6 +20,7 @@ namespace coursework_forms {
             dgv_sotr.Columns[1].ReadOnly = true;
             dgv_sotr.Columns[2].ReadOnly = true;
             dgv_sotr.Columns[3].ReadOnly = true;
+            dgv_sotr.Columns[4].ReadOnly = true;
             dgv_sotr.Columns[5].ReadOnly = true;
         }
 

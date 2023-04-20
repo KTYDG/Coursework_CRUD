@@ -214,7 +214,7 @@ namespace coursework_forms.FORMS.sotr {
             my_command2.CommandText = String.Format("INSERT INTO Сотрудник VALUES({0},{1},'{2}','{3}','{4}','{5}','{6}',{7},'{8}',{9})",
                 tb_td.Text,
                 cb_place.SelectedValue.ToString(),
-                f[0], f[1], f[2],
+                f[1], f[0], f[2],
                 dtm_birth.Value.ToShortDateString(),
                 cb_gender.Text,
                 tb_phone.Text,
